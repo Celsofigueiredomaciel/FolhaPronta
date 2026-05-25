@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="60" viewBox="0 0 280 60" role="img">
+  <title>FolhaPronta</title>
+  <desc>Logo FolhaPronta — avião de papel com linhas de pauta</desc>
+
+  <style>
+    .nome-folha  { font-family: 'Segoe UI', Arial, sans-serif; font-size: 28px; font-weight: 300; fill: #1F2937; letter-spacing: -0.5px; }
+    .nome-pronta { font-family: 'Segoe UI', Arial, sans-serif; font-size: 28px; font-weight: 800; fill: #2563EB; letter-spacing: -0.5px; }
+    .tagline     { font-family: 'Segoe UI', Arial, sans-serif; font-size: 8px; font-weight: 400; fill: #6B7280; letter-spacing: 1.8px; }
+  </style>
+
+  <!-- Avião de papel -->
+  <g transform="translate(4, 4)">
+    <!-- Sombra -->
+    <path d="M3 42 L48 22 L28 40 Z" fill="#1D4ED8" opacity="0.12"/>
+    <!-- Asa inferior -->
+    <path d="M3 42 L48 22 L33 46 Z" fill="#BFDBFE"/>
+    <!-- Corpo principal -->
+    <path d="M3 42 L48 22 L28 40 Z" fill="#2563EB"/>
+    <!-- Ponta do avião -->
+    <path d="M48 22 L60 17 L28 40 Z" fill="#1D4ED8"/>
+    <!-- Vinco central -->
+    <line x1="28" y1="40" x2="48" y2="22" stroke="white" stroke-width="1" opacity="0.6"/>
+    <!-- Linhas de pauta na asa -->
+    <line x1="12" y1="37" x2="34" y2="25" stroke="white" stroke-width="0.8" opacity="0.5"/>
+    <line x1="8"  y1="40" x2="36" y2="27" stroke="white" stroke-width="0.8" opacity="0.3"/>
+    <line x1="16" y1="34" x2="32" y2="23" stroke="white" stroke-width="0.8" opacity="0.5"/>
+    <!-- Linhas de pauta na asa inferior -->
+    <line x1="12" y1="43" x2="32" y2="39" stroke="#93C5FD" stroke-width="0.7" opacity="0.6"/>
+    <line x1="18" y1="45" x2="34" y2="42" stroke="#93C5FD" stroke-width="0.7" opacity="0.4"/>
+    <!-- Margem vermelha -->
+    <line x1="6"  y1="33" x2="13" y2="47" stroke="#FCA5A5" stroke-width="1" opacity="0.7"/>
+    <!-- Rastro -->
+    <line x1="-10" y1="28" x2="-2"  y2="31" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+    <line x1="-14" y1="33" x2="-4"  y2="36" stroke="#2563EB" stroke-width="1"   stroke-linecap="round" opacity="0.2"/>
+  </g>
+
+  <!-- Nome -->
+  <text x="78" y="38">
+    <tspan class="nome-folha">Folha</tspan><tspan class="nome-pronta">Pronta</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="80" y="50" class="tagline">IMPRIMA EM SEGUNDOS</text>
+
+  <!-- Linha decorativa -->
+  <rect x="80" y="53" width="195" height="1.5" rx="0.75" fill="#2563EB" opacity="0.2"/>
+
+</svg>

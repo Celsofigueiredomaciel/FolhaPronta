@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Planos FolhaPronta — Free, Premium e Max. Escolha o plano ideal e gere PDFs ilimitados sem marca d'água.">
+  <meta name="keywords" content="planos folhapronta, premium, assinatura papel PDF, gerar PDF grátis">
+  <meta name="author" content="FolhaPronta">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Planos — FolhaPronta">
+  <meta property="og:description" content="Free, Premium e Max. Escolha o plano e imprima sem limites.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://folhapronta.com.br/pages/planos.html">
+
+  <title>Planos — FolhaPronta</title>
+
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/planos.css">
+</head>
+<body>
+
+  <!-- ── HEADER ──────────────────────────────────────────────── -->
+  <header class="header scrolled" id="header">
+    <div class="container">
+      <nav class="nav">
+
+        <a href="../index.html" class="logo">
+          <img src="../assets/icons/logo.svg" alt="FolhaPronta" height="36" style="display:block;">
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="../catalogo.html" class="nav-link">Catálogo</a></li>
+          <li><a href="planos.html" class="nav-link" style="color:var(--color-primary)">Planos</a></li>
+          <li><a href="../index.html#como-funciona" class="nav-link">Como funciona</a></li>
+        </ul>
+
+        <div class="nav-acoes">
+          <a href="planos.html" class="btn btn-outline btn-sm">Ver planos</a>
+          <a href="../catalogo.html" class="btn btn-primary btn-sm">Imprimir agora</a>
+        </div>
+
+        <!-- Menu mobile -->
+        <button class="btn-menu-mobile" id="btn-menu-mobile" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── HERO ────────────────────────────────────────────────── -->
+  <section class="planos-hero">
+    <div class="container">
+      <h1>Escolha seu <span>plano</span></h1>
+      <p>Comece grátis e faça upgrade quando precisar. Sem surpresas na fatura.</p>
+
+      <!-- Toggle mensal / anual -->
+      <div class="toggle-periodo">
+        <span class="toggle-label ativo" id="label-mensal">Mensal</span>
+
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggle-anual" aria-label="Alternar para cobrança anual">
+          <div class="toggle-track"></div>
+          <div class="toggle-thumb"></div>
+        </label>
+
+        <span class="toggle-label" id="label-anual">Anual</span>
+        <span class="toggle-badge">−20%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CARDS DE PLANO ──────────────────────────────────────── -->
+  <section class="planos-cards-section" id="free">
+    <div class="container">
+      <div class="planos-grid-page">
+
+        <!-- Free -->
+        <div class="card-plano">
+          <div class="card-plano-nome" style="color:var(--color-free)">Free</div>
+
+          <div class="card-plano-preco preco-mensal">
+            <span class="valor">R$ 0</span>
+            <span class="periodo">/ sempre</span>
+          </div>
+          <div class="card-plano-preco preco-anual">
+            <span class="valor">R$ 0</span>
+            <span class="periodo">/ sempre</span>
+          </div>
+
+          <ul class="card-plano-lista">
+            <li class="card-plano-item"><span class="check">✓</span> 8 modelos de papel</li>
+            <li class="card-plano-item"><span class="check">✓</span> 5 PDFs por dia</li>
+            <li class="card-plano-item"><span class="check">✓</span> Sem cadastro</li>
+            <li class="card-plano-item"><span class="cross">✗</span> Marca d'água no rodapé</li>
+            <li class="card-plano-item"><span class="cross">✗</span> Sem logo da empresa</li>
+            <li class="card-plano-item"><span class="cross">✗</span> Sem salvar modelos</li>
+          </ul>
+
+          <a href="../catalogo.html" class="btn btn-outline">Começar grátis</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="card-plano destaque" id="premium">
+          <div class="card-plano-tag-popular">⭐ MAIS POPULAR</div>
+          <div class="card-plano-nome" style="color:var(--color-premium)">Premium</div>
+
+          <div class="card-plano-preco preco-mensal">
+            <span class="valor">R$ 9,90</span>
+            <span class="periodo">/ mês</span>
+          </div>
+          <div class="card-plano-preco preco-anual">
+            <span class="valor">R$ 7,90</span>
+            <span class="periodo">/ mês · cobrado anualmente</span>
+          </div>
+
+          <ul class="card-plano-lista">
+            <li class="card-plano-item"><span class="check">✓</span> Todos os modelos (+20)</li>
+            <li class="card-plano-item"><span class="check">✓</span> PDFs ilimitados</li>
+            <li class="card-plano-item"><span class="check">✓</span> Sem marca d'água</li>
+            <li class="card-plano-item"><span class="check">✓</span> Logo da empresa</li>
+            <li class="card-plano-item"><span class="check">✓</span> Personalização avançada</li>
+            <li class="card-plano-item"><span class="cross">✗</span> Sem salvar modelos</li>
+          </ul>
+
+          <a href="#" class="btn btn-primary">Assinar Premium</a>
+        </div>
+
+        <!-- Max -->
+        <div class="card-plano" id="max">
+          <div class="card-plano-nome" style="color:var(--color-max)">Max</div>
+
+          <div class="card-plano-preco preco-mensal">
+            <span class="valor">R$ 24,90</span>
+            <span class="periodo">/ mês</span>
+          </div>
+          <div class="card-plano-preco preco-anual">
+            <span class="valor">R$ 19,90</span>
+            <span class="periodo">/ mês · cobrado anualmente</span>
+          </div>
+
+          <ul class="card-plano-lista">
+            <li class="card-plano-item"><span class="check">✓</span> Tudo do Premium</li>
+            <li class="card-plano-item"><span class="check">✓</span> Salvar modelos</li>
+            <li class="card-plano-item"><span class="check">✓</span> Histórico de PDFs</li>
+            <li class="card-plano-item"><span class="check">✓</span> Multi-usuário</li>
+            <li class="card-plano-item"><span class="check">✓</span> Banco de dados próprio</li>
+          </ul>
+
+          <a href="#" class="btn btn-outline" style="border-color:var(--color-max);color:var(--color-max)">
+            Assinar Max
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TABELA COMPARATIVA ──────────────────────────────────── -->
+  <section class="comparativo-section">
+    <div class="container">
+      <h2>Compare os planos</h2>
+      <p class="comparativo-sub">Veja exatamente o que está incluso em cada plano.</p>
+
+      <div class="tabela-wrap">
+        <table class="tabela-comparativa">
+          <thead>
+            <tr>
+              <th>Recurso</th>
+              <th class="th-free">Free</th>
+              <th class="th-premium th-premium-wrap">
+                Premium
+                <span class="th-popular">⭐ popular</span>
+              </th>
+              <th class="th-max">Max</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- Grupo: Uso -->
+            <tr class="grupo-header">
+              <td colspan="4">Uso geral</td>
+            </tr>
+            <tr>
+              <td>Modelos disponíveis</td>
+              <td class="check-txt">8</td>
+              <td class="col-destaque check-txt check-prem">Todos (+20)</td>
+              <td class="check-txt check-max">Todos (+20)</td>
+            </tr>
+            <tr>
+              <td>PDFs por dia</td>
+              <td class="check-txt">5</td>
+              <td class="col-destaque check-prem">Ilimitados</td>
+              <td class="check-max">Ilimitados</td>
+            </tr>
+            <tr>
+              <td>Sem cadastro</td>
+              <td><span class="check-sim">✓</span></td>
+              <td class="col-destaque"><span class="check-sim">✓</span></td>
+              <td><span class="check-sim">✓</span></td>
+            </tr>
+
+            <!-- Grupo: Personalização -->
+            <tr class="grupo-header">
+              <td colspan="4">Personalização</td>
+            </tr>
+            <tr>
+              <td>Marca d'água no rodapé</td>
+              <td><span class="check-sim" style="color:var(--color-danger)">✗</span></td>
+              <td class="col-destaque"><span class="check-nao">✗</span></td>
+              <td><span class="check-nao">✗</span></td>
+            </tr>
+            <tr>
+              <td>Logo da empresa no PDF</td>
+              <td><span class="check-nao">✗</span></td>
+              <td class="col-destaque"><span class="check-sim">✓</span></td>
+              <td><span class="check-sim">✓</span></td>
+            </tr>
+            <tr>
+              <td>Personalização avançada</td>
+              <td><span class="check-nao">✗</span></td>
+              <td class="col-destaque"><span class="check-sim">✓</span></td>
+              <td><span class="check-sim">✓</span></td>
+            </tr>
+            <tr>
+              <td>Fontes e cores customizadas</td>
+              <td><span class="check-nao">✗</span></td>
+              <td class="col-destaque"><span class="check-sim">✓</span></td>
+              <td><span class="check-sim">✓</span></td>
+            </tr>
+
+            <!-- Grupo: Armazenamento -->
+            <tr class="grupo-header">
+              <td colspan="4">Armazenamento &amp; histórico</td>
+            </tr>
+            <tr>
+              <td>Salvar modelos personalizados</td>
+              <td><span class="check-nao">✗</span></td>
+              <td class="col-destaque"><span class="check-nao">✗</span></td>
+              <td><span class="check-sim">✓</span></td>
+            </tr>
+            <tr>
+              <td>Histórico de PDFs gerados</td>
+              <td><span class="check-nao">✗</span></td>
+              <td class="col-destaque"><span class="check-nao">✗</span></td>
+              <td><span class="check-sim">✓</span></td>
+            </tr>
+            <tr>
+              <td>Banco de dados próprio</td>
+              <td><span class="check-nao">✗</span></td>
+              <td class="col-destaque"><span class="check-nao">✗</span></td>
+              <td><span class="check-sim">✓</span></td>
+            </tr>
+
+            <!-- Grupo: Equipe -->
+            <tr class="grupo-header">
+              <td colspan="4">Equipe &amp; acesso</td>
+            </tr>
+            <tr>
+              <td>Usuários simultâneos</td>
+              <td class="check-txt">1</td>
+              <td class="col-destaque check-txt">1</td>
+              <td class="check-max">Múltiplos</td>
+            </tr>
+            <tr>
+              <td>Multi-usuário</td>
+              <td><span class="check-nao">✗</span></td>
+              <td class="col-destaque"><span class="check-nao">✗</span></td>
+              <td><span class="check-sim">✓</span></td>
+            </tr>
+            <tr>
+              <td>Suporte prioritário</td>
+              <td><span class="check-nao">✗</span></td>
+              <td class="col-destaque"><span class="check-sim">✓</span></td>
+              <td><span class="check-sim">✓</span></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ─────────────────────────────────────────────────── -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Perguntas frequentes</h2>
+      <p class="faq-sub">Ainda com dúvidas? Aqui estão as respostas mais comuns.</p>
+
+      <div class="faq-lista">
+
+        <div class="faq-item">
+          <div class="faq-pergunta" role="button" tabindex="0" aria-expanded="false">
+            <span>Posso cancelar a assinatura quando quiser?</span>
+            <div class="faq-icone">+</div>
+          </div>
+          <div class="faq-resposta">
+            <div class="faq-resposta-inner">
+              Sim, você pode cancelar a qualquer momento, sem multa e sem burocracia. Após o cancelamento, seu acesso Premium ou Max permanece ativo até o fim do período já pago. No plano anual, o cancelamento encerra a renovação automática — você aproveita o restante dos 12 meses normalmente.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-pergunta" role="button" tabindex="0" aria-expanded="false">
+            <span>O plano Free tem algum limite de uso?</span>
+            <div class="faq-icone">+</div>
+          </div>
+          <div class="faq-resposta">
+            <div class="faq-resposta-inner">
+              O plano Free permite gerar até 5 PDFs por dia, sem cadastro. Os PDFs incluem uma pequena marca d'água no rodapé (ex: "Gerado por FolhaPronta.com.br") e você acessa 8 dos modelos disponíveis. Para remover a marca d'água, adicionar logo da empresa ou acessar modelos exclusivos, faça upgrade para o Premium.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-pergunta" role="button" tabindex="0" aria-expanded="false">
+            <span>Meus documentos ficam salvos na nuvem?</span>
+            <div class="faq-icone">+</div>
+          </div>
+          <div class="faq-resposta">
+            <div class="faq-resposta-inner">
+              No plano Free e Premium, as preferências de personalização ficam salvas localmente no seu navegador (localStorage), mas os PDFs em si não ficam armazenados. No plano Max, você tem histórico completo de PDFs gerados e pode salvar modelos configurados para reutilizar depois — tudo com banco de dados próprio vinculado à sua conta.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-pergunta" role="button" tabindex="0" aria-expanded="false">
+            <span>Posso adicionar o logo da minha empresa nos PDFs?</span>
+            <div class="faq-icone">+</div>
+          </div>
+          <div class="faq-resposta">
+            <div class="faq-resposta-inner">
+              Sim! A partir do plano Premium você pode fazer upload do logo da sua empresa (PNG ou JPG, até 2 MB) e ele será inserido automaticamente no cabeçalho de todos os PDFs gerados. É ideal para recibos, ordens de serviço, protocolos e documentos empresariais. No plano Max, o logo fica salvo na conta para uso recorrente.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-pergunta" role="button" tabindex="0" aria-expanded="false">
+            <span>Qual a diferença entre Premium e Max?</span>
+            <div class="faq-icone">+</div>
+          </div>
+          <div class="faq-resposta">
+            <div class="faq-resposta-inner">
+              O plano Premium é perfeito para uso individual: todos os modelos, PDFs ilimitados, sem marca d'água e com logo da empresa. O plano Max adiciona funcionalidades para equipes e uso recorrente: salvar modelos configurados, histórico de PDFs gerados, suporte a múltiplos usuários e banco de dados próprio. Se você usa o FolhaPronta para a sua empresa com mais de uma pessoa, o Max é o caminho certo.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA FINAL ────────────────────────────────────────────── -->
+  <section class="planos-cta">
+    <div class="container">
+      <h2>Pronto para começar?</h2>
+      <p>O plano Free não precisa de cadastro. Acesse o catálogo e gere seu primeiro PDF agora.</p>
+      <div class="planos-cta-acoes">
+        <a href="../catalogo.html" class="btn btn-primary btn-lg">📄 Ver catálogo grátis</a>
+        <a href="#premium" class="btn btn-outline btn-lg">Assinar Premium</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col">
+          <a href="../index.html" class="logo" style="color: white">
+            <img src="../assets/icons/logo.svg" alt="FolhaPronta" height="36" style="display:block; filter: brightness(0) invert(1);">
+          </a>
+          <p class="footer-desc">
+            Papéis prontos para imprimir. Grátis, rápido e sem complicação.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h6 class="footer-titulo">Papéis</h6>
+          <ul class="footer-links">
+            <li><a href="../catalogo.html?cat=escolar">Escolares</a></li>
+            <li><a href="../catalogo.html?cat=tecnico">Técnicos</a></li>
+            <li><a href="../catalogo.html?cat=empresarial">Empresariais</a></li>
+            <li><a href="../catalogo.html?cat=recibos">Recibos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h6 class="footer-titulo">Planos</h6>
+          <ul class="footer-links">
+            <li><a href="planos.html#free">Free</a></li>
+            <li><a href="planos.html#premium">Premium</a></li>
+            <li><a href="planos.html#max">Max</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h6 class="footer-titulo">Legal</h6>
+          <ul class="footer-links">
+            <li><a href="privacidade.html">Privacidade (LGPD)</a></li>
+            <li><a href="termos.html">Termos de Uso</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 FolhaPronta. Feito com ❤️ no Brasil.</p>
+        <p class="footer-lgpd-info">
+          Seus dados são protegidos conforme a
+          <a href="privacidade.html">LGPD (Lei 13.709/2018)</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── MODAL UPGRADE ───────────────────────────────────────── -->
+  <div class="modal-overlay hidden" id="modal-upgrade">
+    <div class="modal">
+      <div class="modal-icone">🚀</div>
+      <h3 class="modal-titulo">Recurso Premium</h3>
+      <p class="modal-desc">Faça upgrade para acessar este recurso.</p>
+      <div class="modal-acoes">
+        <a href="planos.html" class="btn btn-primary btn-lg">Ver planos</a>
+        <button class="btn btn-ghost"
+                onclick="document.getElementById('modal-upgrade').classList.add('hidden')">
+          Continuar no Free
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BANNER LGPD ─────────────────────────────────────────── -->
+  <div class="lgpd-banner hidden" id="lgpd-banner">
+    <p>
+      🍪 Usamos apenas cookies essenciais para salvar suas preferências localmente.
+      Nenhum dado é enviado a servidores. Saiba mais em nossa
+      <a href="privacidade.html">Política de Privacidade</a>.
+    </p>
+    <div class="lgpd-acoes">
+      <button class="btn btn-secondary btn-sm" id="lgpd-aceitar">Entendi, aceitar</button>
+      <button class="btn btn-ghost btn-sm" id="lgpd-recusar"
+              style="color:var(--color-gray-400)">
+        Só essenciais
+      </button>
+    </div>
+  </div>
+
+  <!-- ── BOTÃO WHATSAPP ──────────────────────────────────────── -->
+  <a href="https://wa.me/55XXXXXXXXXXX?text=Olá!%20Tenho%20uma%20sugestão%20para%20o%20FolhaPronta:"
+     class="btn-whatsapp"
+     target="_blank"
+     rel="noopener noreferrer"
+     title="Enviar sugestão pelo WhatsApp"
+     aria-label="Feedback pelo WhatsApp">
+    💬
+  </a>
+
+  <!-- ── SCRIPTS ─────────────────────────────────────────────── -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="../assets/js/planos/planos.js"></script>
+  <script src="../assets/js/core/pdf-engine.js"></script>
+  <script src="../assets/js/core/lgpd.js"></script>
+
+  <script>
+    // ── Header: sempre visível nesta página (fundo branco fixo)
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // ── Menu mobile
+    const btnMenu = document.getElementById('btn-menu-mobile');
+    const navLinks = document.querySelector('.nav-links');
+    if (btnMenu) {
+      btnMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('aberto');
+        btnMenu.classList.toggle('ativo');
+      });
+    }
+
+    // ── Toggle mensal / anual
+    const toggleAnual  = document.getElementById('toggle-anual');
+    const labelMensal  = document.getElementById('label-mensal');
+    const labelAnual   = document.getElementById('label-anual');
+
+    toggleAnual.addEventListener('change', () => {
+      const isAnual = toggleAnual.checked;
+      document.body.classList.toggle('anual', isAnual);
+      labelMensal.classList.toggle('ativo', !isAnual);
+      labelAnual.classList.toggle('ativo',  isAnual);
+    });
+
+    // ── FAQ accordion
+    document.querySelectorAll('.faq-pergunta').forEach(pergunta => {
+      function toggle() {
+        const item    = pergunta.closest('.faq-item');
+        const aberto  = item.classList.contains('aberto');
+
+        // fecha todos
+        document.querySelectorAll('.faq-item.aberto').forEach(el => {
+          el.classList.remove('aberto');
+          el.querySelector('.faq-pergunta').setAttribute('aria-expanded', 'false');
+        });
+
+        // abre o clicado (se estava fechado)
+        if (!aberto) {
+          item.classList.add('aberto');
+          pergunta.setAttribute('aria-expanded', 'true');
+        }
+      }
+
+      pergunta.addEventListener('click', toggle);
+      pergunta.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+      });
+    });
+  </script>
+
+</body>
+</html>

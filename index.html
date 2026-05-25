@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FolhaPronta — Papéis prontos para imprimir. Pautado, protocolo, recibo, partitura e muito mais. Gere PDFs grátis em segundos.">
+  <meta name="keywords" content="papel pautado imprimir, recibo grátis, papel protocolo, folha pautada PDF, papel quadriculado">
+  <meta name="author" content="FolhaPronta">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FolhaPronta — Papéis prontos para imprimir">
+  <meta property="og:description" content="Escolha o papel, personalize e imprima em segundos. Grátis.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://folhapronta.com.br">
+
+  <title>FolhaPronta — Papéis prontos para imprimir</title>
+
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/landing.css">
+</head>
+<body>
+
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+
+        <a href="index.html" class="logo">
+          <img src="assets/icons/logo.svg" alt="FolhaPronta" height="36" style="display:block;">
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="catalogo.html" class="nav-link">Catálogo</a></li>
+          <li><a href="pages/planos.html" class="nav-link">Planos</a></li>
+          <li><a href="#como-funciona" class="nav-link">Como funciona</a></li>
+        </ul>
+
+        <div class="nav-acoes">
+          <a href="pages/planos.html" class="btn btn-outline btn-sm">Ver planos</a>
+          <a href="catalogo.html" class="btn btn-primary btn-sm">Imprimir agora</a>
+        </div>
+
+        <!-- Menu mobile -->
+        <button class="btn-menu-mobile" id="btn-menu-mobile" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── HERO ────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          <span>✨</span>
+          <span>100% gratuito para começar</span>
+        </div>
+
+        <h1 class="hero-titulo">
+          O papel que você precisa,<br>
+          <span class="hero-destaque">pronto em segundos</span>
+        </h1>
+
+        <p class="hero-desc">
+          Precisa de papel pautado, protocolo, recibo ou partitura?
+          Escolha, personalize e imprima direto do seu navegador.
+          Sem cadastro, sem complicação.
+        </p>
+
+        <div class="hero-acoes">
+          <a href="catalogo.html" class="btn btn-primary btn-lg">
+            📄 Ver todos os papéis
+          </a>
+          <a href="#como-funciona" class="btn btn-ghost btn-lg">
+            Como funciona →
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">+30</span>
+            <span class="stat-label">modelos</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">gratuito</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-num">0</span>
+            <span class="stat-label">cadastros</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Preview visual -->
+      <div class="hero-visual">
+        <div class="papel-preview papel-preview-1">
+          <div class="preview-header" style="background:#2563EB">📝 Papel Pautado</div>
+          <div class="preview-linhas">
+            <div class="preview-linha"></div>
+            <div class="preview-linha"></div>
+            <div class="preview-linha"></div>
+            <div class="preview-linha"></div>
+            <div class="preview-linha"></div>
+            <div class="preview-linha"></div>
+          </div>
+          <span class="badge-plano badge-free">Free</span>
+        </div>
+        <div class="papel-preview papel-preview-2">
+          <div class="preview-header" style="background:#10B981">🧾 Recibo</div>
+          <div class="preview-recibo">
+            <div class="pr-linha longa"></div>
+            <div class="pr-linha media"></div>
+            <div class="pr-linha longa"></div>
+            <div class="pr-divisor"></div>
+            <div class="pr-linha curta"></div>
+          </div>
+          <span class="badge-plano badge-free">Free</span>
+        </div>
+        <div class="papel-preview papel-preview-3">
+          <div class="preview-header" style="background:#7C3AED">🎵 Partitura</div>
+          <div class="preview-partitura">
+            <div class="pent"></div>
+            <div class="pent"></div>
+            <div class="pent"></div>
+          </div>
+          <span class="badge-plano badge-premium">Premium</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CATEGORIAS RÁPIDAS ──────────────────────────────── -->
+  <section class="section-sm categorias-rapidas">
+    <div class="container">
+      <div class="categorias-grid">
+
+        <a href="catalogo.html?cat=escolar" class="categoria-card" style="--cat-cor:#10B981; --cat-bg:#DCFCE7">
+          <span class="cat-icone">🎒</span>
+          <span class="cat-nome">Escolar</span>
+          <span class="cat-qtd">6 modelos</span>
+        </a>
+
+        <a href="catalogo.html?cat=tecnico" class="categoria-card" style="--cat-cor:#2563EB; --cat-bg:#DBEAFE">
+          <span class="cat-icone">📐</span>
+          <span class="cat-nome">Técnico</span>
+          <span class="cat-qtd">3 modelos</span>
+        </a>
+
+        <a href="catalogo.html?cat=empresarial" class="categoria-card" style="--cat-cor:#F59E0B; --cat-bg:#FEF3C7">
+          <span class="cat-icone">🏢</span>
+          <span class="cat-nome">Empresarial</span>
+          <span class="cat-qtd">6 modelos</span>
+        </a>
+
+        <a href="catalogo.html?cat=recibos" class="categoria-card" style="--cat-cor:#EC4899; --cat-bg:#FCE7F3">
+          <span class="cat-icone">🧾</span>
+          <span class="cat-nome">Recibos</span>
+          <span class="cat-qtd">4 modelos</span>
+        </a>
+
+        <a href="catalogo.html?cat=criativo" class="categoria-card" style="--cat-cor:#7C3AED; --cat-bg:#F3E8FF">
+          <span class="cat-icone">🎨</span>
+          <span class="cat-nome">Criativo</span>
+          <span class="cat-qtd">4 modelos</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMO FUNCIONA ───────────────────────────────────── -->
+  <section class="section" id="como-funciona">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 3rem">
+        <h2>Simples assim</h2>
+        <p style="color: var(--color-gray-500); margin-top: 0.5rem">
+          3 passos. Sem cadastro. Sem instalação.
+        </p>
+      </div>
+
+      <div class="passos-grid">
+
+        <div class="passo">
+          <div class="passo-num">1</div>
+          <div class="passo-icone">🔍</div>
+          <h4>Escolha o papel</h4>
+          <p>Navegue pelo catálogo e encontre o modelo que precisa.</p>
+        </div>
+
+        <div class="passo-seta">→</div>
+
+        <div class="passo">
+          <div class="passo-num">2</div>
+          <div class="passo-icone">✏️</div>
+          <h4>Personalize</h4>
+          <p>Ajuste espaçamento, adicione título, data e outras opções.</p>
+        </div>
+
+        <div class="passo-seta">→</div>
+
+        <div class="passo">
+          <div class="passo-num">3</div>
+          <div class="passo-icone">🖨️</div>
+          <h4>Gere e imprima</h4>
+          <p>Clique em gerar PDF e imprima diretamente do seu navegador.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PLANOS RESUMO ───────────────────────────────────── -->
+  <section class="section planos-section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 3rem">
+        <h2>Grátis para começar</h2>
+        <p style="color: var(--color-gray-500); margin-top: 0.5rem">
+          Sem cartão de crédito. Faça upgrade quando precisar de mais.
+        </p>
+      </div>
+
+      <div class="planos-grid">
+
+        <!-- Free -->
+        <div class="card-plano">
+          <div class="card-plano-nome" style="color: var(--color-free)">Free</div>
+          <div class="card-plano-preco">
+            <span class="valor">R$ 0</span>
+            <span class="periodo">/ sempre</span>
+          </div>
+          <ul class="card-plano-lista">
+            <li class="card-plano-item"><span class="check">✓</span> 8 modelos de papel</li>
+            <li class="card-plano-item"><span class="check">✓</span> 5 PDFs por dia</li>
+            <li class="card-plano-item"><span class="check">✓</span> Sem cadastro</li>
+            <li class="card-plano-item"><span class="cross">✗</span> Marca d'água no rodapé</li>
+            <li class="card-plano-item"><span class="cross">✗</span> Sem logo da empresa</li>
+          </ul>
+          <a href="catalogo.html" class="btn btn-outline">Começar grátis</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="card-plano destaque">
+          <div class="card-plano-tag-popular">⭐ MAIS POPULAR</div>
+          <div class="card-plano-nome" style="color: var(--color-premium)">Premium</div>
+          <div class="card-plano-preco">
+            <span class="valor">R$ 9,90</span>
+            <span class="periodo">/ mês</span>
+          </div>
+          <ul class="card-plano-lista">
+            <li class="card-plano-item"><span class="check">✓</span> Todos os modelos</li>
+            <li class="card-plano-item"><span class="check">✓</span> PDFs ilimitados</li>
+            <li class="card-plano-item"><span class="check">✓</span> Sem marca d'água</li>
+            <li class="card-plano-item"><span class="check">✓</span> Logo da empresa</li>
+            <li class="card-plano-item"><span class="cross">✗</span> Sem salvar modelos</li>
+          </ul>
+          <a href="pages/planos.html" class="btn btn-primary">Assinar Premium</a>
+        </div>
+
+        <!-- Max -->
+        <div class="card-plano">
+          <div class="card-plano-nome" style="color: var(--color-max)">Max</div>
+          <div class="card-plano-preco">
+            <span class="valor">R$ 24,90</span>
+            <span class="periodo">/ mês</span>
+          </div>
+          <ul class="card-plano-lista">
+            <li class="card-plano-item"><span class="check">✓</span> Tudo do Premium</li>
+            <li class="card-plano-item"><span class="check">✓</span> Salvar modelos</li>
+            <li class="card-plano-item"><span class="check">✓</span> Histórico de PDFs</li>
+            <li class="card-plano-item"><span class="check">✓</span> Multi-usuário</li>
+            <li class="card-plano-item"><span class="check">✓</span> Banco de dados próprio</li>
+          </ul>
+          <a href="pages/planos.html" class="btn btn-outline" style="border-color: var(--color-max); color: var(--color-max)">Assinar Max</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: white">
+            <img src="assets/icons/logo.svg" alt="FolhaPronta" height="36" style="display:block; filter: brightness(0) invert(1);">
+          </a>
+          <p class="footer-desc">
+            Papéis prontos para imprimir. Grátis, rápido e sem complicação.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h6 class="footer-titulo">Papéis</h6>
+          <ul class="footer-links">
+            <li><a href="catalogo.html?cat=escolar">Escolares</a></li>
+            <li><a href="catalogo.html?cat=tecnico">Técnicos</a></li>
+            <li><a href="catalogo.html?cat=empresarial">Empresariais</a></li>
+            <li><a href="catalogo.html?cat=recibos">Recibos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h6 class="footer-titulo">Planos</h6>
+          <ul class="footer-links">
+            <li><a href="pages/planos.html#free">Free</a></li>
+            <li><a href="pages/planos.html#premium">Premium</a></li>
+            <li><a href="pages/planos.html#max">Max</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h6 class="footer-titulo">Legal</h6>
+          <ul class="footer-links">
+            <li><a href="pages/privacidade.html">Privacidade (LGPD)</a></li>
+            <li><a href="pages/termos.html">Termos de Uso</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 FolhaPronta. Feito com ❤️ no Brasil.</p>
+        <p class="footer-lgpd-info">
+          Seus dados são protegidos conforme a 
+          <a href="pages/privacidade.html">LGPD (Lei 13.709/2018)</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── MODAL UPGRADE ───────────────────────────────────── -->
+  <div class="modal-overlay hidden" id="modal-upgrade">
+    <div class="modal">
+      <div class="modal-icone" id="modal-upgrade-icone">🚀</div>
+      <h3 class="modal-titulo" id="modal-upgrade-titulo">Recurso Premium</h3>
+      <p class="modal-desc" id="modal-upgrade-desc">Faça upgrade para acessar.</p>
+      <div class="modal-acoes">
+        <a href="pages/planos.html" class="btn btn-primary btn-lg">Ver planos</a>
+        <button class="btn btn-ghost" onclick="document.getElementById('modal-upgrade').classList.add('hidden')">
+          Continuar no Free
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BANNER LGPD ─────────────────────────────────────── -->
+  <div class="lgpd-banner hidden" id="lgpd-banner">
+    <p>
+      🍪 Usamos apenas cookies essenciais para salvar suas preferências localmente.
+      Nenhum dado é enviado a servidores. Saiba mais em nossa
+      <a href="pages/privacidade.html">Política de Privacidade</a>.
+    </p>
+    <div class="lgpd-acoes">
+      <button class="btn btn-secondary btn-sm" id="lgpd-aceitar">Entendi, aceitar</button>
+      <button class="btn btn-ghost btn-sm" id="lgpd-recusar" style="color: var(--color-gray-400)">
+        Só essenciais
+      </button>
+    </div>
+  </div>
+
+  <!-- ── BOTÃO WHATSAPP ──────────────────────────────────── -->
+  <a href="https://wa.me/55XXXXXXXXXXX?text=Olá!%20Tenho%20uma%20sugestão%20para%20o%20FolhaPronta:"
+     class="btn-whatsapp"
+     target="_blank"
+     rel="noopener noreferrer"
+     title="Enviar sugestão pelo WhatsApp"
+     aria-label="Feedback pelo WhatsApp">
+    💬
+  </a>
+
+  <!-- ── SCRIPTS ─────────────────────────────────────────── -->
+  <!-- jsPDF via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Core FolhaPronta -->
+  <script src="assets/js/planos/planos.js"></script>
+  <script src="assets/js/core/pdf-engine.js"></script>
+  <script src="assets/js/core/lgpd.js"></script>
+
+  <script>
+    // Header scroll
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Menu mobile
+    const btnMenu = document.getElementById('btn-menu-mobile');
+    const navLinks = document.querySelector('.nav-links');
+    if (btnMenu) {
+      btnMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('aberto');
+        btnMenu.classList.toggle('ativo');
+      });
+    }
+  </script>
+
+</body>
+</html>

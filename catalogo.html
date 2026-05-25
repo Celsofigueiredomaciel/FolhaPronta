@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo FolhaPronta — Todos os papéis prontos para imprimir organizados por categoria. Pautado, protocolo, recibo, partitura e muito mais.">
+  <meta name="keywords" content="catálogo papéis imprimir, papel pautado, recibo, protocolo, partitura PDF">
+  <meta name="author" content="FolhaPronta">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Catálogo de Papéis — FolhaPronta">
+  <meta property="og:description" content="Escolha entre +20 modelos de papel. Personalize e imprima em segundos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://folhapronta.com.br/catalogo.html">
+
+  <title>Catálogo de Papéis — FolhaPronta</title>
+
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/catalogo.css">
+</head>
+<body>
+
+  <!-- ── HEADER ──────────────────────────────────────────────── -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+
+        <a href="index.html" class="logo">
+          <img src="assets/icons/logo.svg" alt="FolhaPronta" height="36" style="display:block;">
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="catalogo.html" class="nav-link">Catálogo</a></li>
+          <li><a href="pages/planos.html" class="nav-link">Planos</a></li>
+          <li><a href="index.html#como-funciona" class="nav-link">Como funciona</a></li>
+        </ul>
+
+        <div class="nav-acoes">
+          <a href="pages/planos.html" class="btn btn-outline btn-sm">Ver planos</a>
+          <a href="catalogo.html" class="btn btn-primary btn-sm">Imprimir agora</a>
+        </div>
+
+        <!-- Menu mobile -->
+        <button class="btn-menu-mobile" id="btn-menu-mobile" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── HERO DO CATÁLOGO ────────────────────────────────────── -->
+  <section class="catalogo-hero">
+    <div class="container">
+      <h1>Todos os <span>papéis</span> em um lugar</h1>
+      <p>Escolha o modelo, personalize e gere seu PDF em segundos. Sem cadastro.</p>
+      <div class="catalogo-stats">
+        <div class="catalogo-stat">
+          <span class="catalogo-stat-num">23</span>
+          <span class="catalogo-stat-label">modelos</span>
+        </div>
+        <div class="catalogo-stat-div"></div>
+        <div class="catalogo-stat">
+          <span class="catalogo-stat-num">8</span>
+          <span class="catalogo-stat-label">gratuitos</span>
+        </div>
+        <div class="catalogo-stat-div"></div>
+        <div class="catalogo-stat">
+          <span class="catalogo-stat-num">5</span>
+          <span class="catalogo-stat-label">categorias</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FILTROS ─────────────────────────────────────────────── -->
+  <div class="filtros-bar" id="filtros-bar">
+    <div class="container">
+      <div class="filtros-inner">
+
+        <button class="filtro-btn ativo"
+                data-cat="todos"
+                style="--filtro-cor:#2563EB; --filtro-bg:#DBEAFE">
+          Todos <span class="filtro-qtd">23</span>
+        </button>
+
+        <button class="filtro-btn"
+                data-cat="escolar"
+                style="--filtro-cor:#10B981; --filtro-bg:#DCFCE7">
+          🎒 Escolar <span class="filtro-qtd">4</span>
+        </button>
+
+        <button class="filtro-btn"
+                data-cat="tecnico"
+                style="--filtro-cor:#2563EB; --filtro-bg:#DBEAFE">
+          📐 Técnico <span class="filtro-qtd">3</span>
+        </button>
+
+        <button class="filtro-btn"
+                data-cat="empresarial"
+                style="--filtro-cor:#F59E0B; --filtro-bg:#FEF3C7">
+          🏢 Empresarial <span class="filtro-qtd">6</span>
+        </button>
+
+        <button class="filtro-btn"
+                data-cat="recibos"
+                style="--filtro-cor:#EC4899; --filtro-bg:#FCE7F3">
+          🧾 Recibos <span class="filtro-qtd">4</span>
+        </button>
+
+        <button class="filtro-btn"
+                data-cat="criativo"
+                style="--filtro-cor:#7C3AED; --filtro-bg:#F3E8FF">
+          🎨 Criativo <span class="filtro-qtd">4</span>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CATÁLOGO ────────────────────────────────────────────── -->
+  <main class="catalogo-body">
+    <div class="container">
+
+      <!-- Estado vazio -->
+      <div class="catalogo-vazio" id="catalogo-vazio">
+        <div class="catalogo-vazio-icone">🔍</div>
+        <h3>Nenhum papel encontrado</h3>
+        <p>Tente outro filtro ou <a href="catalogo.html" class="btn btn-outline btn-sm" style="margin-left:8px">ver todos</a></p>
+      </div>
+
+      <!-- ── ESCOLAR ──────────────────────────────────────────── -->
+      <section class="categoria-secao" data-categoria="escolar" id="secao-escolar">
+        <div class="categoria-header"
+             style="--cat-cor:#10B981; --cat-bg:#DCFCE7">
+          <div class="categoria-icone-wrap">🎒</div>
+          <h2>Escolar</h2>
+          <span class="categoria-count">4 modelos</span>
+        </div>
+        <div class="papeis-grid">
+
+          <div class="card-papel"
+               data-plano="free"
+               data-href="pages/pautado.html"
+               style="--card-color:#10B981; --card-bg:#DCFCE7">
+            <div class="card-papel-icone">📝</div>
+            <div class="card-papel-titulo">Pautado</div>
+            <p class="card-papel-desc">Linhas horizontais com espaçamento ajustável. Ideal para caligrafia e redações.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-free">Free</span>
+              <span class="card-papel-acao">Gerar →</span>
+            </div>
+          </div>
+
+          <div class="card-papel"
+               data-plano="free"
+               data-href="pages/quadriculado.html"
+               style="--card-color:#10B981; --card-bg:#DCFCE7">
+            <div class="card-papel-icone">⬛</div>
+            <div class="card-papel-titulo">Quadriculado</div>
+            <p class="card-papel-desc">Grade de quadrados com tamanho configurável. Ótimo para matemática e gráficos.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-free">Free</span>
+              <span class="card-papel-acao">Gerar →</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="premium"
+               style="--card-color:#10B981; --card-bg:#DCFCE7">
+            <div class="card-papel-icone">✍️</div>
+            <div class="card-papel-titulo">Caligrafia</div>
+            <p class="card-papel-desc">Linhas guia triplas para praticar caligrafia cursiva e letra bastão com perfeição.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-premium">Premium</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="premium"
+               style="--card-color:#10B981; --card-bg:#DCFCE7">
+            <div class="card-papel-icone">📏</div>
+            <div class="card-papel-titulo">Milimetrado</div>
+            <p class="card-papel-desc">Grade milimétrica de alta precisão para desenhos técnicos e experimentos escolares.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-premium">Premium</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── TÉCNICO ──────────────────────────────────────────── -->
+      <section class="categoria-secao" data-categoria="tecnico" id="secao-tecnico">
+        <div class="categoria-header"
+             style="--cat-cor:#2563EB; --cat-bg:#DBEAFE">
+          <div class="categoria-icone-wrap">📐</div>
+          <h2>Técnico</h2>
+          <span class="categoria-count">3 modelos</span>
+        </div>
+        <div class="papeis-grid">
+
+          <div class="card-papel"
+               data-plano="free"
+               data-href="pages/engenharia.html"
+               style="--card-color:#2563EB; --card-bg:#DBEAFE">
+            <div class="card-papel-icone">🔧</div>
+            <div class="card-papel-titulo">Engenharia</div>
+            <p class="card-papel-desc">Folha A4 com bordas técnicas e campos de legendas. Padrão para projetos e plantas.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-free">Free</span>
+              <span class="card-papel-acao">Gerar →</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="premium"
+               style="--card-color:#2563EB; --card-bg:#DBEAFE">
+            <div class="card-papel-icone">🎵</div>
+            <div class="card-papel-titulo">Partitura</div>
+            <p class="card-papel-desc">Pautas musicais com 5 linhas e espaçamento configurável para compositores e estudantes.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-premium">Premium</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="premium"
+               style="--card-color:#2563EB; --card-bg:#DBEAFE">
+            <div class="card-papel-icone">🔷</div>
+            <div class="card-papel-titulo">Isométrico</div>
+            <p class="card-papel-desc">Grade isométrica para desenho 3D, perspectivas e projetos de design de produto.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-premium">Premium</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── EMPRESARIAL ──────────────────────────────────────── -->
+      <section class="categoria-secao" data-categoria="empresarial" id="secao-empresarial">
+        <div class="categoria-header"
+             style="--cat-cor:#F59E0B; --cat-bg:#FEF3C7">
+          <div class="categoria-icone-wrap">🏢</div>
+          <h2>Empresarial</h2>
+          <span class="categoria-count">6 modelos</span>
+        </div>
+        <div class="papeis-grid">
+
+          <div class="card-papel"
+               data-plano="free"
+               data-href="pages/protocolo.html"
+               style="--card-color:#F59E0B; --card-bg:#FEF3C7">
+            <div class="card-papel-icone">📋</div>
+            <div class="card-papel-titulo">Protocolo</div>
+            <p class="card-papel-desc">Folha de protocolo numerada para controle de documentos e solicitações internas.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-free">Free</span>
+              <span class="card-papel-acao">Gerar →</span>
+            </div>
+          </div>
+
+          <div class="card-papel"
+               data-plano="free"
+               data-href="pages/ponto.html"
+               style="--card-color:#F59E0B; --card-bg:#FEF3C7">
+            <div class="card-papel-icone">🕐</div>
+            <div class="card-papel-titulo">Ponto</div>
+            <p class="card-papel-desc">Folha de ponto mensal com campos de entrada, saída e assinatura para controle de jornada.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-free">Free</span>
+              <span class="card-papel-acao">Gerar →</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="premium"
+               style="--card-color:#F59E0B; --card-bg:#FEF3C7">
+            <div class="card-papel-icone">📦</div>
+            <div class="card-papel-titulo">Requisição</div>
+            <p class="card-papel-desc">Formulário de requisição de materiais com campos de quantidade, valor e aprovação.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-premium">Premium</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="premium"
+               style="--card-color:#F59E0B; --card-bg:#FEF3C7">
+            <div class="card-papel-icone">⏰</div>
+            <div class="card-papel-titulo">Hora Extra</div>
+            <p class="card-papel-desc">Controle de horas extras com campos de justificativa, aprovação e banco de horas.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-premium">Premium</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="premium"
+               style="--card-color:#F59E0B; --card-bg:#FEF3C7">
+            <div class="card-papel-icone">📝</div>
+            <div class="card-papel-titulo">Ata de Reunião</div>
+            <p class="card-papel-desc">Modelo profissional de ata com pauta, participantes, deliberações e assinaturas.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-premium">Premium</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="max"
+               style="--card-color:#7C3AED; --card-bg:#F3E8FF">
+            <div class="card-papel-icone">🔩</div>
+            <div class="card-papel-titulo">Ordem de Serviço</div>
+            <p class="card-papel-desc">OS completa com logo da empresa, campos técnicos, itens de serviço e assinaturas.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-max">Max</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── RECIBOS ──────────────────────────────────────────── -->
+      <section class="categoria-secao" data-categoria="recibos" id="secao-recibos">
+        <div class="categoria-header"
+             style="--cat-cor:#EC4899; --cat-bg:#FCE7F3">
+          <div class="categoria-icone-wrap">🧾</div>
+          <h2>Recibos</h2>
+          <span class="categoria-count">4 modelos</span>
+        </div>
+        <div class="papeis-grid">
+
+          <div class="card-papel"
+               data-plano="free"
+               data-href="pages/recibo-simples.html"
+               style="--card-color:#EC4899; --card-bg:#FCE7F3">
+            <div class="card-papel-icone">🧾</div>
+            <div class="card-papel-titulo">Recibo Simples</div>
+            <p class="card-papel-desc">Recibo básico com campos de valor, pagador, motivo e data. Ideal para serviços do dia a dia.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-free">Free</span>
+              <span class="card-papel-acao">Gerar →</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="premium"
+               style="--card-color:#EC4899; --card-bg:#FCE7F3">
+            <div class="card-papel-icone">🏪</div>
+            <div class="card-papel-titulo">Recibo Comercial</div>
+            <p class="card-papel-desc">Recibo com CNPJ, razão social, discriminação de itens e campos fiscais completos.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-premium">Premium</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="premium"
+               style="--card-color:#EC4899; --card-bg:#FCE7F3">
+            <div class="card-papel-icone">🏠</div>
+            <div class="card-papel-titulo">Recibo Aluguel</div>
+            <p class="card-papel-desc">Recibo de aluguel com campos de IPTU, condomínio, período e vencimento.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-premium">Premium</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="premium"
+               style="--card-color:#EC4899; --card-bg:#FCE7F3">
+            <div class="card-papel-icone">📑</div>
+            <div class="card-papel-titulo">Recibo 2 Vias</div>
+            <p class="card-papel-desc">Recibo duplicado em uma única folha A4. Corte ao meio e entregue uma via ao pagador.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-premium">Premium</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── CRIATIVO ─────────────────────────────────────────── -->
+      <section class="categoria-secao" data-categoria="criativo" id="secao-criativo">
+        <div class="categoria-header"
+             style="--cat-cor:#7C3AED; --cat-bg:#F3E8FF">
+          <div class="categoria-icone-wrap">🎨</div>
+          <h2>Criativo</h2>
+          <span class="categoria-count">4 modelos</span>
+        </div>
+        <div class="papeis-grid">
+
+          <div class="card-papel"
+               data-plano="free"
+               data-href="pages/planner-semanal.html"
+               style="--card-color:#7C3AED; --card-bg:#F3E8FF">
+            <div class="card-papel-icone">📅</div>
+            <div class="card-papel-titulo">Planner Semanal</div>
+            <p class="card-papel-desc">Planner de 7 dias com blocos de horários, prioridades e espaço para anotações livres.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-free">Free</span>
+              <span class="card-papel-acao">Gerar →</span>
+            </div>
+          </div>
+
+          <div class="card-papel"
+               data-plano="free"
+               data-href="pages/lista-tarefas.html"
+               style="--card-color:#7C3AED; --card-bg:#F3E8FF">
+            <div class="card-papel-icone">✅</div>
+            <div class="card-papel-titulo">Lista de Tarefas</div>
+            <p class="card-papel-desc">Checklist com campos de prioridade, prazo e categoria. Simples e eficiente.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-free">Free</span>
+              <span class="card-papel-acao">Gerar →</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="premium"
+               style="--card-color:#7C3AED; --card-bg:#F3E8FF">
+            <div class="card-papel-icone">🎯</div>
+            <div class="card-papel-titulo">Bullet Journal</div>
+            <p class="card-papel-desc">Página de bullet journal com grid de pontos, índice e coleções personalizáveis.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-premium">Premium</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+          <div class="card-papel locked"
+               data-plano="max"
+               style="--card-color:#7C3AED; --card-bg:#F3E8FF">
+            <div class="card-papel-icone">🎬</div>
+            <div class="card-papel-titulo">Storyboard</div>
+            <p class="card-papel-desc">Grid de quadros com campos de cena, diálogo e descrição para roteiristas e videomakers.</p>
+            <div class="card-papel-footer">
+              <span class="badge-plano badge-max">Max</span>
+              <span class="card-papel-acao">🔒 Desbloquear</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── CTA PLANOS ───────────────────────────────────────── -->
+      <div class="catalogo-cta">
+        <h3>🚀 Desbloqueie todos os modelos</h3>
+        <p>PDFs ilimitados, sem marca d'água e com logo da sua empresa. A partir de R$ 9,90/mês.</p>
+        <div class="catalogo-cta-acoes">
+          <a href="pages/planos.html" class="btn btn-primary btn-lg">Ver planos</a>
+          <a href="pages/planos.html#premium" class="btn btn-ghost btn-lg" style="color: var(--color-gray-300)">
+            Comparar planos →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ── FOOTER ──────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: white">
+            <img src="assets/icons/logo.svg" alt="FolhaPronta" height="36" style="display:block; filter: brightness(0) invert(1);">
+          </a>
+          <p class="footer-desc">
+            Papéis prontos para imprimir. Grátis, rápido e sem complicação.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h6 class="footer-titulo">Papéis</h6>
+          <ul class="footer-links">
+            <li><a href="catalogo.html?cat=escolar">Escolares</a></li>
+            <li><a href="catalogo.html?cat=tecnico">Técnicos</a></li>
+            <li><a href="catalogo.html?cat=empresarial">Empresariais</a></li>
+            <li><a href="catalogo.html?cat=recibos">Recibos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h6 class="footer-titulo">Planos</h6>
+          <ul class="footer-links">
+            <li><a href="pages/planos.html#free">Free</a></li>
+            <li><a href="pages/planos.html#premium">Premium</a></li>
+            <li><a href="pages/planos.html#max">Max</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h6 class="footer-titulo">Legal</h6>
+          <ul class="footer-links">
+            <li><a href="pages/privacidade.html">Privacidade (LGPD)</a></li>
+            <li><a href="pages/termos.html">Termos de Uso</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 FolhaPronta. Feito com ❤️ no Brasil.</p>
+        <p class="footer-lgpd-info">
+          Seus dados são protegidos conforme a
+          <a href="pages/privacidade.html">LGPD (Lei 13.709/2018)</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── MODAL UPGRADE ───────────────────────────────────────── -->
+  <div class="modal-overlay hidden" id="modal-upgrade">
+    <div class="modal">
+      <div class="modal-icone" id="modal-upgrade-icone">🚀</div>
+      <h3 class="modal-titulo" id="modal-upgrade-titulo">Recurso Premium</h3>
+      <p class="modal-desc" id="modal-upgrade-desc">Faça upgrade para acessar este modelo.</p>
+      <div class="modal-acoes">
+        <a href="pages/planos.html" class="btn btn-primary btn-lg">Ver planos</a>
+        <button class="btn btn-ghost" onclick="document.getElementById('modal-upgrade').classList.add('hidden')">
+          Continuar no Free
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BANNER LGPD ─────────────────────────────────────────── -->
+  <div class="lgpd-banner hidden" id="lgpd-banner">
+    <p>
+      🍪 Usamos apenas cookies essenciais para salvar suas preferências localmente.
+      Nenhum dado é enviado a servidores. Saiba mais em nossa
+      <a href="pages/privacidade.html">Política de Privacidade</a>.
+    </p>
+    <div class="lgpd-acoes">
+      <button class="btn btn-secondary btn-sm" id="lgpd-aceitar">Entendi, aceitar</button>
+      <button class="btn btn-ghost btn-sm" id="lgpd-recusar" style="color: var(--color-gray-400)">
+        Só essenciais
+      </button>
+    </div>
+  </div>
+
+  <!-- ── BOTÃO WHATSAPP ──────────────────────────────────────── -->
+  <a href="https://wa.me/55XXXXXXXXXXX?text=Olá!%20Tenho%20uma%20sugestão%20para%20o%20FolhaPronta:"
+     class="btn-whatsapp"
+     target="_blank"
+     rel="noopener noreferrer"
+     title="Enviar sugestão pelo WhatsApp"
+     aria-label="Feedback pelo WhatsApp">
+    💬
+  </a>
+
+  <!-- ── SCRIPTS ─────────────────────────────────────────────── -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="assets/js/planos/planos.js"></script>
+  <script src="assets/js/core/pdf-engine.js"></script>
+  <script src="assets/js/core/lgpd.js"></script>
+
+  <script>
+    // ── Header scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // ── Menu mobile
+    const btnMenu = document.getElementById('btn-menu-mobile');
+    const navLinks = document.querySelector('.nav-links');
+    if (btnMenu) {
+      btnMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('aberto');
+        btnMenu.classList.toggle('ativo');
+      });
+    }
+
+    // ── Dados dos modais de upgrade por plano
+    const UPGRADE_INFO = {
+      premium: {
+        icone: '⭐',
+        titulo: 'Recurso Premium',
+        desc: 'Este modelo está disponível no plano Premium (R$ 9,90/mês). PDFs ilimitados, sem marca d\'água e com logo da sua empresa.'
+      },
+      max: {
+        icone: '🚀',
+        titulo: 'Recurso Max',
+        desc: 'Este modelo está disponível no plano Max (R$ 24,90/mês). Inclui tudo do Premium + salvar modelos, histórico e multi-usuário.'
+      }
+    };
+
+    // ── Clique nos cards
+    document.querySelectorAll('.card-papel').forEach(card => {
+      card.addEventListener('click', () => {
+        const plano = card.dataset.plano;
+        const href  = card.dataset.href;
+
+        if (plano === 'free' && href) {
+          window.location.href = href;
+          return;
+        }
+
+        // Abre modal de upgrade
+        const info = UPGRADE_INFO[plano] || UPGRADE_INFO.premium;
+        document.getElementById('modal-upgrade-icone').textContent = info.icone;
+        document.getElementById('modal-upgrade-titulo').textContent = info.titulo;
+        document.getElementById('modal-upgrade-desc').textContent   = info.desc;
+        document.getElementById('modal-upgrade').classList.remove('hidden');
+      });
+    });
+
+    // Fecha modal ao clicar no overlay
+    document.getElementById('modal-upgrade').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.add('hidden');
+    });
+
+    // ── Filtros por categoria
+    const botoesFiltro = document.querySelectorAll('.filtro-btn');
+    const secoes       = document.querySelectorAll('.categoria-secao');
+    const vazioEl      = document.getElementById('catalogo-vazio');
+
+    function aplicarFiltro(cat) {
+      let algumVisivel = false;
+
+      secoes.forEach(secao => {
+        const visivel = cat === 'todos' || secao.dataset.categoria === cat;
+        secao.classList.toggle('hidden', !visivel);
+        if (visivel) algumVisivel = true;
+      });
+
+      vazioEl.classList.toggle('visivel', !algumVisivel);
+
+      botoesFiltro.forEach(btn => {
+        btn.classList.toggle('ativo', btn.dataset.cat === cat);
+      });
+
+      // Atualiza URL sem recarregar
+      const url = new URL(window.location);
+      if (cat === 'todos') {
+        url.searchParams.delete('cat');
+      } else {
+        url.searchParams.set('cat', cat);
+      }
+      history.replaceState(null, '', url);
+    }
+
+    botoesFiltro.forEach(btn => {
+      btn.addEventListener('click', () => aplicarFiltro(btn.dataset.cat));
+    });
+
+    // ── Lê ?cat= na URL ao carregar
+    const catParam = new URLSearchParams(window.location.search).get('cat');
+    if (catParam) aplicarFiltro(catParam);
+  </script>
+
+</body>
+</html>

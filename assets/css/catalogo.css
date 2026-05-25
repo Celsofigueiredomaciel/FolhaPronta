@@ -1,0 +1,265 @@
+/* ============================================================
+   FolhaPronta — catalogo.css
+   Estilos exclusivos da página de catálogo
+   ============================================================ */
+
+/* ── Hero do catálogo ───────────────────────────────────────── */
+.catalogo-hero {
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-primary-light) 100%);
+  padding: calc(var(--header-height) + var(--space-12)) 0 var(--space-12);
+  text-align: center;
+}
+
+.catalogo-hero h1 {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-3);
+}
+
+.catalogo-hero h1 span {
+  color: var(--color-primary);
+}
+
+.catalogo-hero p {
+  color: var(--color-gray-500);
+  font-size: var(--text-lg);
+  max-width: 520px;
+  margin: 0 auto var(--space-6);
+}
+
+.catalogo-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.catalogo-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.catalogo-stat-num {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-2xl);
+  color: var(--color-gray-900);
+}
+
+.catalogo-stat-label {
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.catalogo-stat-div {
+  width: 1px;
+  height: 32px;
+  background: var(--color-gray-300);
+}
+
+/* ── Barra de filtros ───────────────────────────────────────── */
+.filtros-bar {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 100;
+  background: var(--color-white);
+  border-bottom: 2px solid var(--color-gray-100);
+  padding: var(--space-4) 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.filtros-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.filtros-inner::-webkit-scrollbar { display: none; }
+
+.filtro-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  cursor: pointer;
+  border: 2px solid var(--color-gray-200);
+  background: var(--color-white);
+  color: var(--color-gray-600);
+  transition: all var(--transition-fast);
+}
+
+.filtro-btn:hover {
+  border-color: var(--filtro-cor, var(--color-primary));
+  color: var(--filtro-cor, var(--color-primary));
+  background: var(--filtro-bg, var(--color-primary-light));
+}
+
+.filtro-btn.ativo {
+  border-color: var(--filtro-cor, var(--color-primary));
+  background: var(--filtro-cor, var(--color-primary));
+  color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.filtro-btn .filtro-qtd {
+  background: rgba(255,255,255,0.25);
+  padding: 1px 7px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+}
+
+.filtro-btn:not(.ativo) .filtro-qtd {
+  background: var(--color-gray-100);
+  color: var(--color-gray-500);
+}
+
+/* ── Conteúdo principal ─────────────────────────────────────── */
+.catalogo-body {
+  padding: var(--space-10) 0 var(--space-20);
+  min-height: 60vh;
+}
+
+/* ── Seção de categoria ─────────────────────────────────────── */
+.categoria-secao {
+  margin-bottom: var(--space-12);
+}
+
+.categoria-secao.hidden { display: none; }
+
+.categoria-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-gray-100);
+}
+
+.categoria-icone-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-xl);
+  background: var(--cat-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.categoria-header h2 {
+  font-size: var(--text-2xl);
+  color: var(--cat-cor);
+  margin: 0;
+}
+
+.categoria-header .categoria-count {
+  margin-left: auto;
+  font-size: var(--text-sm);
+  color: var(--color-gray-400);
+  font-weight: 600;
+}
+
+/* ── Grid de cards ──────────────────────────────────────────── */
+.papeis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-6);
+}
+
+/* ── Estado vazio ───────────────────────────────────────────── */
+.catalogo-vazio {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-20) var(--space-6);
+  text-align: center;
+  color: var(--color-gray-400);
+  gap: var(--space-4);
+}
+
+.catalogo-vazio.visivel { display: flex; }
+
+.catalogo-vazio-icone {
+  font-size: 64px;
+  opacity: 0.5;
+}
+
+.catalogo-vazio h3 {
+  color: var(--color-gray-600);
+}
+
+/* ── Card de papel (extensões específicas do catálogo) ──────── */
+.card-papel .card-papel-acao {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  transition: gap var(--transition-fast);
+}
+
+.card-papel:hover .card-papel-acao {
+  gap: var(--space-2);
+}
+
+.card-papel.locked .card-papel-acao {
+  color: var(--color-gray-400);
+}
+
+/* ── Seção CTA planos ───────────────────────────────────────── */
+.catalogo-cta {
+  background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
+  border-radius: var(--radius-2xl);
+  padding: var(--space-12) var(--space-8);
+  text-align: center;
+  color: var(--color-white);
+  margin-top: var(--space-8);
+}
+
+.catalogo-cta h3 {
+  color: var(--color-white);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-3);
+}
+
+.catalogo-cta p {
+  color: var(--color-gray-400);
+  margin-bottom: var(--space-6);
+}
+
+.catalogo-cta-acoes {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Responsivo ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .catalogo-hero { padding: calc(var(--header-height) + var(--space-8)) 0 var(--space-8); }
+  .catalogo-hero h1 { font-size: var(--text-3xl); }
+  .papeis-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-4); }
+  .catalogo-stats { gap: var(--space-4); }
+}
+
+@media (max-width: 480px) {
+  .papeis-grid { grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .card-papel { padding: var(--space-4); }
+  .catalogo-cta { padding: var(--space-8) var(--space-4); }
+}
