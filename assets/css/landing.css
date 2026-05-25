@@ -38,9 +38,6 @@
   text-decoration: none;
 }
 
-.logo-icone { font-size: 28px; }
-.logo-texto strong { color: var(--color-primary); }
-
 .nav-links {
   display: flex;
   align-items: center;

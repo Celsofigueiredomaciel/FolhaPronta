@@ -88,7 +88,7 @@
 
   /* Layout */
   --container-max:  1200px;
-  --header-height:  70px;
+  --header-height:  80px;
 }
 
 /* ── Reset ──────────────────────────────────────────────────── */
@@ -169,6 +169,12 @@ p { line-height: 1.7; }
 .gap-8       { gap: var(--space-8); }
 .text-center { text-align: center; }
 .hidden      { display: none; }
+
+.logo {
+  gap: var(--space-2);
+  align-items: center;
+  display: flex;
+}
 
 /* ── Animações base ─────────────────────────────────────────── */
 @keyframes fadeInUp {

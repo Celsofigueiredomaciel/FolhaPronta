@@ -11,27 +11,13 @@ const PLANOS = {
     descricao: 'Para uso esporádico e pessoal',
     cor: '#6B7280',
     limites: {
-      geracoesHoje: 5,         // máx 5 PDFs por dia
+      geracoesHoje: 10,        // máx 10 PDFs por dia
       marcaDAgua: true,         // mostra marca d'água
       logoEmpresa: false,       // não pode subir logo
       salvarModelos: false,     // não salva modelos
       historicoGeracao: false,  // sem histórico
     },
-    papeis: [
-      // Escolar
-      'pautado',
-      'quadriculado',
-      // Técnico
-      'engenharia',
-      // Empresarial
-      'protocolo',
-      'ponto',
-      // Recibos
-      'recibo-simples',
-      // Criativo
-      'planner-semanal',
-      'lista-tarefas',
-    ]
+    papeis: 'todos'
   },
 
   premium: {
