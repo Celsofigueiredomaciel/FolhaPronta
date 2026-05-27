@@ -210,7 +210,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 FolhaPronta. Feito com ❤️ no Brasil.</p>
+        <p>© 2026 FolhaPronta. Feito com ❤️ no Brasil.</p>
         <p class="footer-lgpd-info">
           Seus dados são protegidos conforme a
           <a href="privacidade.html">LGPD (Lei 13.709/2018)</a>
@@ -284,6 +284,7 @@
 
   <!-- ── SCRIPTS BASE ─────────────────────────────────────────── -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="../assets/js/core/stats-tracker.js"></script>
   <script src="../assets/js/planos/planos.js"></script>
   <script src="../assets/js/core/pdf-engine.js"></script>
   <script src="../assets/js/core/lgpd.js"></script>
@@ -315,6 +316,12 @@
   <script src="../assets/js/papeis/criativo/lista-tarefas.js"></script>
   <script src="../assets/js/papeis/criativo/bullet-journal.js" onerror="void 0"></script>
   <script src="../assets/js/papeis/criativo/storyboard.js" onerror="void 0"></script>
+
+  <!-- Agro -->
+  <script src="../assets/js/papeis/agro/caderneta-campo.js" onerror="void 0"></script>
+  <script src="../assets/js/papeis/agro/controle-insumos.js" onerror="void 0"></script>
+  <script src="../assets/js/papeis/agro/diario-safra.js" onerror="void 0"></script>
+  <script src="../assets/js/papeis/agro/recibo-rural.js" onerror="void 0"></script>
 
   <!-- ── NÚCLEO DO GERADOR ─────────────────────────────────────── -->
   <script>
@@ -358,6 +365,12 @@
       'lista-tarefas':    { nome: 'Lista de Tarefas', icone: '✅', plano: 'free',    cat: 'criativo',    cor: '#7C3AED', bg: '#F3E8FF', desc: 'Checklist com prioridade, prazo e categoria.' },
       'bullet-journal':   { nome: 'Bullet Journal',   icone: '🎯', plano: 'premium', cat: 'criativo',    cor: '#7C3AED', bg: '#F3E8FF', desc: 'Página de bullet journal com grid de pontos.' },
       'storyboard':       { nome: 'Storyboard',       icone: '🎬', plano: 'max',     cat: 'criativo',    cor: '#7C3AED', bg: '#F3E8FF', desc: 'Grid de quadros com cena, diálogo e descrição.' },
+
+      /* Agro */
+      'caderneta-campo':  { nome: 'Caderneta de Campo',  icone: '🌾', plano: 'free', cat: 'agro', cor: '#16A34A', bg: '#DCFCE7', desc: 'Controle de plantio, colheita e gastos por safra.' },
+      'controle-insumos': { nome: 'Controle de Insumos', icone: '🌱', plano: 'free', cat: 'agro', cor: '#16A34A', bg: '#DCFCE7', desc: 'Entrada e saída de sementes, fertilizantes e defensivos.' },
+      'diario-safra':     { nome: 'Diário de Safra',     icone: '📓', plano: 'free', cat: 'agro', cor: '#16A34A', bg: '#DCFCE7', desc: 'Registro semanal de atividades e observações do campo.' },
+      'recibo-rural':     { nome: 'Recibo Rural',        icone: '📜', plano: 'free', cat: 'agro', cor: '#16A34A', bg: '#DCFCE7', desc: 'Recibo para venda de produção e serviços rurais.' },
     };
 
     /* ── Plano atual do usuário (integrar com planos.js) ────────── */
@@ -617,6 +630,7 @@
 
         if (plano === 'free') {
           incrementarContador();
+          FolhaPronta.tracker?.registrar(slug, info.cat);
           atualizarContadorUI();
         }
 

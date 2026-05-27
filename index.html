@@ -11,9 +11,21 @@
   <meta property="og:title" content="FolhaPronta — Papéis prontos para imprimir">
   <meta property="og:description" content="Escolha o papel, personalize e imprima em segundos. Grátis.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://folhapronta.com.br">
+  <meta property="og:url" content="https://folhapronta.app.br">
 
   <title>FolhaPronta — Papéis prontos para imprimir</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  <meta name="theme-color" content="#2563EB" id="theme-color-meta">
+
+  <script>
+    (function() {
+      const tema = localStorage.getItem('fp-tema') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-tema', tema);
+    })();
+  </script>
 
   <link rel="stylesheet" href="assets/css/global.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -39,6 +51,13 @@
         <div class="nav-acoes">
           <a href="pages/planos.html" class="btn btn-outline btn-sm">Ver planos</a>
           <a href="catalogo.html" class="btn btn-primary btn-sm">Imprimir agora</a>
+          <button
+            class="btn-tema"
+            id="btn-tema"
+            aria-label="Alternar tema claro/escuro"
+            title="Alternar tema">
+            <span class="tema-icone">🌙</span>
+          </button>
         </div>
 
         <!-- Menu mobile -->
@@ -223,76 +242,58 @@
   <section class="section planos-section">
     <div class="container">
       <div class="text-center" style="margin-bottom: 3rem">
-        <h2>Grátis para começar</h2>
+        <h2>100% Gratuito para sempre</h2>
         <p style="color: var(--color-gray-500); margin-top: 0.5rem">
-          Sem cartão de crédito. Faça upgrade quando precisar de mais.
+          Sem cartão de crédito. Sem cadastro. Sem pegadinhas.
         </p>
       </div>
 
-      <div class="planos-grid">
-
-        <!-- Free -->
-        <div class="card-plano">
-          <div class="card-plano-nome" style="color: var(--color-free)">Free</div>
+      <div style="max-width: 480px; margin: 0 auto;">
+        <div class="card-plano" style="text-align:center;">
+          <div class="card-plano-nome" style="color: var(--color-free);
+               font-size: var(--text-2xl);">Free</div>
           <div class="card-plano-preco">
             <span class="valor">R$ 0</span>
             <span class="periodo">/ sempre</span>
           </div>
-          <ul class="card-plano-lista">
-            <li class="card-plano-item"><span class="check">✓</span> Todos os modelos disponíveis</li>
-            <li class="card-plano-item"><span class="check">✓</span> 10 PDFs por dia</li>
-            <li class="card-plano-item"><span class="check">✓</span> Sem cadastro</li>
-            <li class="card-plano-item"><span class="cross">✗</span> Marca d'água no rodapé</li>
-            <li class="card-plano-item"><span class="cross">✗</span> Sem logo da empresa</li>
+          <ul class="card-plano-lista" style="text-align:left;">
+            <li class="card-plano-item">
+              <span class="check">✓</span> Todos os modelos disponíveis
+            </li>
+            <li class="card-plano-item">
+              <span class="check">✓</span> 10 PDFs por dia
+            </li>
+            <li class="card-plano-item">
+              <span class="check">✓</span> Sem cadastro
+            </li>
+            <li class="card-plano-item">
+              <span class="cross">✗</span> Marca d'água no rodapé
+            </li>
+            <li class="card-plano-item">
+              <span class="cross">✗</span> Sem logo da empresa
+            </li>
           </ul>
-          <a href="catalogo.html" class="btn btn-outline">Começar grátis</a>
+          <a href="catalogo.html" class="btn btn-primary"
+             style="width:100%; justify-content:center;">
+            Começar agora — é grátis
+          </a>
         </div>
 
-        <!-- Premium -->
-        <div class="card-plano destaque">
-          <div class="card-plano-tag-popular">⭐ MAIS POPULAR</div>
-          <div class="card-plano-nome" style="color: var(--color-premium)">Premium</div>
-          <div class="card-plano-preco">
-            <span class="valor" style="font-size:var(--text-2xl); color:var(--color-gray-400);">Em breve</span>
-          </div>
-          <ul class="card-plano-lista">
-            <li class="card-plano-item"><span class="check">✓</span> Todos os modelos</li>
-            <li class="card-plano-item"><span class="check">✓</span> PDFs ilimitados</li>
-            <li class="card-plano-item"><span class="check">✓</span> Sem marca d'água</li>
-            <li class="card-plano-item"><span class="check">✓</span> Logo da empresa</li>
-            <li class="card-plano-item"><span class="cross">✗</span> Sem salvar modelos</li>
-          </ul>
-          <div class="plano-em-breve">
-            <span class="badge-em-breve">🚀 Em breve</span>
-            <a href="https://wa.me/5591988799352?text=Olá!%20Quero%20ser%20avisado%20do%20lançamento%20do%20plano%20Premium%20do%20FolhaPronta."
-               class="btn btn-outline btn-sm" target="_blank">
-              💬 Me avise quando lançar
-            </a>
-          </div>
+        <!-- Teaser planos futuros -->
+        <div style="margin-top: 2rem; text-align: center;
+                    padding: 1.25rem; background: var(--color-gray-50);
+                    border-radius: var(--radius-lg);
+                    border: 1px dashed var(--color-gray-300);">
+          <p style="color: var(--color-gray-500);
+                    font-size: var(--text-sm); margin-bottom: 0.75rem;">
+            🚀 Planos <strong>Premium</strong> e <strong>Max</strong> chegando
+            em breve — sem marca d'água, PDFs ilimitados e muito mais.
+          </p>
+          <a href="https://wa.me/5591988799352?text=Olá!%20Quero%20ser%20avisado%20do%20lançamento%20dos%20planos%20pagos%20do%20FolhaPronta."
+             class="btn btn-outline btn-sm" target="_blank">
+            💬 Me avise quando lançar
+          </a>
         </div>
-
-        <!-- Max -->
-        <div class="card-plano">
-          <div class="card-plano-nome" style="color: var(--color-max)">Max</div>
-          <div class="card-plano-preco">
-            <span class="valor" style="font-size:var(--text-2xl); color:var(--color-gray-400);">Em breve</span>
-          </div>
-          <ul class="card-plano-lista">
-            <li class="card-plano-item"><span class="check">✓</span> Tudo do Premium</li>
-            <li class="card-plano-item"><span class="check">✓</span> Salvar modelos</li>
-            <li class="card-plano-item"><span class="check">✓</span> Histórico de PDFs</li>
-            <li class="card-plano-item"><span class="check">✓</span> Multi-usuário</li>
-            <li class="card-plano-item"><span class="check">✓</span> Banco de dados próprio</li>
-          </ul>
-          <div class="plano-em-breve">
-            <span class="badge-em-breve">🚀 Em breve</span>
-            <a href="https://wa.me/5591988799352?text=Olá!%20Quero%20ser%20avisado%20do%20lançamento%20do%20plano%20Max%20do%20FolhaPronta."
-               class="btn btn-outline btn-sm" target="_blank">
-              💬 Me avise quando lançar
-            </a>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -341,7 +342,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 FolhaPronta. Feito com ❤️ no Brasil.</p>
+        <p>© 2026 FolhaPronta. Feito com ❤️ no Brasil.</p>
         <p class="footer-lgpd-info">
           Seus dados são protegidos conforme a 
           <a href="pages/privacidade.html">LGPD (Lei 13.709/2018)</a>
@@ -398,6 +399,7 @@
   <script src="assets/js/planos/planos.js"></script>
   <script src="assets/js/core/pdf-engine.js"></script>
   <script src="assets/js/core/lgpd.js"></script>
+  <script src="assets/js/core/theme-toggle.js"></script>
 
   <script>
     // Header scroll
