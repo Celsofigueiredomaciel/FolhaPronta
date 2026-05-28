@@ -309,7 +309,7 @@
   <!-- Recibos -->
   <script src="../assets/js/papeis/recibos/recibo-simples.js"></script>
   <script src="../assets/js/papeis/recibos/recibo-comercial.js" onerror="void 0"></script>
-  <script src="../assets/js/papeis/recibos/recibo-aluguel.js" onerror="void 0"></script>
+  <script src="../assets/js/papeis/recibos/recibo-aluguel.js"></script>
   <script src="../assets/js/papeis/recibos/recibo-2vias.js" onerror="void 0"></script>
   <!-- Criativo -->
   <script src="../assets/js/papeis/criativo/planner-semanal.js" onerror="void 0"></script>
@@ -358,7 +358,7 @@
       /* Recibos */
       'recibo-simples':   { nome: 'Recibo Simples',   icone: '🧾', plano: 'free',    cat: 'recibos',     cor: '#EC4899', bg: '#FCE7F3', desc: 'Recibo básico com valor, pagador e motivo.' },
       'recibo-comercial': { nome: 'Recibo Comercial', icone: '🏪', plano: 'premium', cat: 'recibos',     cor: '#EC4899', bg: '#FCE7F3', desc: 'Recibo com CNPJ, razão social e campos fiscais.' },
-      'recibo-aluguel':   { nome: 'Recibo Aluguel',   icone: '🏠', plano: 'premium', cat: 'recibos',     cor: '#EC4899', bg: '#FCE7F3', desc: 'Recibo de aluguel com IPTU, condomínio e período.' },
+      'recibo-aluguel':   { nome: 'Recibo Aluguel',   icone: '🏠', plano: 'free', cat: 'recibos',     cor: '#EC4899', bg: '#FCE7F3', desc: 'Recibo de aluguel com IPTU, condomínio e período.' },
       'recibo-2vias':     { nome: 'Recibo 2 Vias',    icone: '📑', plano: 'premium', cat: 'recibos',     cor: '#EC4899', bg: '#FCE7F3', desc: 'Recibo duplicado em uma única folha A4.' },
       /* Criativo */
       'planner-semanal':  { nome: 'Planner Semanal',  icone: '📅', plano: 'free',    cat: 'criativo',    cor: '#7C3AED', bg: '#F3E8FF', desc: 'Planner de 7 dias com blocos de horários.' },
@@ -765,6 +765,7 @@
         'ponto':          window.PapelPonto,
         'lista-tarefas':  window.PapelListaTarefas,
         'recibo-simples': window.ReciboSimples,
+        'recibo-aluguel': window.ReciboAluguel,
       };
       for (const [slug, m] of Object.entries(mapa)) {
         if (!m) continue;
