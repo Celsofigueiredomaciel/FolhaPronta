@@ -338,41 +338,22 @@
     window.FolhaPronta = window.FolhaPronta || {};
     window.FolhaPronta.papeis = window.FolhaPronta.papeis || {};
 
-    /* ── Registro estático (metadados de todos os papéis) ──────── */
-    const REGISTRO = {
-      /* Escolar */
-      'pautado':          { nome: 'Papel Pautado',    icone: '📝', plano: 'free',    cat: 'escolar',     cor: '#10B981', bg: '#DCFCE7', desc: 'Linhas horizontais com espaçamento ajustável.' },
-      'quadriculado':     { nome: 'Quadriculado',     icone: '⬛', plano: 'free',    cat: 'escolar',     cor: '#10B981', bg: '#DCFCE7', desc: 'Grade de quadrados com tamanho configurável.' },
-      'caligrafia':       { nome: 'Caligrafia',       icone: '✍️', plano: 'premium', cat: 'escolar',     cor: '#10B981', bg: '#DCFCE7', desc: 'Linhas guia triplas para praticar caligrafia.' },
-      'milimetrado':      { nome: 'Milimetrado',      icone: '📏', plano: 'premium', cat: 'escolar',     cor: '#10B981', bg: '#DCFCE7', desc: 'Grade milimétrica de alta precisão.' },
-      /* Técnico */
-      'engenharia':       { nome: 'Engenharia',       icone: '🔧', plano: 'free',    cat: 'tecnico',     cor: '#2563EB', bg: '#DBEAFE', desc: 'Folha A4 com bordas técnicas e campos de legenda.' },
-      'partitura':        { nome: 'Partitura',        icone: '🎵', plano: 'premium', cat: 'tecnico',     cor: '#2563EB', bg: '#DBEAFE', desc: 'Pautas musicais com 5 linhas e espaçamento configurável.' },
-      'isometrico':       { nome: 'Isométrico',       icone: '🔷', plano: 'premium', cat: 'tecnico',     cor: '#2563EB', bg: '#DBEAFE', desc: 'Grade isométrica para desenho 3D.' },
-      /* Empresarial */
-      'protocolo':        { nome: 'Protocolo',        icone: '📋', plano: 'free',    cat: 'empresarial', cor: '#F59E0B', bg: '#FEF3C7', desc: 'Folha de protocolo numerada para controle de documentos.' },
-      'ponto':            { nome: 'Ponto',            icone: '🕐', plano: 'free',    cat: 'empresarial', cor: '#F59E0B', bg: '#FEF3C7', desc: 'Folha de ponto mensal com campos de jornada.' },
-      'requisicao':       { nome: 'Requisição',       icone: '📦', plano: 'premium', cat: 'empresarial', cor: '#F59E0B', bg: '#FEF3C7', desc: 'Formulário de requisição de materiais.' },
-      'hora-extra':       { nome: 'Hora Extra',       icone: '⏰', plano: 'premium', cat: 'empresarial', cor: '#F59E0B', bg: '#FEF3C7', desc: 'Controle de horas extras com aprovação.' },
-      'ata-reuniao':      { nome: 'Ata de Reunião',   icone: '📝', plano: 'premium', cat: 'empresarial', cor: '#F59E0B', bg: '#FEF3C7', desc: 'Modelo profissional de ata com pauta e assinaturas.' },
-      'ordem-servico':    { nome: 'Ordem de Serviço', icone: '🔩', plano: 'max',     cat: 'empresarial', cor: '#7C3AED', bg: '#F3E8FF', desc: 'OS completa com logo, itens e assinaturas.' },
-      /* Recibos */
-      'recibo-simples':   { nome: 'Recibo Simples',   icone: '🧾', plano: 'free',    cat: 'recibos',     cor: '#EC4899', bg: '#FCE7F3', desc: 'Recibo básico com valor, pagador e motivo.' },
-      'recibo-comercial': { nome: 'Recibo Comercial', icone: '🏪', plano: 'premium', cat: 'recibos',     cor: '#EC4899', bg: '#FCE7F3', desc: 'Recibo com CNPJ, razão social e campos fiscais.' },
-      'recibo-aluguel':   { nome: 'Recibo Aluguel',   icone: '🏠', plano: 'free', cat: 'recibos',     cor: '#EC4899', bg: '#FCE7F3', desc: 'Recibo de aluguel com IPTU, condomínio e período.' },
-      'recibo-2vias':     { nome: 'Recibo 2 Vias',    icone: '📑', plano: 'premium', cat: 'recibos',     cor: '#EC4899', bg: '#FCE7F3', desc: 'Recibo duplicado em uma única folha A4.' },
-      /* Criativo */
-      'planner-semanal':  { nome: 'Planner Semanal',  icone: '📅', plano: 'free',    cat: 'criativo',    cor: '#7C3AED', bg: '#F3E8FF', desc: 'Planner de 7 dias com blocos de horários.' },
-      'lista-tarefas':    { nome: 'Lista de Tarefas', icone: '✅', plano: 'free',    cat: 'criativo',    cor: '#7C3AED', bg: '#F3E8FF', desc: 'Checklist com prioridade, prazo e categoria.' },
-      'bullet-journal':   { nome: 'Bullet Journal',   icone: '🎯', plano: 'premium', cat: 'criativo',    cor: '#7C3AED', bg: '#F3E8FF', desc: 'Página de bullet journal com grid de pontos.' },
-      'storyboard':       { nome: 'Storyboard',       icone: '🎬', plano: 'max',     cat: 'criativo',    cor: '#7C3AED', bg: '#F3E8FF', desc: 'Grid de quadros com cena, diálogo e descrição.' },
-
-      /* Agro */
-      'caderneta-campo':  { nome: 'Caderneta de Campo',  icone: '🌾', plano: 'free', cat: 'agro', cor: '#16A34A', bg: '#DCFCE7', desc: 'Controle de plantio, colheita e gastos por safra.' },
-      'controle-insumos': { nome: 'Controle de Insumos', icone: '🌱', plano: 'free', cat: 'agro', cor: '#16A34A', bg: '#DCFCE7', desc: 'Entrada e saída de sementes, fertilizantes e defensivos.' },
-      'diario-safra':     { nome: 'Diário de Safra',     icone: '📓', plano: 'free', cat: 'agro', cor: '#16A34A', bg: '#DCFCE7', desc: 'Registro semanal de atividades e observações do campo.' },
-      'recibo-rural':     { nome: 'Recibo Rural',        icone: '📜', plano: 'free', cat: 'agro', cor: '#16A34A', bg: '#DCFCE7', desc: 'Recibo para venda de produção e serviços rurais.' },
-    };
+    /* ── Registro — lido do registry.js central ────────────────── */
+    const REGISTRO = (() => {
+      const mapa = {};
+      (window.FolhaPronta?.registry || []).forEach(papel => {
+        mapa[papel.id] = {
+          nome:  papel.nome,
+          icone: papel.icone,
+          plano: papel.plano,
+          cat:   papel.cat,
+          cor:   papel.cor,
+          bg:    papel.bg,
+          desc:  papel.desc,
+        };
+      });
+      return mapa;
+    })();
 
     /* ── Plano atual do usuário (integrar com planos.js) ────────── */
     function getPlanoUsuario() {
