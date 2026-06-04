@@ -6,7 +6,7 @@
  */
 
 (function () {
-  const SHEETS_URL = 'COLE_AQUI_A_URL_DO_APPS_SCRIPT';
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx5KeK_azfQHAc8Oe2AvPhO78wsSvsPswr-7cwWbS-pgldpARycvdGHzMcdxbedMGv_/exec';
 
   window.FolhaPronta = window.FolhaPronta || {};
 
