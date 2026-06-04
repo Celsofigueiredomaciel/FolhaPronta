@@ -291,38 +291,15 @@
   <script src="../assets/js/core/lgpd.js"></script>
 
   <!-- ── MÓDULOS DE PAPEL ─────────────────────────────────────── -->
-  <!-- Escolar -->
+  <!-- Módulos que existem — carregados estaticamente -->
   <script src="../assets/js/papeis/escolar/pautado.js"></script>
   <script src="../assets/js/papeis/escolar/quadriculado.js"></script>
-  <script src="../assets/js/papeis/escolar/caligrafia.js" onerror="void 0"></script>
-  <script src="../assets/js/papeis/escolar/milimetrado.js" onerror="void 0"></script>
-  <!-- Técnico -->
-  <script src="../assets/js/papeis/tecnico/engenharia.js" onerror="void 0"></script>
-  <script src="../assets/js/papeis/tecnico/partitura.js" onerror="void 0"></script>
-  <script src="../assets/js/papeis/tecnico/isometrico.js" onerror="void 0"></script>
-  <!-- Empresarial -->
   <script src="../assets/js/papeis/empresarial/protocolo.js"></script>
   <script src="../assets/js/papeis/empresarial/ponto.js"></script>
-  <script src="../assets/js/papeis/empresarial/requisicao.js" onerror="void 0"></script>
-  <script src="../assets/js/papeis/empresarial/hora-extra.js" onerror="void 0"></script>
-  <script src="../assets/js/papeis/empresarial/ata-reuniao.js" onerror="void 0"></script>
-  <script src="../assets/js/papeis/empresarial/ordem-servico.js" onerror="void 0"></script>
-  <!-- Recibos -->
   <script src="../assets/js/papeis/recibos/recibo-simples.js"></script>
-  <script src="../assets/js/papeis/recibos/recibo-comercial.js" onerror="void 0"></script>
   <script src="../assets/js/papeis/recibos/recibo-aluguel.js"></script>
-  <script src="../assets/js/papeis/recibos/recibo-2vias.js" onerror="void 0"></script>
-  <!-- Criativo -->
-  <script src="../assets/js/papeis/criativo/planner-semanal.js" onerror="void 0"></script>
   <script src="../assets/js/papeis/criativo/lista-tarefas.js"></script>
-  <script src="../assets/js/papeis/criativo/bullet-journal.js" onerror="void 0"></script>
-  <script src="../assets/js/papeis/criativo/storyboard.js" onerror="void 0"></script>
-
-  <!-- Agro -->
-  <script src="../assets/js/papeis/agro/caderneta-campo.js" onerror="void 0"></script>
-  <script src="../assets/js/papeis/agro/controle-insumos.js" onerror="void 0"></script>
-  <script src="../assets/js/papeis/agro/diario-safra.js" onerror="void 0"></script>
-  <script src="../assets/js/papeis/agro/recibo-rural.js" onerror="void 0"></script>
+  <!-- Demais módulos carregados sob demanda por carregarModuloPapel() -->
 
   <!-- ── NÚCLEO DO GERADOR ─────────────────────────────────────── -->
   <script>
@@ -343,13 +320,14 @@
       const mapa = {};
       (window.FolhaPronta?.registry || []).forEach(papel => {
         mapa[papel.id] = {
-          nome:  papel.nome,
-          icone: papel.icone,
-          plano: papel.plano,
-          cat:   papel.cat,
-          cor:   papel.cor,
-          bg:    papel.bg,
-          desc:  papel.desc,
+          nome:   papel.nome,
+          icone:  papel.icone,
+          plano:  papel.plano,
+          cat:    papel.cat,
+          cor:    papel.cor,
+          bg:     papel.bg,
+          desc:   papel.desc,
+          modulo: papel.modulo,
         };
       });
       return mapa;
@@ -473,6 +451,39 @@
       `;
     }
 
+    // Registra módulos estáticos (globals já disponíveis neste ponto)
+    registrarModulos();
+
+    /* ── Carregamento dinâmico de módulo de papel ──────────────── */
+    function carregarModuloPapel(slug, callback) {
+      const papel = REGISTRO[slug];
+
+      if (!papel || !papel.modulo) {
+        callback(null);
+        return;
+      }
+
+      // Módulo já registrado (carregado estaticamente) — usa direto
+      if (window.FolhaPronta.papeis[slug]) {
+        callback(papel);
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = '../' + papel.modulo;
+
+      script.onload = function() {
+        registrarModulos();
+        callback(papel);
+      };
+
+      script.onerror = function() {
+        callback(null);
+      };
+
+      document.head.appendChild(script);
+    }
+
     /* ── Inicialização principal ────────────────────────────────── */
     let papelAtual = null;
 
@@ -485,21 +496,18 @@
         return;
       }
 
-      const info       = REGISTRO[slug];
+      const info         = REGISTRO[slug];
       const planoUsuario = getPlanoUsuario();
-      papelAtual       = slug;
-
-      // Verifica permissão de plano
-      if (!planoPermite(info.plano, planoUsuario)) {
-        // Mostra o layout mas bloqueia a geração
-        document.getElementById('gerador-layout').classList.remove('hidden');
-        carregarInterface(slug, info, true);
-        abrirModalUpgrade(info.plano);
-        return;
-      }
+      papelAtual         = slug;
+      const bloqueado    = !planoPermite(info.plano, planoUsuario);
 
       document.getElementById('gerador-layout').classList.remove('hidden');
-      carregarInterface(slug, info, false);
+
+      if (bloqueado) abrirModalUpgrade(info.plano);
+
+      carregarModuloPapel(slug, function() {
+        carregarInterface(slug, info, bloqueado);
+      });
     }
 
     function carregarInterface(slug, info, bloqueado) {
@@ -739,7 +747,7 @@
     }
 
     /* ── Registro de módulos no namespace FolhaPronta ──────────── */
-    (function registrarModulos() {
+    function registrarModulos() {
       const mapa = {
         'pautado':        window.PapelPautado,
         'quadriculado':   window.PapelQuadriculado,
@@ -755,10 +763,13 @@
           renderizarFormulario(el) {
             // Módulos esperam string ID; gerador passa elemento DOM
             m.renderizarFormulario(typeof el === 'string' ? el : el.id);
-          }
+          },
+          renderizarPreview: m.renderizarPreview?.bind(m),
+          gerarPDF:          m.gerarPDF?.bind(m),
+          obterConfig:       m.obterConfig?.bind(m),
         };
       }
-    })();
+    }
 
     /* ── Boot ───────────────────────────────────────────────────── */
     document.addEventListener('DOMContentLoaded', inicializar);
