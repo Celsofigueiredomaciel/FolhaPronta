@@ -58,7 +58,7 @@
         <div class="gerador-meta">
           <span id="badge-plano-papel" class="badge-plano badge-free" style="display:none"></span>
           <span class="contador-badge hidden" id="contador-badge" title="Gerações restantes hoje no plano Free">
-            📄 <span class="contador-num" id="contador-num">5</span> restantes hoje
+            📄 <span class="contador-num" id="contador-num">10</span> restantes hoje
           </span>
           <a href="../catalogo.html" class="btn btn-ghost btn-sm">← Voltar</a>
         </div>
@@ -241,7 +241,7 @@
       <div class="modal-icone">⏳</div>
       <h3 class="modal-titulo">Limite diário atingido</h3>
       <p class="modal-desc">
-        Você gerou os 5 PDFs gratuitos de hoje. O limite reinicia à meia-noite.
+        Você gerou os 10 PDFs gratuitos de hoje. O limite reinicia à meia-noite.
         Faça upgrade para o Premium e gere PDFs ilimitados.
       </p>
       <div class="modal-acoes">
@@ -371,7 +371,7 @@
     }
 
     /* ── Contador de gerações (plano free) ──────────────────────── */
-    const LIMITE_FREE = 5;
+    const LIMITE_FREE = 10;
 
     function getChaveContador() {
       return 'fp_geracoes_' + new Date().toISOString().slice(0, 10);
@@ -493,13 +493,13 @@
       if (!planoPermite(info.plano, planoUsuario)) {
         // Mostra o layout mas bloqueia a geração
         document.getElementById('gerador-layout').classList.remove('hidden');
-        carregarInterface(slug, info, bloqueado = true);
+        carregarInterface(slug, info, true);
         abrirModalUpgrade(info.plano);
         return;
       }
 
       document.getElementById('gerador-layout').classList.remove('hidden');
-      carregarInterface(slug, info, bloqueado = false);
+      carregarInterface(slug, info, false);
     }
 
     function carregarInterface(slug, info, bloqueado) {
