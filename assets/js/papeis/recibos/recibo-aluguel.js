@@ -294,6 +294,7 @@ const ReciboAluguel = {
         (eng, cfg) => this.gerar(eng, cfg),
         config
       );
+      window.FolhaPronta?.tracker?.registrar('recibo-aluguel', 'recibos');
     });
   }
 };

@@ -230,6 +230,7 @@ const PapelPautado = {
         (eng, cfg) => this.gerar(eng, cfg),
         config
       );
+      window.FolhaPronta?.tracker?.registrar('pautado', 'escolar');
     });
   }
 };

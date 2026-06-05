@@ -304,6 +304,7 @@ const PapelPonto = {
         (eng, cfg) => this.gerar(eng, cfg),
         config
       );
+      window.FolhaPronta?.tracker?.registrar('ponto', 'empresarial');
     });
   }
 };

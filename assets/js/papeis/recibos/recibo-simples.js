@@ -251,6 +251,7 @@ const ReciboSimples = {
         (eng, cfg) => this.gerar(eng, cfg),
         config
       );
+      window.FolhaPronta?.tracker?.registrar('recibo-simples', 'recibos');
     });
   }
 };

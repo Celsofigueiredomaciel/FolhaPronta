@@ -234,6 +234,7 @@ const PapelProtocolo = {
         (eng, cfg) => this.gerar(eng, cfg),
         config
       );
+      window.FolhaPronta?.tracker?.registrar('protocolo', 'empresarial');
     });
   }
 };

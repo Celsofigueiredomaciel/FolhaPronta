@@ -275,6 +275,7 @@ const PapelListaTarefas = {
         (eng, cfg) => this.gerar(eng, cfg),
         config
       );
+      window.FolhaPronta?.tracker?.registrar('lista-tarefas', 'criativo');
     });
   }
 };
