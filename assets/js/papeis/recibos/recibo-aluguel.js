@@ -202,31 +202,31 @@ const ReciboAluguel = {
 
         <div class="config-grid-2">
           <div class="input-group">
-            <label class="input-label">Locador (proprietário)</label>
+            <label class="input-label" for="cfg-locador">Locador (proprietário)</label>
             <input type="text" class="input" id="cfg-locador"
               placeholder="Ex: João Silva" maxlength="60">
           </div>
           <div class="input-group">
-            <label class="input-label">Locatário (inquilino)</label>
+            <label class="input-label" for="cfg-locatario">Locatário (inquilino)</label>
             <input type="text" class="input" id="cfg-locatario"
               placeholder="Ex: Maria Santos" maxlength="60">
           </div>
         </div>
 
         <div class="input-group">
-          <label class="input-label">Endereço do imóvel</label>
+          <label class="input-label" for="cfg-endereco">Endereço do imóvel</label>
           <input type="text" class="input" id="cfg-endereco"
             placeholder="Ex: Rua das Flores, 123 — Belém/PA" maxlength="80">
         </div>
 
         <div class="config-grid-2">
           <div class="input-group">
-            <label class="input-label">Período de referência</label>
+            <label class="input-label" for="cfg-periodo">Período de referência</label>
             <input type="text" class="input" id="cfg-periodo"
               placeholder="Ex: Junho/2026" maxlength="30">
           </div>
           <div class="input-group">
-            <label class="input-label">Vencimento</label>
+            <label class="input-label" for="cfg-vencimento">Vencimento</label>
             <input type="text" class="input" id="cfg-vencimento"
               placeholder="Ex: 10/06/2026" maxlength="20">
           </div>
@@ -234,12 +234,12 @@ const ReciboAluguel = {
 
         <div class="config-grid-2">
           <div class="input-group">
-            <label class="input-label">Valor do Aluguel (R$)</label>
+            <label class="input-label" for="cfg-aluguel">Valor do Aluguel (R$)</label>
             <input type="text" class="input" id="cfg-aluguel"
               placeholder="Ex: 800,00" maxlength="15">
           </div>
           <div class="input-group">
-            <label class="input-label">Número do recibo</label>
+            <label class="input-label" for="cfg-numero">Número do recibo</label>
             <input type="text" class="input" id="cfg-numero"
               placeholder="Ex: 001" maxlength="10">
           </div>
@@ -247,19 +247,19 @@ const ReciboAluguel = {
 
         <div class="config-grid-2">
           <div class="input-group">
-            <label class="input-label">IPTU (R$)</label>
+            <label class="input-label" for="cfg-iptu">IPTU (R$)</label>
             <input type="text" class="input" id="cfg-iptu"
               placeholder="Ex: 50,00" maxlength="15">
           </div>
           <div class="input-group">
-            <label class="input-label">Condomínio (R$)</label>
+            <label class="input-label" for="cfg-cond">Condomínio (R$)</label>
             <input type="text" class="input" id="cfg-cond"
               placeholder="Ex: 120,00" maxlength="15">
           </div>
         </div>
 
         <div class="input-group">
-          <label class="input-label">Cidade</label>
+          <label class="input-label" for="cfg-cidade">Cidade</label>
           <input type="text" class="input" id="cfg-cidade"
             placeholder="Ex: Belém" maxlength="40">
         </div>
@@ -275,6 +275,27 @@ const ReciboAluguel = {
     PDFEngine.atualizarContadorGeracoes();
 
     document.getElementById('btn-gerar-aluguel').addEventListener('click', async () => {
+      const valorRaw = document.getElementById('cfg-aluguel').value.trim();
+      const validacao = PDFEngine.validarValor(valorRaw);
+      if (!validacao.valido) {
+        alert(validacao.erro);
+        return;
+      }
+
+      const iptuRaw = document.getElementById('cfg-iptu').value.trim();
+      const validacaoIPTU = PDFEngine.validarValor(iptuRaw);
+      if (!validacaoIPTU.valido) {
+        alert('IPTU: ' + validacaoIPTU.erro);
+        return;
+      }
+
+      const condRaw = document.getElementById('cfg-cond').value.trim();
+      const validacaoCond = PDFEngine.validarValor(condRaw);
+      if (!validacaoCond.valido) {
+        alert('Condomínio: ' + validacaoCond.erro);
+        return;
+      }
+
       const config = {
         nomeLocador:   document.getElementById('cfg-locador').value,
         nomeLocatario: document.getElementById('cfg-locatario').value,

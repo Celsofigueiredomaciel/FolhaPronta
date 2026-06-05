@@ -178,6 +178,22 @@ const PDFEngine = {
     }, 3000);
   },
 
+  // Valida valor monetário brasileiro
+  // Aceita: 150 | 150,00 | 1.500,00
+  // Rejeita: -150 | 150ab | abc | 150,000
+  validarValor(valor) {
+    if (!valor || valor.trim() === '') return { valido: true };
+    const v = valor.trim();
+    if (!/^\d{1,3}(\.\d{3})*(,\d{1,2})?$|^\d+(,\d{1,2})?$/.test(v)) {
+      return { valido: false, erro: 'Digite um valor válido. Ex: 150,00' };
+    }
+    const num = parseFloat(v.replace(/\./g, '').replace(',', '.'));
+    if (num <= 0) {
+      return { valido: false, erro: 'O valor deve ser maior que zero.' };
+    }
+    return { valido: true };
+  },
+
   atualizarContadorGeracoes() {
     const el = document.getElementById('contador-geracoes');
     if (!el) return;

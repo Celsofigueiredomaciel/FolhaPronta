@@ -224,16 +224,10 @@ const ReciboSimples = {
 
     document.getElementById('btn-gerar-recibo').addEventListener('click', async () => {
       const valorRaw = document.getElementById('cfg-valor').value.trim();
-      if (valorRaw) {
-        if (!/^\d+([.,]\d{1,2})?$/.test(valorRaw)) {
-          alert('Digite um valor válido. Ex: 150,00');
-          return;
-        }
-        const valorNum = parseFloat(valorRaw.replace(',', '.'));
-        if (valorNum <= 0) {
-          alert('O valor deve ser maior que zero.');
-          return;
-        }
+      const validacao = PDFEngine.validarValor(valorRaw);
+      if (!validacao.valido) {
+        alert(validacao.erro);
+        return;
       }
 
       const config = {
