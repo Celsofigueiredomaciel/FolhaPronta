@@ -141,7 +141,7 @@ const PapelPautado = {
       <div class="config-form">
 
         <div class="input-group">
-          <label class="input-label">Espaçamento entre linhas</label>
+          <label class="input-label" for="cfg-espacamento">Espaçamento entre linhas</label>
           <select class="select" id="cfg-espacamento">
             ${this.opcoes.espacamentos.map(op =>
               `<option value="${op.valor}" ${op.valor === 8 ? 'selected' : ''}>
@@ -152,7 +152,7 @@ const PapelPautado = {
         </div>
 
         <div class="input-group">
-          <label class="input-label">Margem lateral</label>
+          <label class="input-label" for="cfg-margem">Margem lateral</label>
           <select class="select" id="cfg-margem">
             ${this.opcoes.margens.map(op =>
               `<option value="${op.valor}" ${op.valor === 'simples' ? 'selected' : ''}>
@@ -163,7 +163,7 @@ const PapelPautado = {
         </div>
 
         <div class="input-group">
-          <label class="input-label">Cor das linhas</label>
+          <label class="input-label" for="cfg-cor-linha">Cor das linhas</label>
           <select class="select" id="cfg-cor-linha">
             ${this.opcoes.linhasCor.map(op =>
               `<option value="${op.valor}">${op.label}</option>`
@@ -172,7 +172,7 @@ const PapelPautado = {
         </div>
 
         <div class="input-group">
-          <label class="input-label">Título da folha (opcional)</label>
+          <label class="input-label" for="cfg-titulo">Título da folha (opcional)</label>
           <input type="text"
             class="input"
             id="cfg-titulo"
@@ -192,7 +192,7 @@ const PapelPautado = {
         </div>
 
         <div class="input-group">
-          <label class="input-label">Quantidade de páginas</label>
+          <label class="input-label" for="cfg-paginas">Quantidade de páginas</label>
           <select class="select" id="cfg-paginas">
             <option value="1">1 página</option>
             <option value="2">2 páginas</option>

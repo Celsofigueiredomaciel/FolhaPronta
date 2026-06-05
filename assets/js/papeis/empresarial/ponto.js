@@ -251,29 +251,29 @@ const PapelPonto = {
 
         <div class="config-grid-2">
           <div class="input-group">
-            <label class="input-label">Mês</label>
+            <label class="input-label" for="cfg-mes">Mês</label>
             <select class="select" id="cfg-mes">${opcoesMes}</select>
           </div>
           <div class="input-group">
-            <label class="input-label">Ano</label>
+            <label class="input-label" for="cfg-ano">Ano</label>
             <select class="select" id="cfg-ano">${opcoesAno}</select>
           </div>
         </div>
 
         <div class="input-group">
-          <label class="input-label">Nome do funcionário</label>
+          <label class="input-label" for="cfg-funcionario">Nome do funcionário</label>
           <input type="text" class="input" id="cfg-funcionario"
             placeholder="Ex: Maria dos Santos" maxlength="60">
         </div>
 
         <div class="config-grid-2">
           <div class="input-group">
-            <label class="input-label">Empresa</label>
+            <label class="input-label" for="cfg-empresa">Empresa</label>
             <input type="text" class="input" id="cfg-empresa"
               placeholder="Ex: Empresa XYZ Ltda." maxlength="50">
           </div>
           <div class="input-group">
-            <label class="input-label">Cargo</label>
+            <label class="input-label" for="cfg-cargo">Cargo</label>
             <input type="text" class="input" id="cfg-cargo"
               placeholder="Ex: Analista" maxlength="30">
           </div>

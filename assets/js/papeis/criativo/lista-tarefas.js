@@ -211,13 +211,13 @@ const PapelListaTarefas = {
       <div class="config-form">
 
         <div class="input-group">
-          <label class="input-label">Título da lista (opcional)</label>
+          <label class="input-label" for="cfg-titulo">Título da lista (opcional)</label>
           <input type="text" class="input" id="cfg-titulo"
             placeholder="Ex: Compras do mês / Tarefas da semana" maxlength="60">
         </div>
 
         <div class="input-group">
-          <label class="input-label">Quantidade de itens</label>
+          <label class="input-label" for="cfg-itens">Quantidade de itens</label>
           <select class="select" id="cfg-itens">
             ${this.opcoes.quantidades.map(op =>
               `<option value="${op.valor}" ${op.valor === 15 ? 'selected' : ''}>${op.label}</option>`
@@ -241,7 +241,7 @@ const PapelListaTarefas = {
         </div>
 
         <div class="input-group">
-          <label class="input-label">Quantidade de páginas</label>
+          <label class="input-label" for="cfg-paginas">Quantidade de páginas</label>
           <select class="select" id="cfg-paginas">
             <option value="1">1 página</option>
             <option value="2">2 páginas</option>

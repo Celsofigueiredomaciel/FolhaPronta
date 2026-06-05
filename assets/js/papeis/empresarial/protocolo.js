@@ -179,13 +179,13 @@ const PapelProtocolo = {
         </p>
 
         <div class="input-group">
-          <label class="input-label">Nome da empresa (opcional)</label>
+          <label class="input-label" for="cfg-empresa">Nome da empresa (opcional)</label>
           <input type="text" class="input" id="cfg-empresa"
             placeholder="Ex: Prefeitura Municipal de Belém" maxlength="60">
         </div>
 
         <div class="input-group">
-          <label class="input-label">Linhas por página</label>
+          <label class="input-label" for="cfg-linhas">Linhas por página</label>
           <select class="select" id="cfg-linhas">
             ${this.opcoes.linhas.map(op =>
               `<option value="${op.valor}" ${op.valor === 25 ? 'selected' : ''}>${op.label}</option>`
@@ -201,7 +201,7 @@ const PapelProtocolo = {
         </div>
 
         <div class="input-group">
-          <label class="input-label">Quantidade de páginas</label>
+          <label class="input-label" for="cfg-paginas">Quantidade de páginas</label>
           <select class="select" id="cfg-paginas">
             <option value="1">1 página</option>
             <option value="2">2 páginas</option>
