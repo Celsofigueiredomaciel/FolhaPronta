@@ -772,7 +772,10 @@
     }
 
     /* ── Boot ───────────────────────────────────────────────────── */
-    document.addEventListener('DOMContentLoaded', inicializar);
+    document.addEventListener('DOMContentLoaded', function() {
+      registrarModulos();
+      inicializar();
+    });
   </script>
 
 </body>

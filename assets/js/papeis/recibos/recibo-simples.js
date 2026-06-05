@@ -125,9 +125,13 @@ const ReciboSimples = {
       doc.setDrawColor(180, 180, 180);
       doc.setLineWidth(0.3);
 
-      if (campo.valor) {
+      const textoFinal = campo.valor
+        ? String(campo.valor).substring(0, 60)
+        : null;
+
+      if (textoFinal) {
         doc.setTextColor(0, 0, 0);
-        doc.text(campo.valor, margemL + 8 + doc.getTextWidth(campo.label) + 3, campo.y);
+        doc.text(textoFinal, margemL + 8 + doc.getTextWidth(campo.label) + 3, campo.y);
       } else {
         doc.line(margemL + 8 + doc.getTextWidth(campo.label) + 3, campo.y, margemR - 5, campo.y);
       }
@@ -165,13 +169,13 @@ const ReciboSimples = {
 
         <div class="config-grid-2">
           <div class="input-group">
-            <label class="input-label">Quem recebeu (seu nome/empresa)</label>
+            <label class="input-label" for="cfg-recebedor">Quem recebeu (seu nome/empresa)</label>
             <input type="text" class="input" id="cfg-recebedor"
               placeholder="Ex: João Silva" maxlength="60">
           </div>
 
           <div class="input-group">
-            <label class="input-label">Quem pagou</label>
+            <label class="input-label" for="cfg-emitente">Quem pagou</label>
             <input type="text" class="input" id="cfg-emitente"
               placeholder="Ex: Maria Santos" maxlength="60">
           </div>
@@ -179,26 +183,26 @@ const ReciboSimples = {
 
         <div class="config-grid-2">
           <div class="input-group">
-            <label class="input-label">Valor (R$)</label>
+            <label class="input-label" for="cfg-valor">Valor (R$)</label>
             <input type="text" class="input" id="cfg-valor"
               placeholder="Ex: 150,00" maxlength="20">
           </div>
 
           <div class="input-group">
-            <label class="input-label">Número do recibo</label>
+            <label class="input-label" for="cfg-numero">Número do recibo</label>
             <input type="text" class="input" id="cfg-numero"
-              placeholder="Ex: 001" maxlength="10">
+              placeholder="Ex: 001" maxlength="10" pattern="[0-9]*">
           </div>
         </div>
 
         <div class="input-group">
-          <label class="input-label">Referente a (descrição do pagamento)</label>
+          <label class="input-label" for="cfg-descricao">Referente a (descrição do pagamento)</label>
           <input type="text" class="input" id="cfg-descricao"
             placeholder="Ex: Prestação de serviço de pintura" maxlength="80">
         </div>
 
         <div class="input-group">
-          <label class="input-label">Cidade</label>
+          <label class="input-label" for="cfg-cidade">Cidade</label>
           <input type="text" class="input" id="cfg-cidade"
             placeholder="Ex: Belém" maxlength="40">
         </div>
@@ -213,7 +217,21 @@ const ReciboSimples = {
 
     PDFEngine.atualizarContadorGeracoes();
 
+    document.getElementById('cfg-numero')
+      .addEventListener('input', function() {
+        this.value = this.value.replace(/[^0-9]/g, '');
+      });
+
     document.getElementById('btn-gerar-recibo').addEventListener('click', async () => {
+      const valorRaw = document.getElementById('cfg-valor').value.trim();
+      if (valorRaw) {
+        const valorNum = parseFloat(valorRaw.replace(',', '.'));
+        if (isNaN(valorNum) || valorNum <= 0) {
+          alert('Digite um valor válido. Ex: 150,00');
+          return;
+        }
+      }
+
       const config = {
         nomeRecebedor: document.getElementById('cfg-recebedor').value,
         nomeEmitente:  document.getElementById('cfg-emitente').value,
