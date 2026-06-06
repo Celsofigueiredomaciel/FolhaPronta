@@ -21,8 +21,9 @@
       });
 
       fetch(`${SHEETS_URL}?${params}`, {
-        method: 'GET',
-        mode:   'no-cors',
+        method:   'GET',
+        mode:     'no-cors',
+        redirect: 'manual',
       }).catch(() => {});
     }
   };

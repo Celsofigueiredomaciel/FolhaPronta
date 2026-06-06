@@ -194,7 +194,7 @@ const PapelProtocolo = {
         </div>
 
         <div class="config-checkboxes">
-          <label class="checkbox-label">
+          <label class="checkbox-label" for="cfg-numerar-linhas">
             <input type="checkbox" id="cfg-numerar-linhas">
             Pré-numerar as linhas (Nº de protocolo)
           </label>

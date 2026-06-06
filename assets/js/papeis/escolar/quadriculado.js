@@ -135,7 +135,7 @@ const PapelQuadriculado = {
         </div>
 
         <div class="config-checkboxes">
-          <label class="checkbox-label">
+          <label class="checkbox-label" for="cfg-numerar">
             <input type="checkbox" id="cfg-numerar">
             Numerar páginas
           </label>

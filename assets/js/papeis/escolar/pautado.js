@@ -181,11 +181,11 @@ const PapelPautado = {
         </div>
 
         <div class="config-checkboxes">
-          <label class="checkbox-label">
-            <input type="checkbox" id="cfg-data"> 
+          <label class="checkbox-label" for="cfg-data">
+            <input type="checkbox" id="cfg-data">
             Campo de data no topo
           </label>
-          <label class="checkbox-label">
+          <label class="checkbox-label" for="cfg-numerar">
             <input type="checkbox" id="cfg-numerar">
             Numerar páginas
           </label>
