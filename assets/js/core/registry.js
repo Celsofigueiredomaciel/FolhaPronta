@@ -319,6 +319,18 @@ window.FolhaPronta.registry = [
     modulo:   'assets/js/papeis/agro/recibo-rural.js',
     ativo:    false,
   },
+  {
+    id:       'diario-campo',
+    nome:     'Diário de Campo',
+    icone:    '🌾',
+    plano:    'free',
+    cat:      'agro',
+    cor:      '#16A34A',
+    bg:       '#DCFCE7',
+    desc:     'Registro diário de atividades, clima e observações por talhão.',
+    modulo:   'assets/js/papeis/agro/diario-campo.js',
+    ativo:    true,
+  },
 
 ];
 

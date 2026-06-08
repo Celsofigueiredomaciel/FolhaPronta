@@ -299,6 +299,7 @@
   <script src="../assets/js/papeis/recibos/recibo-simples.js"></script>
   <script src="../assets/js/papeis/recibos/recibo-aluguel.js"></script>
   <script src="../assets/js/papeis/criativo/lista-tarefas.js"></script>
+  <script src="../assets/js/papeis/agro/diario-campo.js"></script>
   <!-- Demais módulos carregados sob demanda por carregarModuloPapel() -->
 
   <!-- ── NÚCLEO DO GERADOR ─────────────────────────────────────── -->
@@ -756,6 +757,7 @@
         'lista-tarefas':  window.PapelListaTarefas,
         'recibo-simples': window.ReciboSimples,
         'recibo-aluguel': window.ReciboAluguel,
+        'diario-campo':   window.DiarioCampo,
       };
       for (const [slug, m] of Object.entries(mapa)) {
         if (!m) continue;
