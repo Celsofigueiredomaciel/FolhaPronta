@@ -37,7 +37,7 @@ window.FolhaPronta.registry = [
     id:       'caligrafia',
     nome:     'Caligrafia',
     icone:    '✍️',
-    plano:    'premium',
+    plano:    'free',
     cat:      'escolar',
     cor:      '#10B981',
     bg:       '#DCFCE7',
@@ -49,7 +49,7 @@ window.FolhaPronta.registry = [
     id:       'milimetrado',
     nome:     'Milimetrado',
     icone:    '📏',
-    plano:    'premium',
+    plano:    'free',
     cat:      'escolar',
     cor:      '#10B981',
     bg:       '#DCFCE7',
@@ -69,13 +69,13 @@ window.FolhaPronta.registry = [
     bg:       '#DBEAFE',
     desc:     'Folha A4 com bordas técnicas e campos de legendas. Padrão para projetos.',
     modulo:   'assets/js/papeis/tecnico/engenharia.js',
-    ativo:    true,
+    ativo:    false,
   },
   {
     id:       'partitura',
     nome:     'Partitura',
     icone:    '🎵',
-    plano:    'premium',
+    plano:    'free',
     cat:      'tecnico',
     cor:      '#2563EB',
     bg:       '#DBEAFE',
@@ -87,7 +87,7 @@ window.FolhaPronta.registry = [
     id:       'isometrico',
     nome:     'Isométrico',
     icone:    '🔷',
-    plano:    'premium',
+    plano:    'free',
     cat:      'tecnico',
     cor:      '#2563EB',
     bg:       '#DBEAFE',
@@ -125,7 +125,7 @@ window.FolhaPronta.registry = [
     id:       'requisicao',
     nome:     'Requisição',
     icone:    '📦',
-    plano:    'premium',
+    plano:    'free',
     cat:      'empresarial',
     cor:      '#F59E0B',
     bg:       '#FEF3C7',
@@ -137,7 +137,7 @@ window.FolhaPronta.registry = [
     id:       'hora-extra',
     nome:     'Hora Extra',
     icone:    '⏰',
-    plano:    'premium',
+    plano:    'free',
     cat:      'empresarial',
     cor:      '#F59E0B',
     bg:       '#FEF3C7',
@@ -149,7 +149,7 @@ window.FolhaPronta.registry = [
     id:       'ata-reuniao',
     nome:     'Ata de Reunião',
     icone:    '📝',
-    plano:    'premium',
+    plano:    'free',
     cat:      'empresarial',
     cor:      '#F59E0B',
     bg:       '#FEF3C7',
@@ -161,7 +161,7 @@ window.FolhaPronta.registry = [
     id:       'ordem-servico',
     nome:     'Ordem de Serviço',
     icone:    '🔩',
-    plano:    'max',
+    plano:    'free',
     cat:      'empresarial',
     cor:      '#7C3AED',
     bg:       '#F3E8FF',
@@ -199,7 +199,7 @@ window.FolhaPronta.registry = [
     id:       'recibo-comercial',
     nome:     'Recibo Comercial',
     icone:    '🏪',
-    plano:    'premium',
+    plano:    'free',
     cat:      'recibos',
     cor:      '#EC4899',
     bg:       '#FCE7F3',
@@ -211,7 +211,7 @@ window.FolhaPronta.registry = [
     id:       'recibo-2vias',
     nome:     'Recibo 2 Vias',
     icone:    '📑',
-    plano:    'premium',
+    plano:    'free',
     cat:      'recibos',
     cor:      '#EC4899',
     bg:       '#FCE7F3',
@@ -231,7 +231,7 @@ window.FolhaPronta.registry = [
     bg:       '#F3E8FF',
     desc:     'Planner de 7 dias com blocos de horários e espaço para anotações.',
     modulo:   'assets/js/papeis/criativo/planner-semanal.js',
-    ativo:    true,
+    ativo:    false,
   },
   {
     id:       'lista-tarefas',
@@ -249,7 +249,7 @@ window.FolhaPronta.registry = [
     id:       'bullet-journal',
     nome:     'Bullet Journal',
     icone:    '🎯',
-    plano:    'premium',
+    plano:    'free',
     cat:      'criativo',
     cor:      '#7C3AED',
     bg:       '#F3E8FF',
@@ -261,7 +261,7 @@ window.FolhaPronta.registry = [
     id:       'storyboard',
     nome:     'Storyboard',
     icone:    '🎬',
-    plano:    'max',
+    plano:    'free',
     cat:      'criativo',
     cor:      '#7C3AED',
     bg:       '#F3E8FF',
@@ -369,4 +369,21 @@ window.FolhaPronta.getPorPlano = function(plano) {
  */
 window.FolhaPronta.getAtivos = function() {
   return window.FolhaPronta.registry.filter(p => p.ativo === true);
+};
+
+/**
+ * Contagens derivadas — únicas fontes para qualquer número exibido no site.
+ */
+window.FolhaPronta.contagens = function() {
+  const r = window.FolhaPronta.registry;
+  return {
+    total:      r.length,
+    prontos:    r.filter(p => p.ativo).length,
+    emBreve:    r.filter(p => !p.ativo).length,
+    categorias: [...new Set(r.map(p => p.cat))].length,
+    porCat:     Object.fromEntries(
+                  [...new Set(r.map(p => p.cat))].map(c =>
+                    [c, r.filter(p => p.cat === c).length])
+                ),
+  };
 };
