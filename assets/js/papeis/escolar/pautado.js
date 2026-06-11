@@ -232,6 +232,51 @@ const PapelPautado = {
       );
       window.FolhaPronta?.tracker?.registrar('pautado', 'escolar');
     });
+  },
+
+  renderizarPreview(container, config = {}) {
+    const {
+      corLinha   = '#CCCCCC',
+      margem     = 'simples',
+      titulo     = '',
+      linhasData = false,
+    } = config;
+
+    const temMargem = margem === 'simples' || margem === 'dupla';
+
+    container.innerHTML = `
+      <div style="font-family:sans-serif;font-size:10px;padding:4px;">
+        <div style="position:relative;background:#fff;border:1px solid #ccc;border-radius:3px;padding:4px 4px 2px;overflow:hidden;">
+          ${linhasData ? `
+            <div style="font-size:7px;color:#aaa;text-align:right;margin-bottom:2px;">
+              Data: ___/___/______
+            </div>
+          ` : ''}
+          ${titulo ? `
+            <div style="font-size:8px;font-weight:bold;color:#3c3c3c;text-align:center;padding-bottom:2px;margin-bottom:3px;border-bottom:0.5px solid #888;">
+              ${titulo}
+            </div>
+          ` : ''}
+          ${temMargem ? `<div style="position:absolute;left:17px;top:0;bottom:0;border-left:1px solid #dc5050;pointer-events:none;"></div>` : ''}
+          ${margem === 'dupla' ? `<div style="position:absolute;right:5px;top:0;bottom:0;border-left:1px solid #dc5050;pointer-events:none;"></div>` : ''}
+          ${Array.from({ length: 13 }, (_, i) => `
+            <div style="height:7px;border-bottom:1px solid ${corLinha};"></div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  obterConfig() {
+    return {
+      espacamento:    parseInt(document.getElementById('cfg-espacamento')?.value  || '8'),
+      margem:         document.getElementById('cfg-margem')?.value                || 'simples',
+      corLinha:       document.getElementById('cfg-cor-linha')?.value             || '#CCCCCC',
+      titulo:         document.getElementById('cfg-titulo')?.value                || '',
+      linhasData:     document.getElementById('cfg-data')?.checked                || false,
+      numerarPaginas: document.getElementById('cfg-numerar')?.checked             || false,
+      quantPaginas:   parseInt(document.getElementById('cfg-paginas')?.value      || '1'),
+    };
   }
 };
 
