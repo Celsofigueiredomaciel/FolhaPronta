@@ -32,12 +32,10 @@
 
         <ul class="nav-links">
           <li><a href="catalogo.html" class="nav-link">Catálogo</a></li>
-          <li><a href="pages/planos.html" class="nav-link">Planos</a></li>
           <li><a href="index.html#como-funciona" class="nav-link">Como funciona</a></li>
         </ul>
 
         <div class="nav-acoes">
-          <a href="pages/planos.html" class="btn btn-outline btn-sm">Ver planos</a>
           <a href="catalogo.html" class="btn btn-primary btn-sm">Imprimir agora</a>
         </div>
 
@@ -57,17 +55,17 @@
       <p>Escolha o modelo, personalize e gere seu PDF em segundos. Sem cadastro.</p>
       <div class="catalogo-stats">
         <div class="catalogo-stat">
-          <span class="catalogo-stat-num">27</span>
+          <span class="catalogo-stat-num" id="stat-total">–</span>
           <span class="catalogo-stat-label">modelos</span>
         </div>
         <div class="catalogo-stat-div"></div>
         <div class="catalogo-stat">
-          <span class="catalogo-stat-num">12</span>
-          <span class="catalogo-stat-label">gratuitos</span>
+          <span class="catalogo-stat-num" id="stat-prontos">–</span>
+          <span class="catalogo-stat-label">disponíveis</span>
         </div>
         <div class="catalogo-stat-div"></div>
         <div class="catalogo-stat">
-          <span class="catalogo-stat-num">6</span>
+          <span class="catalogo-stat-num" id="stat-cats">–</span>
           <span class="catalogo-stat-label">categorias</span>
         </div>
       </div>
@@ -147,8 +145,8 @@
         <div class="papeis-grid">
 
           <div class="card-papel"
-               data-plano="free"
-               data-href="pages/pautado.html"
+               data-status="pronto"
+               data-href="pages/gerador.html?papel=pautado"
                style="--card-color:#10B981; --card-bg:#DCFCE7">
             <div class="card-papel-icone">📝</div>
             <div class="card-papel-titulo">Pautado</div>
@@ -160,8 +158,8 @@
           </div>
 
           <div class="card-papel"
-               data-plano="free"
-               data-href="pages/quadriculado.html"
+               data-status="pronto"
+               data-href="pages/gerador.html?papel=quadriculado"
                style="--card-color:#10B981; --card-bg:#DCFCE7">
             <div class="card-papel-icone">⬛</div>
             <div class="card-papel-titulo">Quadriculado</div>
@@ -172,27 +170,27 @@
             </div>
           </div>
 
-          <div class="card-papel locked"
-               data-plano="premium"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#10B981; --card-bg:#DCFCE7">
             <div class="card-papel-icone">✍️</div>
             <div class="card-papel-titulo">Caligrafia</div>
             <p class="card-papel-desc">Linhas guia triplas para praticar caligrafia cursiva e letra bastão com perfeição.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-premium">Premium</span>
-              <span class="card-papel-acao">🔒 Desbloquear</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
-          <div class="card-papel locked"
-               data-plano="premium"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#10B981; --card-bg:#DCFCE7">
             <div class="card-papel-icone">📏</div>
             <div class="card-papel-titulo">Milimetrado</div>
             <p class="card-papel-desc">Grade milimétrica de alta precisão para desenhos técnicos e experimentos escolares.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-premium">Premium</span>
-              <span class="card-papel-acao">🔒 Desbloquear</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
@@ -209,40 +207,39 @@
         </div>
         <div class="papeis-grid">
 
-          <div class="card-papel"
-               data-plano="free"
-               data-href="pages/engenharia.html"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#2563EB; --card-bg:#DBEAFE">
             <div class="card-papel-icone">🔧</div>
             <div class="card-papel-titulo">Engenharia</div>
             <p class="card-papel-desc">Folha A4 com bordas técnicas e campos de legendas. Padrão para projetos e plantas.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-free">Free</span>
-              <span class="card-papel-acao">Gerar →</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
-          <div class="card-papel locked"
-               data-plano="premium"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#2563EB; --card-bg:#DBEAFE">
             <div class="card-papel-icone">🎵</div>
             <div class="card-papel-titulo">Partitura</div>
             <p class="card-papel-desc">Pautas musicais com 5 linhas e espaçamento configurável para compositores e estudantes.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-premium">Premium</span>
-              <span class="card-papel-acao">🔒 Desbloquear</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
-          <div class="card-papel locked"
-               data-plano="premium"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#2563EB; --card-bg:#DBEAFE">
             <div class="card-papel-icone">🔷</div>
             <div class="card-papel-titulo">Isométrico</div>
             <p class="card-papel-desc">Grade isométrica para desenho 3D, perspectivas e projetos de design de produto.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-premium">Premium</span>
-              <span class="card-papel-acao">🔒 Desbloquear</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
@@ -260,8 +257,8 @@
         <div class="papeis-grid">
 
           <div class="card-papel"
-               data-plano="free"
-               data-href="pages/protocolo.html"
+               data-status="pronto"
+               data-href="pages/gerador.html?papel=protocolo"
                style="--card-color:#F59E0B; --card-bg:#FEF3C7">
             <div class="card-papel-icone">📋</div>
             <div class="card-papel-titulo">Protocolo</div>
@@ -273,8 +270,8 @@
           </div>
 
           <div class="card-papel"
-               data-plano="free"
-               data-href="pages/ponto.html"
+               data-status="pronto"
+               data-href="pages/gerador.html?papel=ponto"
                style="--card-color:#F59E0B; --card-bg:#FEF3C7">
             <div class="card-papel-icone">🕐</div>
             <div class="card-papel-titulo">Ponto</div>
@@ -285,51 +282,51 @@
             </div>
           </div>
 
-          <div class="card-papel locked"
-               data-plano="premium"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#F59E0B; --card-bg:#FEF3C7">
             <div class="card-papel-icone">📦</div>
             <div class="card-papel-titulo">Requisição</div>
             <p class="card-papel-desc">Formulário de requisição de materiais com campos de quantidade, valor e aprovação.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-premium">Premium</span>
-              <span class="card-papel-acao">🔒 Desbloquear</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
-          <div class="card-papel locked"
-               data-plano="premium"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#F59E0B; --card-bg:#FEF3C7">
             <div class="card-papel-icone">⏰</div>
             <div class="card-papel-titulo">Hora Extra</div>
             <p class="card-papel-desc">Controle de horas extras com campos de justificativa, aprovação e banco de horas.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-premium">Premium</span>
-              <span class="card-papel-acao">🔒 Desbloquear</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
-          <div class="card-papel locked"
-               data-plano="premium"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#F59E0B; --card-bg:#FEF3C7">
             <div class="card-papel-icone">📝</div>
             <div class="card-papel-titulo">Ata de Reunião</div>
             <p class="card-papel-desc">Modelo profissional de ata com pauta, participantes, deliberações e assinaturas.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-premium">Premium</span>
-              <span class="card-papel-acao">🔒 Desbloquear</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
-          <div class="card-papel locked"
-               data-plano="max"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#7C3AED; --card-bg:#F3E8FF">
             <div class="card-papel-icone">🔩</div>
             <div class="card-papel-titulo">Ordem de Serviço</div>
             <p class="card-papel-desc">OS completa com logo da empresa, campos técnicos, itens de serviço e assinaturas.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-max">Max</span>
-              <span class="card-papel-acao">🔒 Desbloquear</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
@@ -347,8 +344,8 @@
         <div class="papeis-grid">
 
           <div class="card-papel"
-               data-plano="free"
-               data-href="pages/recibo-simples.html"
+               data-status="pronto"
+               data-href="pages/gerador.html?papel=recibo-simples"
                style="--card-color:#EC4899; --card-bg:#FCE7F3">
             <div class="card-papel-icone">🧾</div>
             <div class="card-papel-titulo">Recibo Simples</div>
@@ -359,20 +356,20 @@
             </div>
           </div>
 
-          <div class="card-papel locked"
-               data-plano="premium"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#EC4899; --card-bg:#FCE7F3">
             <div class="card-papel-icone">🏪</div>
             <div class="card-papel-titulo">Recibo Comercial</div>
             <p class="card-papel-desc">Recibo com CNPJ, razão social, discriminação de itens e campos fiscais completos.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-premium">Premium</span>
-              <span class="card-papel-acao">🔒 Desbloquear</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
           <div class="card-papel"
-               data-plano="free"
+               data-status="pronto"
                data-href="pages/gerador.html?papel=recibo-aluguel"
                style="--card-color:#EC4899; --card-bg:#FCE7F3">
             <div class="card-papel-icone">🏠</div>
@@ -384,15 +381,15 @@
             </div>
           </div>
 
-          <div class="card-papel locked"
-               data-plano="premium"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#EC4899; --card-bg:#FCE7F3">
             <div class="card-papel-icone">📑</div>
             <div class="card-papel-titulo">Recibo 2 Vias</div>
             <p class="card-papel-desc">Recibo duplicado em uma única folha A4. Corte ao meio e entregue uma via ao pagador.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-premium">Premium</span>
-              <span class="card-papel-acao">🔒 Desbloquear</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
@@ -409,22 +406,21 @@
         </div>
         <div class="papeis-grid">
 
-          <div class="card-papel"
-               data-plano="free"
-               data-href="pages/planner-semanal.html"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#7C3AED; --card-bg:#F3E8FF">
             <div class="card-papel-icone">📅</div>
             <div class="card-papel-titulo">Planner Semanal</div>
             <p class="card-papel-desc">Planner de 7 dias com blocos de horários, prioridades e espaço para anotações livres.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-free">Free</span>
-              <span class="card-papel-acao">Gerar →</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
           <div class="card-papel"
-               data-plano="free"
-               data-href="pages/lista-tarefas.html"
+               data-status="pronto"
+               data-href="pages/gerador.html?papel=lista-tarefas"
                style="--card-color:#7C3AED; --card-bg:#F3E8FF">
             <div class="card-papel-icone">✅</div>
             <div class="card-papel-titulo">Lista de Tarefas</div>
@@ -435,27 +431,27 @@
             </div>
           </div>
 
-          <div class="card-papel locked"
-               data-plano="premium"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#7C3AED; --card-bg:#F3E8FF">
             <div class="card-papel-icone">🎯</div>
             <div class="card-papel-titulo">Bullet Journal</div>
             <p class="card-papel-desc">Página de bullet journal com grid de pontos, índice e coleções personalizáveis.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-premium">Premium</span>
-              <span class="card-papel-acao">🔒 Desbloquear</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
-          <div class="card-papel locked"
-               data-plano="max"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#7C3AED; --card-bg:#F3E8FF">
             <div class="card-papel-icone">🎬</div>
             <div class="card-papel-titulo">Storyboard</div>
             <p class="card-papel-desc">Grid de quadros com campos de cena, diálogo e descrição para roteiristas e videomakers.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-max">Max</span>
-              <span class="card-papel-acao">🔒 Desbloquear</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
@@ -472,60 +468,56 @@
         </div>
         <div class="papeis-grid">
 
-          <div class="card-papel"
-               data-plano="free"
-               data-href="pages/gerador.html?papel=caderneta-campo"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#16A34A; --card-bg:#DCFCE7">
             <div class="card-papel-icone">🌾</div>
             <div class="card-papel-titulo">Caderneta de Campo</div>
             <p class="card-papel-desc">Controle simples de plantio, colheita e gastos por safra. Ideal para o pequeno produtor.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-free">Free</span>
-              <span class="card-papel-acao">Gerar →</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
-          <div class="card-papel"
-               data-plano="free"
-               data-href="pages/gerador.html?papel=controle-insumos"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#16A34A; --card-bg:#DCFCE7">
             <div class="card-papel-icone">🌱</div>
             <div class="card-papel-titulo">Controle de Insumos</div>
             <p class="card-papel-desc">Entrada e saída de sementes, fertilizantes e defensivos. Mantenha seu estoque organizado.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-free">Free</span>
-              <span class="card-papel-acao">Gerar →</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
-          <div class="card-papel"
-               data-plano="free"
-               data-href="pages/gerador.html?papel=diario-safra"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#16A34A; --card-bg:#DCFCE7">
             <div class="card-papel-icone">📓</div>
             <div class="card-papel-titulo">Diário de Safra</div>
             <p class="card-papel-desc">Registro semanal de atividades, clima e observações do campo durante toda a safra.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-free">Free</span>
-              <span class="card-papel-acao">Gerar →</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
-          <div class="card-papel"
-               data-plano="free"
-               data-href="pages/gerador.html?papel=recibo-rural"
+          <div class="card-papel embreve"
+               data-status="em-breve"
                style="--card-color:#16A34A; --card-bg:#DCFCE7">
             <div class="card-papel-icone">📜</div>
             <div class="card-papel-titulo">Recibo Rural</div>
             <p class="card-papel-desc">Recibo simples para venda de produção agrícola e prestação de serviços no campo.</p>
             <div class="card-papel-footer">
-              <span class="badge-plano badge-free">Free</span>
-              <span class="card-papel-acao">Gerar →</span>
+              <span class="badge-plano badge-embreve">Em breve</span>
+              <span class="card-papel-acao">🔔 Me avise</span>
             </div>
           </div>
 
           <div class="card-papel"
-               data-plano="free"
+               data-status="pronto"
                data-href="pages/gerador.html?papel=diario-campo"
                style="--card-color:#16A34A; --card-bg:#DCFCE7">
             <div class="card-papel-icone">🌾</div>
@@ -542,12 +534,12 @@
 
       <!-- ── CTA PLANOS ───────────────────────────────────────── -->
       <div class="catalogo-cta">
-        <h3>🚀 Desbloqueie todos os modelos</h3>
-        <p>PDFs ilimitados, sem marca d'água e com logo da sua empresa. A partir de R$ 9,90/mês.</p>
+        <h3>💬 Sentiu falta de algum papel?</h3>
+        <p>Me conta qual modelo você precisa — os mais pedidos são os próximos a sair.</p>
         <div class="catalogo-cta-acoes">
-          <a href="pages/planos.html" class="btn btn-primary btn-lg">Ver planos</a>
-          <a href="pages/planos.html#premium" class="btn btn-ghost btn-lg" style="color: var(--color-gray-300)">
-            Comparar planos →
+          <a href="https://wa.me/5591988799352?text=Ol%C3%A1%21%20Quero%20sugerir%20um%20papel%20para%20o%20FolhaPronta%3A%20"
+             class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+            💬 Sugerir um papel
           </a>
         </div>
       </div>
@@ -581,15 +573,6 @@
         </div>
 
         <div class="footer-col">
-          <h6 class="footer-titulo">Planos</h6>
-          <ul class="footer-links">
-            <li><a href="pages/planos.html#free">Free</a></li>
-            <li><a href="pages/planos.html#premium">Premium</a></li>
-            <li><a href="pages/planos.html#max">Max</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
           <h6 class="footer-titulo">Legal</h6>
           <ul class="footer-links">
             <li><a href="pages/privacidade.html">Privacidade (LGPD)</a></li>
@@ -608,21 +591,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- ── MODAL UPGRADE ───────────────────────────────────────── -->
-  <div class="modal-overlay hidden" id="modal-upgrade">
-    <div class="modal">
-      <div class="modal-icone" id="modal-upgrade-icone">🚀</div>
-      <h3 class="modal-titulo" id="modal-upgrade-titulo">Recurso Premium</h3>
-      <p class="modal-desc" id="modal-upgrade-desc">Faça upgrade para acessar este modelo.</p>
-      <div class="modal-acoes">
-        <a href="pages/planos.html" class="btn btn-primary btn-lg">Ver planos</a>
-        <button class="btn btn-ghost" onclick="document.getElementById('modal-upgrade').classList.add('hidden')">
-          Continuar no Free
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- ── BANNER LGPD ─────────────────────────────────────────── -->
   <div class="lgpd-banner hidden" id="lgpd-banner">
@@ -672,43 +640,32 @@
       });
     }
 
-    // ── Dados dos modais de upgrade por plano
-    const UPGRADE_INFO = {
-      premium: {
-        icone: '⭐',
-        titulo: 'Recurso Premium',
-        desc: 'Este modelo está disponível no plano Premium (R$ 9,90/mês). PDFs ilimitados, sem marca d\'água e com logo da sua empresa.'
-      },
-      max: {
-        icone: '🚀',
-        titulo: 'Recurso Max',
-        desc: 'Este modelo está disponível no plano Max (R$ 24,90/mês). Inclui tudo do Premium + salvar modelos, histórico e multi-usuário.'
-      }
-    };
+    // ── Stats do hero via registry
+    const c = window.FolhaPronta.contagens();
+    document.getElementById('stat-total').textContent   = c.total;
+    document.getElementById('stat-prontos').textContent = c.prontos;
+    document.getElementById('stat-cats').textContent    = c.categorias;
+
+    // ── Contadores das pílulas de filtro via registry
+    document.querySelectorAll('.filtro-btn').forEach(btn => {
+      const cat   = btn.dataset.cat;
+      const qtdEl = btn.querySelector('.filtro-qtd');
+      if (!qtdEl) return;
+      qtdEl.textContent = cat === 'todos' ? c.total : (c.porCat[cat] ?? 0);
+    });
 
     // ── Clique nos cards
     document.querySelectorAll('.card-papel').forEach(card => {
       card.addEventListener('click', () => {
-        const plano = card.dataset.plano;
-        const href  = card.dataset.href;
-
-        if (plano === 'free' && href) {
-          window.location.href = href;
+        if (card.dataset.status === 'pronto' && card.dataset.href) {
+          window.location.href = card.dataset.href;
           return;
         }
-
-        // Abre modal de upgrade
-        const info = UPGRADE_INFO[plano] || UPGRADE_INFO.premium;
-        document.getElementById('modal-upgrade-icone').textContent = info.icone;
-        document.getElementById('modal-upgrade-titulo').textContent = info.titulo;
-        document.getElementById('modal-upgrade-desc').textContent   = info.desc;
-        document.getElementById('modal-upgrade').classList.remove('hidden');
+        // Em breve → abre WhatsApp pedindo aviso (pesquisa de demanda)
+        const nome = card.querySelector('.card-papel-titulo')?.textContent || 'um papel';
+        window.open('https://wa.me/5591988799352?text=' + encodeURIComponent(
+          'Olá! Quero ser avisado quando o papel "' + nome + '" ficar pronto no FolhaPronta.'), '_blank');
       });
-    });
-
-    // Fecha modal ao clicar no overlay
-    document.getElementById('modal-upgrade').addEventListener('click', function(e) {
-      if (e.target === this) this.classList.add('hidden');
     });
 
     // ── Filtros por categoria
