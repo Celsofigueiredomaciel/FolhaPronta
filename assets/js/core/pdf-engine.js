@@ -35,7 +35,7 @@ const PDFEngine = {
     doc.setTextColor(180, 180, 180);
     doc.setFont('helvetica', 'italic');
     doc.text(
-      'Gerado gratuitamente em FolhaPronta.com.br',
+      'Gerado gratuitamente em FolhaPronta.app.br',
       largura / 2,
       altura - 5,
       { align: 'center' }
