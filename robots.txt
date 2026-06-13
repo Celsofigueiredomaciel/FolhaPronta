@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /pages/gerador.html
+Sitemap: https://folhapronta.app.br/sitemap.xml
