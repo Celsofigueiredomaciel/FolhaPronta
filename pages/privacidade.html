@@ -14,375 +14,152 @@
   <link rel="stylesheet" href="../assets/css/components.css">
 
   <style>
-    /* ── Layout geral da página legal ───────────────────────── */
     .legal-hero {
       background: var(--color-gray-50);
       border-bottom: 2px solid var(--color-gray-200);
       padding: calc(var(--header-height) + var(--space-10)) 0 var(--space-10);
     }
-
     .legal-hero-inner {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: var(--space-6);
-      flex-wrap: wrap;
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: var(--space-6); flex-wrap: wrap;
     }
-
     .legal-hero-titulo {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
+      display: flex; align-items: center; gap: var(--space-3);
       margin-bottom: var(--space-3);
     }
-
-    .legal-hero-titulo h1 {
-      font-size: var(--text-3xl);
-      margin: 0;
-    }
-
-    .legal-hero p {
-      color: var(--color-gray-500);
-      max-width: 580px;
-      font-size: var(--text-sm);
-    }
-
+    .legal-hero-titulo h1 { font-size: var(--text-3xl); margin: 0; }
+    .legal-hero p { color: var(--color-gray-500); max-width: 580px; font-size: var(--text-sm); }
     .legal-data-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      background: var(--color-white);
-      border: 2px solid var(--color-gray-200);
-      border-radius: var(--radius-lg);
-      padding: var(--space-3) var(--space-5);
-      font-size: var(--text-xs);
-      font-weight: 700;
-      font-family: var(--font-display);
-      color: var(--color-gray-600);
-      white-space: nowrap;
-      flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      background: var(--color-white); border: 2px solid var(--color-gray-200);
+      border-radius: var(--radius-lg); padding: var(--space-3) var(--space-5);
+      font-size: var(--text-xs); font-weight: 700; font-family: var(--font-display);
+      color: var(--color-gray-600); white-space: nowrap; flex-shrink: 0;
     }
-
-    .legal-data-badge span:first-child {
-      font-size: 18px;
-    }
-
-    /* ── Layout principal: sumário + conteúdo ───────────────── */
-    .legal-body {
-      padding: var(--space-12) 0 var(--space-20);
-    }
-
+    .legal-data-badge span:first-child { font-size: 18px; }
+    .legal-body { padding: var(--space-12) 0 var(--space-20); }
     .legal-layout {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: var(--space-12);
-      align-items: start;
+      display: grid; grid-template-columns: 260px 1fr;
+      gap: var(--space-12); align-items: start;
     }
-
-    /* ── Sumário lateral ────────────────────────────────────── */
     .sumario {
-      position: sticky;
-      top: calc(var(--header-height) + var(--space-6));
-      background: var(--color-white);
-      border: 2px solid var(--color-gray-200);
-      border-radius: var(--radius-xl);
-      padding: var(--space-6);
+      position: sticky; top: calc(var(--header-height) + var(--space-6));
+      background: var(--color-white); border: 2px solid var(--color-gray-200);
+      border-radius: var(--radius-xl); padding: var(--space-6);
     }
-
     .sumario-titulo {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: var(--text-xs);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--color-gray-400);
-      margin-bottom: var(--space-4);
+      font-family: var(--font-display); font-weight: 800; font-size: var(--text-xs);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--color-gray-400); margin-bottom: var(--space-4);
     }
-
-    .sumario-lista {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-1);
-    }
-
+    .sumario-lista { display: flex; flex-direction: column; gap: var(--space-1); }
     .sumario-link {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-3);
-      padding: var(--space-2) var(--space-3);
-      border-radius: var(--radius-md);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      color: var(--color-gray-600);
-      text-decoration: none;
-      transition: all var(--transition-fast);
-      line-height: 1.4;
+      display: flex; align-items: flex-start; gap: var(--space-3);
+      padding: var(--space-2) var(--space-3); border-radius: var(--radius-md);
+      font-size: var(--text-xs); font-weight: 600; color: var(--color-gray-600);
+      text-decoration: none; transition: all var(--transition-fast); line-height: 1.4;
     }
-
-    .sumario-link:hover {
-      background: var(--color-primary-light);
-      color: var(--color-primary);
-    }
-
-    .sumario-link.ativo {
-      background: var(--color-primary-light);
-      color: var(--color-primary);
-    }
-
+    .sumario-link:hover { background: var(--color-primary-light); color: var(--color-primary); }
+    .sumario-link.ativo { background: var(--color-primary-light); color: var(--color-primary); }
     .sumario-num {
-      flex-shrink: 0;
-      width: 18px;
-      height: 18px;
-      background: var(--color-gray-100);
-      border-radius: var(--radius-full);
-      font-size: 10px;
-      font-weight: 900;
-      font-family: var(--font-display);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-gray-500);
-      margin-top: 1px;
+      flex-shrink: 0; width: 18px; height: 18px; background: var(--color-gray-100);
+      border-radius: var(--radius-full); font-size: 10px; font-weight: 900;
+      font-family: var(--font-display); display: flex; align-items: center;
+      justify-content: center; color: var(--color-gray-500); margin-top: 1px;
     }
-
-    .sumario-link.ativo .sumario-num {
-      background: var(--color-primary);
-      color: var(--color-white);
+    .sumario-link.ativo .sumario-num { background: var(--color-primary); color: var(--color-white); }
+    .sumario-badge {
+      margin-top: var(--space-6); padding: var(--space-4); background: #DBEAFE;
+      border-radius: var(--radius-lg); font-size: var(--text-xs); color: var(--color-primary);
+      font-weight: 600; text-align: center; line-height: 1.5;
     }
-
-    .sumario-lgpd {
-      margin-top: var(--space-6);
-      padding: var(--space-4);
-      background: var(--color-primary-light);
-      border-radius: var(--radius-lg);
-      font-size: var(--text-xs);
-      color: var(--color-primary);
-      font-weight: 600;
-      text-align: center;
-      line-height: 1.5;
-    }
-
-    /* ── Artigo ─────────────────────────────────────────────── */
-    .legal-artigo {
-      min-width: 0;
-    }
-
+    .legal-artigo { min-width: 0; }
     .legal-secao {
-      margin-bottom: var(--space-12);
-      padding-bottom: var(--space-10);
+      margin-bottom: var(--space-12); padding-bottom: var(--space-10);
       border-bottom: 2px solid var(--color-gray-100);
       scroll-margin-top: calc(var(--header-height) + var(--space-6));
     }
-
-    .legal-secao:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-    }
-
+    .legal-secao:last-child { border-bottom: none; margin-bottom: 0; }
     .legal-secao-header {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      margin-bottom: var(--space-5);
+      display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-5);
     }
-
     .legal-secao-num {
-      width: 36px;
-      height: 36px;
-      border-radius: var(--radius-full);
-      background: var(--color-primary);
-      color: var(--color-white);
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: var(--text-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      width: 36px; height: 36px; border-radius: var(--radius-full);
+      background: var(--color-primary); color: var(--color-white);
+      font-family: var(--font-display); font-weight: 900; font-size: var(--text-sm);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-
-    .legal-secao h2 {
-      font-size: var(--text-xl);
-      margin: 0;
-    }
-
+    .legal-secao h2 { font-size: var(--text-xl); margin: 0; }
     .legal-secao p {
-      color: var(--color-gray-600);
-      font-size: var(--text-sm);
-      line-height: 1.8;
-      margin-bottom: var(--space-4);
+      color: var(--color-gray-600); font-size: var(--text-sm);
+      line-height: 1.8; margin-bottom: var(--space-4);
     }
-
-    .legal-secao p:last-child {
-      margin-bottom: 0;
-    }
-
+    .legal-secao p:last-child { margin-bottom: 0; }
     .legal-secao h3 {
-      font-size: var(--text-base);
-      color: var(--color-gray-800);
+      font-size: var(--text-base); color: var(--color-gray-800);
       margin: var(--space-5) 0 var(--space-3);
     }
-
-    /* ── Listas dentro do artigo ────────────────────────────── */
     .legal-lista {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-      margin: var(--space-4) 0;
-      padding-left: var(--space-4);
+      display: flex; flex-direction: column; gap: var(--space-2);
+      margin: var(--space-4) 0; padding-left: var(--space-4);
     }
-
     .legal-lista li {
-      font-size: var(--text-sm);
-      color: var(--color-gray-600);
-      line-height: 1.7;
-      position: relative;
-      padding-left: var(--space-5);
+      font-size: var(--text-sm); color: var(--color-gray-600); line-height: 1.7;
+      position: relative; padding-left: var(--space-5);
     }
-
     .legal-lista li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: var(--color-primary);
-      font-weight: 900;
+      content: '•'; position: absolute; left: 0;
+      color: var(--color-primary); font-weight: 900;
     }
-
-    /* ── Cards de destaque dentro do artigo ─────────────────── */
     .legal-card {
-      background: var(--color-gray-50);
-      border: 2px solid var(--color-gray-200);
-      border-radius: var(--radius-xl);
-      padding: var(--space-5) var(--space-6);
+      background: var(--color-gray-50); border: 2px solid var(--color-gray-200);
+      border-radius: var(--radius-xl); padding: var(--space-5) var(--space-6);
       margin: var(--space-5) 0;
     }
-
-    .legal-card.destaque-verde {
-      background: #F0FDF4;
-      border-color: #BBF7D0;
-    }
-
-    .legal-card.destaque-azul {
-      background: var(--color-primary-light);
-      border-color: #BFDBFE;
-    }
-
-    .legal-card.destaque-amarelo {
-      background: #FFFBEB;
-      border-color: #FDE68A;
-    }
-
+    .legal-card.destaque-verde  { background: #F0FDF4; border-color: #BBF7D0; }
+    .legal-card.destaque-azul   { background: var(--color-primary-light); border-color: #BFDBFE; }
+    .legal-card.destaque-amarelo { background: #FFFBEB; border-color: #FDE68A; }
     .legal-card-titulo {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: var(--text-sm);
-      margin-bottom: var(--space-3);
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
+      font-family: var(--font-display); font-weight: 800; font-size: var(--text-sm);
+      margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-2);
     }
-
-    .legal-card.destaque-verde .legal-card-titulo { color: #166534; }
-    .legal-card.destaque-azul  .legal-card-titulo { color: var(--color-primary); }
+    .legal-card.destaque-verde   .legal-card-titulo { color: #166534; }
+    .legal-card.destaque-azul    .legal-card-titulo { color: var(--color-primary); }
     .legal-card.destaque-amarelo .legal-card-titulo { color: #92400E; }
-
-    /* ── Tabela de direitos ─────────────────────────────────── */
     .direitos-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-4);
-      margin: var(--space-5) 0;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--space-4); margin: var(--space-5) 0;
     }
-
     .direito-item {
-      background: var(--color-white);
-      border: 2px solid var(--color-gray-200);
-      border-radius: var(--radius-lg);
-      padding: var(--space-4) var(--space-5);
+      background: var(--color-white); border: 2px solid var(--color-gray-200);
+      border-radius: var(--radius-lg); padding: var(--space-4);
     }
-
-    .direito-icone {
-      font-size: 24px;
-      margin-bottom: var(--space-2);
+    .direito-item .ico { font-size: 24px; margin-bottom: var(--space-2); }
+    .direito-item strong { display: block; font-size: var(--text-sm); margin-bottom: var(--space-1); color: var(--color-gray-800); }
+    .direito-item span { font-size: var(--text-xs); color: var(--color-gray-500); line-height: 1.6; }
+    .contato-card {
+      background: var(--color-gray-900); color: var(--color-white);
+      border-radius: var(--radius-xl); padding: var(--space-8);
+      margin: var(--space-5) 0; display: flex; gap: var(--space-6);
+      align-items: flex-start; flex-wrap: wrap;
     }
-
-    .direito-nome {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: var(--text-sm);
-      color: var(--color-gray-900);
-      margin-bottom: var(--space-1);
-    }
-
-    .direito-desc {
-      font-size: var(--text-xs);
-      color: var(--color-gray-500);
-      line-height: 1.5;
-    }
-
-    /* ── Bloco de contato DPO ───────────────────────────────── */
-    .dpo-card {
-      background: var(--color-gray-900);
-      color: var(--color-white);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8);
-      margin: var(--space-5) 0;
-      display: flex;
-      gap: var(--space-6);
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-
-    .dpo-icone {
-      font-size: 48px;
-      flex-shrink: 0;
-    }
-
-    .dpo-info {
-      flex: 1;
-      min-width: 220px;
-    }
-
-    .dpo-info h3 {
-      color: var(--color-white);
-      font-size: var(--text-lg);
-      margin-bottom: var(--space-3);
-    }
-
-    .dpo-info p {
-      color: var(--color-gray-400) !important;
-      font-size: var(--text-sm) !important;
+    .contato-icone { font-size: 48px; flex-shrink: 0; }
+    .contato-info { flex: 1; min-width: 220px; }
+    .contato-info h3 { color: var(--color-white); font-size: var(--text-lg); margin-bottom: var(--space-3); }
+    .contato-info p {
+      color: var(--color-gray-400) !important; font-size: var(--text-sm) !important;
       margin-bottom: var(--space-2) !important;
     }
-
-    .dpo-info a {
-      color: var(--color-primary-light);
-      text-decoration: underline;
-      font-weight: 600;
-    }
-
-    .dpo-prazo {
-      background: rgba(255,255,255,0.08);
-      border-radius: var(--radius-lg);
-      padding: var(--space-3) var(--space-4);
-      font-size: var(--text-xs);
-      color: var(--color-gray-400);
-      margin-top: var(--space-3);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* ── Responsivo ─────────────────────────────────────────── */
+    .contato-info a { color: var(--color-primary-light); text-decoration: underline; font-weight: 600; }
     @media (max-width: 1024px) {
       .legal-layout { grid-template-columns: 1fr; }
       .sumario { position: static; }
       .sumario-lista { flex-direction: row; flex-wrap: wrap; gap: var(--space-2); }
       .sumario-link { flex: 0 0 auto; }
     }
-
     @media (max-width: 768px) {
       .legal-hero-titulo h1 { font-size: var(--text-2xl); }
-      .direitos-grid { grid-template-columns: 1fr; }
-      .dpo-card { flex-direction: column; gap: var(--space-4); }
+      .contato-card { flex-direction: column; gap: var(--space-4); }
     }
   </style>
 </head>
@@ -399,12 +176,10 @@
 
         <ul class="nav-links">
           <li><a href="../catalogo.html" class="nav-link">Catálogo</a></li>
-          <li><a href="planos.html" class="nav-link">Planos</a></li>
           <li><a href="../index.html#como-funciona" class="nav-link">Como funciona</a></li>
         </ul>
 
         <div class="nav-acoes">
-          <a href="planos.html" class="btn btn-outline btn-sm">Ver planos</a>
           <a href="../catalogo.html" class="btn btn-primary btn-sm">Imprimir agora</a>
         </div>
 
@@ -426,13 +201,14 @@
             <h1>Política de Privacidade</h1>
           </div>
           <p>
-            Transparência total sobre como o FolhaPronta coleta, usa e protege
-            seus dados em conformidade com a <strong>LGPD — Lei 13.709/2018</strong>.
+            Transparência total sobre como o FolhaPronta trata (ou, na maior parte do tempo,
+            <strong>não trata</strong>) seus dados, em conformidade com a
+            <strong>LGPD — Lei 13.709/2018</strong>.
           </p>
         </div>
         <div class="legal-data-badge">
           <span>📅</span>
-          <span>Última atualização: 24 de maio de 2025</span>
+          <span>Vigência: 13 de junho de 2026</span>
         </div>
       </div>
     </div>
@@ -448,63 +224,19 @@
           <nav class="sumario" aria-label="Sumário da política">
             <div class="sumario-titulo">Sumário</div>
             <ul class="sumario-lista">
-              <li>
-                <a href="#dados-coletados" class="sumario-link">
-                  <span class="sumario-num">1</span>
-                  Dados coletados
-                </a>
-              </li>
-              <li>
-                <a href="#uso-dos-dados" class="sumario-link">
-                  <span class="sumario-num">2</span>
-                  Como usamos os dados
-                </a>
-              </li>
-              <li>
-                <a href="#cookies" class="sumario-link">
-                  <span class="sumario-num">3</span>
-                  Cookies e localStorage
-                </a>
-              </li>
-              <li>
-                <a href="#direitos" class="sumario-link">
-                  <span class="sumario-num">4</span>
-                  Direitos do titular
-                </a>
-              </li>
-              <li>
-                <a href="#compartilhamento" class="sumario-link">
-                  <span class="sumario-num">5</span>
-                  Compartilhamento
-                </a>
-              </li>
-              <li>
-                <a href="#retencao" class="sumario-link">
-                  <span class="sumario-num">6</span>
-                  Tempo de armazenamento
-                </a>
-              </li>
-              <li>
-                <a href="#seguranca" class="sumario-link">
-                  <span class="sumario-num">7</span>
-                  Segurança
-                </a>
-              </li>
-              <li>
-                <a href="#dpo" class="sumario-link">
-                  <span class="sumario-num">8</span>
-                  Contato / DPO
-                </a>
-              </li>
-              <li>
-                <a href="#atualizacoes" class="sumario-link">
-                  <span class="sumario-num">9</span>
-                  Atualizações
-                </a>
-              </li>
+              <li><a href="#resumo"          class="sumario-link"><span class="sumario-num">1</span>Resumo rápido</a></li>
+              <li><a href="#dados-coletados" class="sumario-link"><span class="sumario-num">2</span>Dados que tratamos</a></li>
+              <li><a href="#uso-dos-dados"   class="sumario-link"><span class="sumario-num">3</span>Como usamos</a></li>
+              <li><a href="#cookies"         class="sumario-link"><span class="sumario-num">4</span>Cookies e localStorage</a></li>
+              <li><a href="#anuncios"        class="sumario-link"><span class="sumario-num">5</span>Anúncios no futuro</a></li>
+              <li><a href="#compartilhamento" class="sumario-link"><span class="sumario-num">6</span>Compartilhamento</a></li>
+              <li><a href="#direitos"        class="sumario-link"><span class="sumario-num">7</span>Seus direitos</a></li>
+              <li><a href="#seguranca"       class="sumario-link"><span class="sumario-num">8</span>Segurança</a></li>
+              <li><a href="#contato"         class="sumario-link"><span class="sumario-num">9</span>Contato</a></li>
+              <li><a href="#atualizacoes"    class="sumario-link"><span class="sumario-num">10</span>Atualizações</a></li>
             </ul>
 
-            <div class="sumario-lgpd">
+            <div class="sumario-badge">
               🇧🇷 Em conformidade com a<br>
               <strong>LGPD — Lei 13.709/2018</strong>
             </div>
@@ -515,389 +247,314 @@
         <article class="legal-artigo">
 
           <!-- Introdução -->
-          <div style="margin-bottom: var(--space-10); padding-bottom: var(--space-8); border-bottom: 2px solid var(--color-gray-100);">
-            <p style="font-size:var(--text-base); color:var(--color-gray-700); line-height:1.8;">
+          <div style="margin-bottom:var(--space-10);padding-bottom:var(--space-8);border-bottom:2px solid var(--color-gray-100);">
+            <p style="font-size:var(--text-base);color:var(--color-gray-700);line-height:1.8;">
               O <strong>FolhaPronta</strong> ("nós", "nosso") opera o site
-              <strong>folhapronta.com.br</strong> e se compromete a proteger a privacidade
-              de todos os visitantes e usuários. Esta política descreve quais informações
-              coletamos, como as usamos e quais direitos você possui como titular dos dados,
-              em conformidade com a <strong>Lei Geral de Proteção de Dados Pessoais
-              (LGPD — Lei nº 13.709/2018)</strong>.
+              <strong>folhapronta.app.br</strong> e se compromete a proteger a privacidade de
+              todos os visitantes. Esta política descreve, com sinceridade, quais informações
+              tratamos, como as usamos e quais direitos você possui como titular dos dados, em
+              conformidade com a <strong>Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018)</strong>.
             </p>
-            <p style="font-size:var(--text-sm); color:var(--color-gray-500); margin-top:var(--space-4); line-height:1.8;">
-              Ao acessar o FolhaPronta, você concorda com as práticas descritas nesta
-              política. Se não concordar, recomendamos que não utilize nossos serviços.
+            <p style="font-size:var(--text-sm);color:var(--color-gray-500);margin-top:var(--space-4);line-height:1.8;">
+              Ao acessar o FolhaPronta, você concorda com as práticas descritas nesta política.
+              Se não concordar, recomendamos que não utilize o serviço.
             </p>
           </div>
 
-          <!-- 1. Dados coletados -->
-          <section class="legal-secao" id="dados-coletados">
+          <!-- 1. Resumo rápido -->
+          <section class="legal-secao" id="resumo">
             <div class="legal-secao-header">
               <div class="legal-secao-num">1</div>
-              <h2>Quais dados coletamos</h2>
+              <h2>Resumo rápido (em uma frase)</h2>
             </div>
 
             <div class="legal-card destaque-verde">
-              <div class="legal-card-titulo">✅ Plano Free — nenhum dado pessoal coletado</div>
-              <p style="font-size:var(--text-sm); color:#166534; line-height:1.7; margin:0;">
-                No plano gratuito, <strong>não coletamos qualquer dado pessoal identificável</strong>.
-                Não há cadastro, login ou formulários. Nenhuma informação é enviada a nossos
-                servidores ao gerar um PDF. As únicas informações salvas ficam exclusivamente
-                no seu dispositivo, via <code>localStorage</code> do navegador.
+              <div class="legal-card-titulo">✅ Não pedimos, não exigimos e não armazenamos seus dados pessoais</div>
+              <p style="font-size:var(--text-sm);color:#166534;line-height:1.7;margin:0;">
+                O FolhaPronta é um site estático e gratuito. Não há cadastro, login, senha ou
+                pagamento. O conteúdo dos PDFs que você gera <strong>nunca sai do seu navegador</strong>.
+                A única coisa que registramos é uma contagem anônima de acessos, sem identificar você.
               </p>
             </div>
 
-            <h3>Planos pagos (Premium e Max)</h3>
             <p>
-              Ao assinar um plano pago, coletamos apenas os dados estritamente necessários para
-              a prestação do serviço contratado:
-            </p>
-            <ul class="legal-lista">
-              <li><strong>Dados de conta:</strong> nome completo e endereço de e-mail para criação e autenticação da conta.</li>
-              <li><strong>Dados de pagamento:</strong> processados integralmente por gateway de pagamento terceirizado (ex.: Stripe, Pagar.me). O FolhaPronta <strong>nunca armazena</strong> dados de cartão de crédito.</li>
-              <li><strong>Dados de uso:</strong> histórico de PDFs gerados e modelos salvos (apenas no plano Max), armazenados em banco de dados vinculado à sua conta.</li>
-              <li><strong>Dados de logo:</strong> imagens de logotipo enviadas pelo usuário para inserção nos PDFs, armazenadas com criptografia.</li>
-            </ul>
-
-            <h3>Dados coletados automaticamente</h3>
-            <p>
-              Como todo servidor web, coletamos automaticamente dados técnicos básicos de acesso
-              (logs de servidor):
-            </p>
-            <ul class="legal-lista">
-              <li>Endereço IP (anonimizado após 24 horas)</li>
-              <li>Data, hora e páginas visitadas</li>
-              <li>Tipo de navegador e sistema operacional</li>
-              <li>URL de referência (página de onde você veio)</li>
-            </ul>
-            <p>
-              Esses dados são usados exclusivamente para fins de segurança, diagnóstico de erros
-              e estatísticas agregadas de acesso. Não são vinculados a perfis individuais.
+              O restante desta política explica isso em detalhes — inclusive o que pode mudar caso,
+              no futuro, passemos a exibir anúncios para manter o serviço gratuito (ver seção 5).
             </p>
           </section>
 
-          <!-- 2. Como usamos -->
-          <section class="legal-secao" id="uso-dos-dados">
+          <!-- 2. Dados que tratamos -->
+          <section class="legal-secao" id="dados-coletados">
             <div class="legal-secao-header">
               <div class="legal-secao-num">2</div>
-              <h2>Como usamos os dados</h2>
+              <h2>Quais dados tratamos</h2>
             </div>
 
+            <h3>Conteúdo dos seus PDFs — fica só com você</h3>
             <p>
-              Utilizamos os dados coletados exclusivamente para as finalidades descritas abaixo,
-              com base nas bases legais previstas na LGPD:
+              Tudo o que você digita nos formulários (nome, valores, datas, observações) é
+              processado <strong>inteiramente no seu navegador</strong>, por meio de JavaScript,
+              para gerar o PDF. Esse conteúdo <strong>não é enviado, transmitido ou armazenado</strong>
+              em nenhum servidor nosso. Quando você fecha a página, ele desaparece — a não ser que
+              você mesmo salve o PDF no seu dispositivo.
+            </p>
+
+            <h3>Preferências locais — ficam no seu dispositivo</h3>
+            <p>
+              Para lembrar de pequenas escolhas (como o último tipo de papel usado, o tema claro/escuro
+              ou a contagem diária de PDFs gerados), usamos o <code>localStorage</code> do seu próprio
+              navegador. Essas informações <strong>nunca saem do seu dispositivo</strong> e podem ser
+              apagadas por você a qualquer momento, limpando os dados de navegação.
+            </p>
+
+            <h3>Estatísticas anônimas de acesso</h3>
+            <p>
+              Para entender quantas pessoas usam o site e quais modelos são mais procurados, usamos
+              uma contagem simples e <strong>anônima</strong> de acessos, registrada em uma planilha
+              do Google (via Google Apps Script). Essa contagem <strong>não coleta dados pessoais
+              identificáveis</strong> — não registramos nome, e-mail, nem o conteúdo que você digita.
+              Servem apenas para estatísticas agregadas que nos ajudam a melhorar o serviço.
             </p>
 
             <div class="legal-card destaque-azul">
-              <div class="legal-card-titulo">📋 Finalidades e bases legais</div>
-              <ul class="legal-lista" style="margin:0;">
-                <li><strong>Prestação do serviço contratado</strong> — Gerar PDFs, gerenciar conta e assinatura. Base legal: <em>execução de contrato</em> (art. 7º, V, LGPD).</li>
-                <li><strong>Cobrança e faturamento</strong> — Processar pagamentos da assinatura. Base legal: <em>execução de contrato</em> (art. 7º, V, LGPD).</li>
-                <li><strong>Segurança e prevenção de fraudes</strong> — Detectar e bloquear acessos não autorizados. Base legal: <em>legítimo interesse</em> (art. 7º, IX, LGPD).</li>
-                <li><strong>Melhorias do serviço</strong> — Analisar estatísticas agregadas e anônimas de uso. Base legal: <em>legítimo interesse</em> (art. 7º, IX, LGPD).</li>
-                <li><strong>Comunicações sobre a conta</strong> — Enviar e-mails transacionais (confirmação, nota fiscal, alteração de senha). Base legal: <em>execução de contrato</em>.</li>
-                <li><strong>Comunicações de marketing</strong> — Enviar novidades sobre planos e novos modelos, <strong>somente com seu consentimento explícito</strong>. Base legal: <em>consentimento</em> (art. 7º, I, LGPD).</li>
-              </ul>
+              <div class="legal-card-titulo">ℹ️ Sem cadastro, sem pagamento</div>
+              <p style="font-size:var(--text-sm);color:var(--color-primary);line-height:1.7;margin:0;">
+                O FolhaPronta não possui sistema de contas, login, senha ou cobrança. Não solicitamos
+                nem armazenamos e-mail, telefone, CPF, dados de cartão ou qualquer documento. Se algum
+                dia isso mudar, esta política será atualizada antes.
+              </p>
+            </div>
+          </section>
+
+          <!-- 3. Como usamos -->
+          <section class="legal-secao" id="uso-dos-dados">
+            <div class="legal-secao-header">
+              <div class="legal-secao-num">3</div>
+              <h2>Como usamos as informações</h2>
             </div>
 
             <p>
-              <strong>Não utilizamos seus dados</strong> para criação de perfis publicitários,
-              venda de informações a terceiros, tomada de decisões automatizadas com impacto
-              legal ou qualquer finalidade não descrita nesta política.
+              Como praticamente não coletamos dados pessoais, o uso de informações é bem limitado:
+            </p>
+            <ul class="legal-lista">
+              <li><strong>Funcionamento do serviço</strong> — gerar o PDF que você pediu, no seu navegador.</li>
+              <li><strong>Lembrar suas preferências</strong> — guardar localmente escolhas como tema e tipo de papel. Base legal: <em>legítimo interesse</em> (art. 7º, IX, LGPD).</li>
+              <li><strong>Melhorar o serviço</strong> — analisar estatísticas anônimas e agregadas de acesso. Base legal: <em>legítimo interesse</em> (art. 7º, IX, LGPD).</li>
+            </ul>
+
+            <p>
+              <strong>Não fazemos:</strong> criação de perfis publicitários com seus dados, venda de
+              informações, decisões automatizadas com impacto legal sobre você, ou qualquer
+              finalidade não descrita aqui.
             </p>
           </section>
 
-          <!-- 3. Cookies -->
+          <!-- 4. Cookies e localStorage -->
           <section class="legal-secao" id="cookies">
             <div class="legal-secao-header">
-              <div class="legal-secao-num">3</div>
-              <h2>Cookies e localStorage</h2>
+              <div class="legal-secao-num">4</div>
+              <h2>Cookies e armazenamento local</h2>
             </div>
 
-            <div class="legal-card destaque-verde">
-              <div class="legal-card-titulo">✅ Plano Free — apenas armazenamento local</div>
-              <p style="font-size:var(--text-sm); color:#166534; line-height:1.7; margin:0;">
-                No plano gratuito usamos exclusivamente o <code>localStorage</code> do seu navegador
-                para salvar preferências locais (ex.: espaçamento de linhas, tipo de papel
-                escolhido por último). <strong>Nenhum dado é enviado ao servidor.</strong>
-                Você pode limpar essas informações a qualquer momento nas configurações do navegador.
+            <p>
+              Hoje, o FolhaPronta <strong>não usa cookies de rastreamento</strong>. Usamos apenas o
+              <code>localStorage</code> do navegador, que funciona de forma parecida, mas fica
+              exclusivamente no seu dispositivo e não é enviado a outros sites.
+            </p>
+
+            <h3>O que guardamos localmente</h3>
+            <ul class="legal-lista">
+              <li><strong>Preferências de uso</strong> — tipo de papel, tema (claro/escuro) e configurações do último modelo usado.</li>
+              <li><strong>Contagem diária</strong> — número de PDFs gerados no dia, para aplicar o limite gratuito de 10 por dia. Reinicia à meia-noite.</li>
+              <li><strong>Decisão sobre este aviso</strong> — registro de que você já viu e aceitou este aviso de privacidade.</li>
+            </ul>
+
+            <div class="legal-card destaque-amarelo">
+              <div class="legal-card-titulo">⚠️ Como limpar</div>
+              <p style="font-size:var(--text-sm);color:#92400E;line-height:1.7;margin:0;">
+                Você pode apagar essas informações a qualquer momento nas configurações do seu
+                navegador (Privacidade → Limpar dados de navegação), ou usar o modo de navegação
+                anônima para não guardar nada localmente.
+              </p>
+            </div>
+          </section>
+
+          <!-- 5. Anúncios no futuro -->
+          <section class="legal-secao" id="anuncios">
+            <div class="legal-secao-header">
+              <div class="legal-secao-num">5</div>
+              <h2>Anúncios e patrocínio no futuro</h2>
+            </div>
+
+            <p>
+              Para manter o FolhaPronta gratuito, podemos, no futuro, passar a exibir anúncios de
+              terceiros (por exemplo, redes de publicidade) ou espaços de patrocínio com logomarcas
+              de parceiros. <strong>Isso ainda não acontece hoje.</strong>
+            </p>
+
+            <div class="legal-card destaque-azul">
+              <div class="legal-card-titulo">ℹ️ O que mudará quando isso acontecer</div>
+              <p style="font-size:var(--text-sm);color:var(--color-primary);line-height:1.7;margin:0;">
+                Redes de anúncios costumam usar cookies próprios para medir desempenho e exibir
+                publicidade. Quando (e se) ativarmos anúncios, nós: (1) atualizaremos esta política
+                explicando quais parceiros usamos; (2) ajustaremos o aviso de cookies do site; e
+                (3) solicitaremos o seu consentimento sempre que a LGPD exigir, com opção de recusa.
               </p>
             </div>
 
-            <h3>Cookies essenciais</h3>
             <p>
-              Utilizamos apenas cookies estritamente necessários para o funcionamento do site.
-              Eles não rastreiam você em outros sites e não podem ser desativados sem impactar
-              o funcionamento básico:
+              Em nenhuma hipótese a exibição de anúncios afetará a gratuidade da geração de PDFs nem
+              dará a terceiros acesso ao conteúdo que você digita nos formulários, que continua sendo
+              processado apenas no seu navegador.
             </p>
-            <ul class="legal-lista">
-              <li><strong>lgpd_consent</strong> — Registra sua decisão sobre esta política de cookies (localStorage). Expiração: 1 ano.</li>
-              <li><strong>session_token</strong> — Autentica sua sessão nos planos pagos (cookie seguro, HttpOnly). Expiração: 30 dias ou ao sair da conta.</li>
-            </ul>
-
-            <h3>Cookies de análise (somente com consentimento)</h3>
-            <p>
-              Com seu consentimento explícito, podemos usar ferramentas de análise
-              (ex.: Google Analytics com IP anonimizado) para entender como os usuários
-              navegam pelo site. Você pode recusar no banner de cookies sem perder acesso
-              a nenhuma funcionalidade.
-            </p>
-
-            <div class="legal-card destaque-amarelo">
-              <div class="legal-card-titulo">⚠️ Como recusar ou limpar cookies</div>
-              <ul class="legal-lista" style="margin:0;">
-                <li>Clique em <strong>"Só essenciais"</strong> no banner de cookies ao visitar o site.</li>
-                <li>Acesse as configurações do seu navegador → Privacidade → Limpar dados de navegação.</li>
-                <li>Use o modo de navegação privada / anônima para sessões sem armazenamento local.</li>
-              </ul>
-            </div>
           </section>
 
-          <!-- 4. Direitos do titular -->
+          <!-- 6. Compartilhamento -->
+          <section class="legal-secao" id="compartilhamento">
+            <div class="legal-secao-header">
+              <div class="legal-secao-num">6</div>
+              <h2>Com quem compartilhamos dados</h2>
+            </div>
+
+            <div class="legal-card destaque-verde">
+              <div class="legal-card-titulo">✅ Não vendemos e não cedemos seus dados</div>
+              <p style="font-size:var(--text-sm);color:#166534;line-height:1.7;margin:0;">
+                Nunca vendemos, alugamos ou cedemos dados pessoais a anunciantes ou corretores de
+                dados. Como praticamente não coletamos dados pessoais, não há o que compartilhar.
+              </p>
+            </div>
+
+            <h3>Fornecedores de infraestrutura</h3>
+            <p>
+              O site é hospedado em serviços de terceiros (como o GitHub Pages) e a contagem anônima
+              de acessos usa o Google Apps Script / Google Sheets. Esses fornecedores processam dados
+              técnicos mínimos de acesso conforme suas próprias políticas, mas não recebem de nós
+              qualquer conteúdo que você digite nos formulários.
+            </p>
+
+            <h3>Obrigação legal</h3>
+            <p>
+              Podemos divulgar informações em caso de determinação judicial, requisição de autoridade
+              competente ou para proteger direitos e a segurança do FolhaPronta, de usuários ou de
+              terceiros — sempre nos limites da lei.
+            </p>
+          </section>
+
+          <!-- 7. Direitos -->
           <section class="legal-secao" id="direitos">
             <div class="legal-secao-header">
-              <div class="legal-secao-num">4</div>
-              <h2>Direitos do titular dos dados</h2>
+              <div class="legal-secao-num">7</div>
+              <h2>Seus direitos como titular</h2>
             </div>
 
             <p>
-              A LGPD garante a você, como titular dos dados, os seguintes direitos, que podem ser
-              exercidos a qualquer momento entrando em contato conosco (veja a seção 8):
+              A LGPD garante a você diversos direitos sobre seus dados pessoais. Como o FolhaPronta
+              praticamente não coleta dados pessoais identificáveis, na maioria dos casos não temos
+              nada armazenado a seu respeito — mas seus direitos permanecem garantidos e você pode
+              exercê-los a qualquer momento pelo nosso canal de contato (seção 9):
             </p>
 
             <div class="direitos-grid">
-              <div class="direito-item">
-                <div class="direito-icone">📋</div>
-                <div class="direito-nome">Acesso</div>
-                <div class="direito-desc">Confirmar a existência de tratamento e obter uma cópia de todos os seus dados que temos armazenados.</div>
-              </div>
-              <div class="direito-item">
-                <div class="direito-icone">✏️</div>
-                <div class="direito-nome">Correção</div>
-                <div class="direito-desc">Solicitar a atualização de dados incompletos, inexatos ou desatualizados.</div>
-              </div>
-              <div class="direito-item">
-                <div class="direito-icone">🗑️</div>
-                <div class="direito-nome">Exclusão</div>
-                <div class="direito-desc">Pedir a eliminação dos dados pessoais tratados com base no seu consentimento ou quando desnecessários.</div>
-              </div>
-              <div class="direito-item">
-                <div class="direito-icone">📦</div>
-                <div class="direito-nome">Portabilidade</div>
-                <div class="direito-desc">Receber seus dados em formato estruturado (JSON ou CSV) para migração a outro serviço.</div>
-              </div>
-              <div class="direito-item">
-                <div class="direito-icone">🚫</div>
-                <div class="direito-nome">Oposição</div>
-                <div class="direito-desc">Opor-se a tratamentos baseados em legítimo interesse, inclusive para fins de marketing direto.</div>
-              </div>
-              <div class="direito-item">
-                <div class="direito-icone">🔄</div>
-                <div class="direito-nome">Revogação do consentimento</div>
-                <div class="direito-desc">Retirar o consentimento dado anteriormente a qualquer momento, sem prejuízo dos tratamentos realizados até então.</div>
-              </div>
-              <div class="direito-item">
-                <div class="direito-icone">ℹ️</div>
-                <div class="direito-nome">Informação</div>
-                <div class="direito-desc">Obter informações sobre as entidades públicas e privadas com as quais compartilhamos seus dados.</div>
-              </div>
-              <div class="direito-item">
-                <div class="direito-icone">⚖️</div>
-                <div class="direito-nome">Revisão automatizada</div>
-                <div class="direito-desc">Solicitar revisão de decisões tomadas exclusivamente por meios automatizados que afetem seus interesses.</div>
-              </div>
+              <div class="direito-item"><div class="ico">📋</div><strong>Acesso</strong><span>Confirmar se há algum tratamento e obter cópia dos dados, se existirem.</span></div>
+              <div class="direito-item"><div class="ico">✏️</div><strong>Correção</strong><span>Solicitar atualização de dados incompletos ou inexatos.</span></div>
+              <div class="direito-item"><div class="ico">🗑️</div><strong>Exclusão</strong><span>Pedir a eliminação de dados tratados, quando aplicável.</span></div>
+              <div class="direito-item"><div class="ico">🚫</div><strong>Oposição</strong><span>Opor-se a tratamentos baseados em legítimo interesse.</span></div>
+              <div class="direito-item"><div class="ico">🔄</div><strong>Revogação</strong><span>Retirar consentimento dado anteriormente, quando houver.</span></div>
+              <div class="direito-item"><div class="ico">ℹ️</div><strong>Informação</strong><span>Saber com quais terceiros eventuais dados são compartilhados.</span></div>
             </div>
 
             <p>
-              Para exercer qualquer desses direitos, entre em contato com nosso DPO pelo e-mail
-              <strong>privacidade@folhapronta.com.br</strong>. Responderemos em até <strong>15 dias úteis</strong>,
-              conforme prazo estabelecido pela LGPD. Poderemos solicitar confirmação de identidade
-              antes de atender à solicitação.
-            </p>
-
-            <p>
-              Caso não tenha sua solicitação atendida de forma satisfatória, você pode
-              recorrer à <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong> pelo
-              portal <strong>gov.br/anpd</strong>.
+              Para exercer qualquer desses direitos, entre em contato pelo nosso
+              <a href="https://wa.me/5591988799352" style="color:var(--color-primary);font-weight:600;">WhatsApp</a>.
+              Responderemos no menor prazo possível. Caso sua solicitação não seja atendida de forma
+              satisfatória, você pode recorrer à <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>
+              pelo portal <strong>gov.br/anpd</strong>.
             </p>
           </section>
 
-          <!-- 5. Compartilhamento -->
-          <section class="legal-secao" id="compartilhamento">
-            <div class="legal-secao-header">
-              <div class="legal-secao-num">5</div>
-              <h2>Com quem compartilhamos seus dados</h2>
-            </div>
-
-            <div class="legal-card destaque-verde">
-              <div class="legal-card-titulo">✅ Plano Free — compartilhamento zero</div>
-              <p style="font-size:var(--text-sm); color:#166534; line-height:1.7; margin:0;">
-                No plano gratuito, <strong>nenhum dado é compartilhado com terceiros</strong>,
-                pois nenhum dado pessoal é coletado. Os PDFs são gerados inteiramente no seu
-                navegador, sem passar por nossos servidores.
-              </p>
-            </div>
-
-            <h3>Planos pagos</h3>
-            <p>
-              Nos planos pagos, compartilhamos dados apenas com os seguintes parceiros
-              operacionais, estritamente necessários para a prestação do serviço:
-            </p>
-            <ul class="legal-lista">
-              <li><strong>Gateway de pagamento</strong> — Para processamento seguro de cobranças. Esses parceiros são certificados PCI-DSS e possuem suas próprias políticas de privacidade.</li>
-              <li><strong>Infraestrutura de hospedagem</strong> — Servidores em data centers localizados no Brasil ou com adequação à LGPD.</li>
-              <li><strong>Serviço de e-mail transacional</strong> — Para envio de confirmações de conta e notas fiscais.</li>
-            </ul>
-
-            <p>
-              <strong>Nunca vendemos, alugamos ou cedemos seus dados a anunciantes,
-              corretores de dados ou qualquer terceiro para fins comerciais.</strong>
-              Todos os parceiros são contratualmente obrigados a tratar os dados
-              exclusivamente conforme nossas instruções e em conformidade com a LGPD.
-            </p>
-
-            <p>
-              Podemos divulgar dados em caso de determinação judicial, requisição de autoridade
-              competente ou para proteger direitos e segurança do FolhaPronta, de usuários ou
-              de terceiros — sempre nos limites da lei.
-            </p>
-          </section>
-
-          <!-- 6. Retenção -->
-          <section class="legal-secao" id="retencao">
-            <div class="legal-secao-header">
-              <div class="legal-secao-num">6</div>
-              <h2>Por quanto tempo armazenamos seus dados</h2>
-            </div>
-
-            <p>
-              Retemos os dados pelo menor tempo necessário para cumprir as finalidades
-              para as quais foram coletados, observados os prazos legais obrigatórios:
-            </p>
-            <ul class="legal-lista">
-              <li><strong>Logs de servidor (IP anonimizado):</strong> até 6 meses, conforme Marco Civil da Internet (Lei 12.965/2014).</li>
-              <li><strong>Dados de conta (e-mail, nome):</strong> durante a vigência do contrato + 5 anos após o encerramento, para fins fiscais e legais.</li>
-              <li><strong>Dados de pagamento</strong> (referências de transação, sem dados de cartão): 5 anos, exigência fiscal.</li>
-              <li><strong>PDFs e modelos salvos (plano Max):</strong> durante a assinatura ativa. Após cancelamento, 90 dias para exportação — depois são excluídos permanentemente.</li>
-              <li><strong>Preferências de localStorage:</strong> permanecem no seu dispositivo até você limpá-las manualmente. Não há prazo de expiração automático.</li>
-              <li><strong>Consentimento de marketing:</strong> até a revogação pelo usuário.</li>
-            </ul>
-
-            <p>
-              Ao solicitar a exclusão da conta, realizamos a deleção ou anonimização de todos
-              os dados pessoais no prazo de <strong>30 dias</strong>, exceto os retidos por
-              obrigação legal.
-            </p>
-          </section>
-
-          <!-- 7. Segurança -->
+          <!-- 8. Segurança -->
           <section class="legal-secao" id="seguranca">
             <div class="legal-secao-header">
-              <div class="legal-secao-num">7</div>
+              <div class="legal-secao-num">8</div>
               <h2>Segurança dos dados</h2>
             </div>
 
             <p>
-              Adotamos medidas técnicas e organizacionais adequadas para proteger seus dados
-              contra acesso não autorizado, perda, destruição, alteração ou divulgação indevida:
+              A melhor proteção de dados é não coletá-los — e essa é a base do FolhaPronta. Ainda assim,
+              adotamos medidas razoáveis para manter o serviço seguro:
             </p>
             <ul class="legal-lista">
-              <li><strong>Transmissão criptografada:</strong> todo o tráfego entre seu navegador e nossos servidores é protegido por TLS 1.2+.</li>
-              <li><strong>Geração de PDF no cliente (Free):</strong> os PDFs gratuitos são gerados inteiramente no seu navegador via JavaScript, sem transmissão de dados ao servidor.</li>
-              <li><strong>Senhas com hash seguro:</strong> senhas de conta são armazenadas usando algoritmos de hashing modernos (bcrypt). Nunca armazenamos senhas em texto plano.</li>
-              <li><strong>Acesso restrito:</strong> apenas funcionários com necessidade operacional têm acesso aos sistemas de dados, mediante autenticação multifator.</li>
-              <li><strong>Monitoramento:</strong> utilizamos ferramentas de detecção de intrusão e revisões periódicas de segurança.</li>
-              <li><strong>Backups criptografados:</strong> cópias de segurança são armazenadas com criptografia em repouso.</li>
+              <li><strong>Conexão criptografada (HTTPS):</strong> todo o acesso ao site é protegido por TLS.</li>
+              <li><strong>Geração no cliente:</strong> os PDFs são gerados inteiramente no seu navegador, sem transmissão do conteúdo a servidores.</li>
+              <li><strong>Sem base de dados de usuários:</strong> não mantemos cadastro nem banco de dados pessoais que possam ser alvo de vazamento.</li>
             </ul>
 
             <div class="legal-card destaque-amarelo">
-              <div class="legal-card-titulo">⚠️ Em caso de incidente de segurança</div>
-              <p style="font-size:var(--text-sm); color:#92400E; line-height:1.7; margin:0;">
-                Em caso de incidente que possa gerar risco ou dano relevante aos titulares,
-                notificaremos a <strong>ANPD e os titulares afetados</strong> no prazo de
-                <strong>72 horas</strong> após a ciência do incidente, conforme
-                art. 48 da LGPD.
+              <div class="legal-card-titulo">⚠️ Nenhum sistema é 100% seguro</div>
+              <p style="font-size:var(--text-sm);color:#92400E;line-height:1.7;margin:0;">
+                Apesar dos cuidados, nenhum serviço na internet é totalmente imune a falhas. Caso
+                ocorra algum incidente de segurança que possa gerar risco relevante, adotaremos as
+                medidas cabíveis e, quando aplicável, faremos as comunicações exigidas pela LGPD.
               </p>
             </div>
-
-            <p>
-              Apesar de todos os esforços, nenhum sistema é 100% seguro. Recomendamos que
-              você utilize senhas fortes e não as compartilhe com terceiros.
-            </p>
           </section>
 
-          <!-- 8. DPO -->
-          <section class="legal-secao" id="dpo">
-            <div class="legal-secao-header">
-              <div class="legal-secao-num">8</div>
-              <h2>Contato e Encarregado de Dados (DPO)</h2>
-            </div>
-
-            <p>
-              Em conformidade com o art. 41 da LGPD, indicamos um Encarregado pelo Tratamento
-              de Dados Pessoais (DPO — <em>Data Protection Officer</em>), responsável por
-              receber solicitações, reclamações e comunicações dos titulares e da ANPD:
-            </p>
-
-            <div class="dpo-card">
-              <div class="dpo-icone">🛡️</div>
-              <div class="dpo-info">
-                <h3>Encarregado de Dados — FolhaPronta</h3>
-                <p>
-                  <strong style="color:var(--color-white)">E-mail:</strong>
-                  <a href="mailto:privacidade@folhapronta.com.br">privacidade@folhapronta.com.br</a>
-                </p>
-                <p>
-                  <strong style="color:var(--color-white)">Para solicitações de titulares:</strong>
-                  Envie e-mail com o assunto <em>"Direitos LGPD — [seu nome]"</em> e descreva
-                  sua solicitação. Poderemos pedir confirmação de identidade.
-                </p>
-                <p>
-                  <strong style="color:var(--color-white)">Endereço:</strong>
-                  Brasil — atendimento exclusivamente por meios eletrônicos.
-                </p>
-                <div class="dpo-prazo">
-                  ⏱️ Prazo de resposta: até <strong>15 dias úteis</strong> a contar do recebimento
-                  da solicitação, conforme art. 18, §3º da LGPD.
-                </div>
-              </div>
-            </div>
-
-            <p>
-              Se preferir, você também pode exercer seus direitos diretamente junto à
-              <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong> pelo portal
-              <strong>gov.br/anpd</strong>.
-            </p>
-          </section>
-
-          <!-- 9. Atualizações -->
-          <section class="legal-secao" id="atualizacoes">
+          <!-- 9. Contato -->
+          <section class="legal-secao" id="contato">
             <div class="legal-secao-header">
               <div class="legal-secao-num">9</div>
+              <h2>Contato</h2>
+            </div>
+
+            <p>
+              Para dúvidas sobre privacidade, para exercer seus direitos da LGPD ou para qualquer
+              assunto relacionado a dados, fale com a gente pelo canal oficial:
+            </p>
+
+            <div class="contato-card">
+              <div class="contato-icone">🛡️</div>
+              <div class="contato-info">
+                <h3>Privacidade e dados — FolhaPronta</h3>
+                <p>
+                  <strong style="color:var(--color-white)">Canal de contato:</strong>
+                  <a href="https://wa.me/5591988799352">pelo nosso WhatsApp</a>
+                </p>
+                <p>
+                  <strong style="color:var(--color-white)">Atendimento:</strong>
+                  Respondemos no menor prazo possível, normalmente em até <strong style="color:var(--color-white)">2 dias úteis</strong>.
+                </p>
+                <p>
+                  <strong style="color:var(--color-white)">Autoridade:</strong>
+                  Você também pode contatar a ANPD pelo portal gov.br/anpd.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 10. Atualizações -->
+          <section class="legal-secao" id="atualizacoes">
+            <div class="legal-secao-header">
+              <div class="legal-secao-num">10</div>
               <h2>Atualizações desta política</h2>
             </div>
 
             <p>
-              Esta política pode ser atualizada periodicamente para refletir mudanças em nossas
-              práticas, novos serviços ou alterações na legislação aplicável.
-            </p>
-            <p>
-              Sempre que houver alterações relevantes:
+              Esta política pode ser atualizada para refletir mudanças no serviço (como a introdução
+              de anúncios) ou na legislação. Sempre que houver alterações relevantes:
             </p>
             <ul class="legal-lista">
-              <li>A data de <strong>"Última atualização"</strong> no topo desta página será alterada.</li>
-              <li>Usuários com conta nos planos pagos receberão notificação por e-mail com ao menos <strong>15 dias de antecedência</strong> antes das mudanças entrarem em vigor.</li>
-              <li>Mudanças que ampliem o uso de dados ou alterem direitos dos titulares requerem novo consentimento explícito.</li>
+              <li>A data de <strong>"Vigência"</strong> no topo desta página será atualizada.</li>
+              <li>Mudanças importantes — especialmente as que ampliem o uso de dados — serão sinalizadas de forma clara no site, e pediremos seu consentimento quando exigido pela LGPD.</li>
             </ul>
             <p>
-              Recomendamos revisar esta política periodicamente. O uso continuado do serviço
-              após as atualizações implica aceitação dos novos termos.
+              Recomendamos revisar esta página periodicamente.
             </p>
 
-            <div class="legal-card" style="margin-top: var(--space-6);">
+            <div class="legal-card" style="margin-top:var(--space-6);">
               <div class="legal-card-titulo" style="color:var(--color-gray-700);">📜 Histórico de versões</div>
               <ul class="legal-lista" style="margin:0;">
-                <li><strong>24/05/2025</strong> — Versão inicial da política de privacidade.</li>
+                <li><strong>13/06/2026</strong> — Reescrita completa: alinhamento ao modelo 100% gratuito e estático; correção do domínio (folhapronta.app.br); remoção de seções sobre planos pagos, contas e pagamento que não existem; esclarecimento sobre estatísticas anônimas e sobre anúncios futuros.</li>
+                <li><strong>26/05/2026</strong> — Versão inicial da política de privacidade.</li>
               </ul>
             </div>
           </section>
@@ -916,9 +573,7 @@
           <a href="../index.html" class="logo" style="color: white">
             <img src="../assets/icons/logo.svg" alt="FolhaPronta" height="44" style="display:block; filter: brightness(0) invert(1);">
           </a>
-          <p class="footer-desc">
-            Papéis prontos para imprimir. Grátis, rápido e sem complicação.
-          </p>
+          <p class="footer-desc">Papéis prontos para imprimir. Grátis, rápido e sem complicação.</p>
         </div>
 
         <div class="footer-col">
@@ -928,15 +583,8 @@
             <li><a href="../catalogo.html?cat=tecnico">Técnicos</a></li>
             <li><a href="../catalogo.html?cat=empresarial">Empresariais</a></li>
             <li><a href="../catalogo.html?cat=recibos">Recibos</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h6 class="footer-titulo">Planos</h6>
-          <ul class="footer-links">
-            <li><a href="planos.html#free">Free</a></li>
-            <li><a href="planos.html#premium">Premium</a></li>
-            <li><a href="planos.html#max">Max</a></li>
+            <li><a href="../catalogo.html?cat=criativo">Criativos</a></li>
+            <li><a href="../catalogo.html?cat=agro">Agro</a></li>
           </ul>
         </div>
 
@@ -951,7 +599,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 FolhaPronta. Feito com ❤️ no Brasil.</p>
+        <p>© 2026 FolhaPronta. Feito com ❤️ no Brasil.</p>
         <p class="footer-lgpd-info">
           Seus dados são protegidos conforme a
           <a href="privacidade.html">LGPD (Lei 13.709/2018)</a>
@@ -963,41 +611,32 @@
   <!-- ── BANNER LGPD ─────────────────────────────────────────── -->
   <div class="lgpd-banner hidden" id="lgpd-banner">
     <p>
-      🍪 Usamos apenas cookies essenciais para salvar suas preferências localmente.
-      Nenhum dado é enviado a servidores. Saiba mais em nossa
-      <a href="privacidade.html">Política de Privacidade</a>.
+      🍪 Usamos apenas armazenamento local (localStorage) para salvar suas preferências no
+      seu próprio dispositivo. O conteúdo dos seus PDFs não é enviado a servidores. Saiba mais
+      em nossa <a href="privacidade.html">Política de Privacidade</a>.
     </p>
     <div class="lgpd-acoes">
       <button class="btn btn-secondary btn-sm" id="lgpd-aceitar">Entendi, aceitar</button>
       <button class="btn btn-ghost btn-sm" id="lgpd-recusar"
-              style="color:var(--color-gray-400)">
-        Só essenciais
-      </button>
+              style="color:var(--color-gray-400)">Só essenciais</button>
     </div>
   </div>
 
   <!-- ── BOTÃO WHATSAPP ──────────────────────────────────────── -->
-  <a href="https://wa.me/5591988799352?text=Olá!%20Tenho%20uma%20sugestão%20para%20o%20FolhaPronta:"
-     class="btn-whatsapp"
-     target="_blank"
-     rel="noopener noreferrer"
-     title="Enviar sugestão pelo WhatsApp"
-     aria-label="Feedback pelo WhatsApp">
+  <a href="https://wa.me/5591988799352?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20privacidade%20no%20FolhaPronta:"
+     class="btn-whatsapp" target="_blank" rel="noopener noreferrer"
+     title="Dúvidas de privacidade pelo WhatsApp" aria-label="Privacidade pelo WhatsApp">
     💬
   </a>
 
   <!-- ── SCRIPTS ─────────────────────────────────────────────── -->
-  <script src="../assets/js/planos/planos.js"></script>
-  <script src="../assets/js/core/pdf-engine.js"></script>
   <script src="../assets/js/core/lgpd.js"></script>
 
   <script>
-    // ── Header
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
     });
 
-    // ── Menu mobile
     const btnMenu = document.getElementById('btn-menu-mobile');
     const navLinks = document.querySelector('.nav-links');
     if (btnMenu) {
@@ -1007,24 +646,20 @@
       });
     }
 
-    // ── Sumário: destacar seção ativa ao rolar
-    const secoes = document.querySelectorAll('.legal-secao[id]');
+    const secoes   = document.querySelectorAll('.legal-secao[id]');
     const linksNav = document.querySelectorAll('.sumario-link');
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           linksNav.forEach(link => {
-            const ativo = link.getAttribute('href') === '#' + entry.target.id;
-            link.classList.toggle('ativo', ativo);
+            link.classList.toggle('ativo', link.getAttribute('href') === '#' + entry.target.id);
           });
         }
       });
-    }, {
-      rootMargin: '-20% 0px -70% 0px'
-    });
+    }, { rootMargin: '-20% 0px -70% 0px' });
 
-    secoes.forEach(secao => observer.observe(secao));
+    secoes.forEach(s => observer.observe(s));
   </script>
 
 </body>

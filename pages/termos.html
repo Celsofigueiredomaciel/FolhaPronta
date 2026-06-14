@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Termos de Uso do FolhaPronta — Condições para utilização do serviço de geração de PDFs.">
+  <meta name="description" content="Termos de Uso do FolhaPronta — Condições para utilização do serviço gratuito de geração de PDFs.">
   <meta name="author" content="FolhaPronta">
   <meta name="robots" content="noindex">
   <link rel="canonical" href="https://folhapronta.app.br/pages/termos.html">
@@ -14,343 +14,142 @@
   <link rel="stylesheet" href="../assets/css/components.css">
 
   <style>
-    /* ── Layout geral da página legal ───────────────────────── */
     .legal-hero {
       background: var(--color-gray-50);
       border-bottom: 2px solid var(--color-gray-200);
       padding: calc(var(--header-height) + var(--space-10)) 0 var(--space-10);
     }
-
     .legal-hero-inner {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: var(--space-6);
-      flex-wrap: wrap;
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: var(--space-6); flex-wrap: wrap;
     }
-
     .legal-hero-titulo {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
+      display: flex; align-items: center; gap: var(--space-3);
       margin-bottom: var(--space-3);
     }
-
-    .legal-hero-titulo h1 {
-      font-size: var(--text-3xl);
-      margin: 0;
-    }
-
-    .legal-hero p {
-      color: var(--color-gray-500);
-      max-width: 580px;
-      font-size: var(--text-sm);
-    }
-
+    .legal-hero-titulo h1 { font-size: var(--text-3xl); margin: 0; }
+    .legal-hero p { color: var(--color-gray-500); max-width: 580px; font-size: var(--text-sm); }
     .legal-data-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      background: var(--color-white);
-      border: 2px solid var(--color-gray-200);
-      border-radius: var(--radius-lg);
-      padding: var(--space-3) var(--space-5);
-      font-size: var(--text-xs);
-      font-weight: 700;
-      font-family: var(--font-display);
-      color: var(--color-gray-600);
-      white-space: nowrap;
-      flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      background: var(--color-white); border: 2px solid var(--color-gray-200);
+      border-radius: var(--radius-lg); padding: var(--space-3) var(--space-5);
+      font-size: var(--text-xs); font-weight: 700; font-family: var(--font-display);
+      color: var(--color-gray-600); white-space: nowrap; flex-shrink: 0;
     }
-
     .legal-data-badge span:first-child { font-size: 18px; }
-
-    /* ── Layout principal: sumário + conteúdo ───────────────── */
-    .legal-body {
-      padding: var(--space-12) 0 var(--space-20);
-    }
-
+    .legal-body { padding: var(--space-12) 0 var(--space-20); }
     .legal-layout {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: var(--space-12);
-      align-items: start;
+      display: grid; grid-template-columns: 260px 1fr;
+      gap: var(--space-12); align-items: start;
     }
-
-    /* ── Sumário lateral ────────────────────────────────────── */
     .sumario {
-      position: sticky;
-      top: calc(var(--header-height) + var(--space-6));
-      background: var(--color-white);
-      border: 2px solid var(--color-gray-200);
-      border-radius: var(--radius-xl);
-      padding: var(--space-6);
+      position: sticky; top: calc(var(--header-height) + var(--space-6));
+      background: var(--color-white); border: 2px solid var(--color-gray-200);
+      border-radius: var(--radius-xl); padding: var(--space-6);
     }
-
     .sumario-titulo {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: var(--text-xs);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--color-gray-400);
-      margin-bottom: var(--space-4);
+      font-family: var(--font-display); font-weight: 800; font-size: var(--text-xs);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--color-gray-400); margin-bottom: var(--space-4);
     }
-
-    .sumario-lista {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-1);
-    }
-
+    .sumario-lista { display: flex; flex-direction: column; gap: var(--space-1); }
     .sumario-link {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-3);
-      padding: var(--space-2) var(--space-3);
-      border-radius: var(--radius-md);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      color: var(--color-gray-600);
-      text-decoration: none;
-      transition: all var(--transition-fast);
-      line-height: 1.4;
+      display: flex; align-items: flex-start; gap: var(--space-3);
+      padding: var(--space-2) var(--space-3); border-radius: var(--radius-md);
+      font-size: var(--text-xs); font-weight: 600; color: var(--color-gray-600);
+      text-decoration: none; transition: all var(--transition-fast); line-height: 1.4;
     }
-
-    .sumario-link:hover {
-      background: var(--color-primary-light);
-      color: var(--color-primary);
-    }
-
-    .sumario-link.ativo {
-      background: var(--color-primary-light);
-      color: var(--color-primary);
-    }
-
+    .sumario-link:hover { background: var(--color-primary-light); color: var(--color-primary); }
+    .sumario-link.ativo { background: var(--color-primary-light); color: var(--color-primary); }
     .sumario-num {
-      flex-shrink: 0;
-      width: 18px;
-      height: 18px;
-      background: var(--color-gray-100);
-      border-radius: var(--radius-full);
-      font-size: 10px;
-      font-weight: 900;
-      font-family: var(--font-display);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-gray-500);
-      margin-top: 1px;
+      flex-shrink: 0; width: 18px; height: 18px; background: var(--color-gray-100);
+      border-radius: var(--radius-full); font-size: 10px; font-weight: 900;
+      font-family: var(--font-display); display: flex; align-items: center;
+      justify-content: center; color: var(--color-gray-500); margin-top: 1px;
     }
-
-    .sumario-link.ativo .sumario-num {
-      background: var(--color-primary);
-      color: var(--color-white);
-    }
-
+    .sumario-link.ativo .sumario-num { background: var(--color-primary); color: var(--color-white); }
     .sumario-badge {
-      margin-top: var(--space-6);
-      padding: var(--space-4);
-      background: #FEF3C7;
-      border-radius: var(--radius-lg);
-      font-size: var(--text-xs);
-      color: #92400E;
-      font-weight: 600;
-      text-align: center;
-      line-height: 1.5;
+      margin-top: var(--space-6); padding: var(--space-4); background: #FEF3C7;
+      border-radius: var(--radius-lg); font-size: var(--text-xs); color: #92400E;
+      font-weight: 600; text-align: center; line-height: 1.5;
     }
-
-    /* ── Artigo ─────────────────────────────────────────────── */
     .legal-artigo { min-width: 0; }
-
     .legal-secao {
-      margin-bottom: var(--space-12);
-      padding-bottom: var(--space-10);
+      margin-bottom: var(--space-12); padding-bottom: var(--space-10);
       border-bottom: 2px solid var(--color-gray-100);
       scroll-margin-top: calc(var(--header-height) + var(--space-6));
     }
-
-    .legal-secao:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-    }
-
+    .legal-secao:last-child { border-bottom: none; margin-bottom: 0; }
     .legal-secao-header {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      margin-bottom: var(--space-5);
+      display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-5);
     }
-
     .legal-secao-num {
-      width: 36px;
-      height: 36px;
-      border-radius: var(--radius-full);
-      background: var(--color-primary);
-      color: var(--color-white);
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: var(--text-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      width: 36px; height: 36px; border-radius: var(--radius-full);
+      background: var(--color-primary); color: var(--color-white);
+      font-family: var(--font-display); font-weight: 900; font-size: var(--text-sm);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-
-    .legal-secao h2 {
-      font-size: var(--text-xl);
-      margin: 0;
-    }
-
+    .legal-secao h2 { font-size: var(--text-xl); margin: 0; }
     .legal-secao p {
-      color: var(--color-gray-600);
-      font-size: var(--text-sm);
-      line-height: 1.8;
-      margin-bottom: var(--space-4);
+      color: var(--color-gray-600); font-size: var(--text-sm);
+      line-height: 1.8; margin-bottom: var(--space-4);
     }
-
     .legal-secao p:last-child { margin-bottom: 0; }
-
     .legal-secao h3 {
-      font-size: var(--text-base);
-      color: var(--color-gray-800);
+      font-size: var(--text-base); color: var(--color-gray-800);
       margin: var(--space-5) 0 var(--space-3);
     }
-
-    /* ── Listas ─────────────────────────────────────────────── */
     .legal-lista {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-      margin: var(--space-4) 0;
-      padding-left: var(--space-4);
+      display: flex; flex-direction: column; gap: var(--space-2);
+      margin: var(--space-4) 0; padding-left: var(--space-4);
     }
-
     .legal-lista li {
-      font-size: var(--text-sm);
-      color: var(--color-gray-600);
-      line-height: 1.7;
-      position: relative;
-      padding-left: var(--space-5);
+      font-size: var(--text-sm); color: var(--color-gray-600); line-height: 1.7;
+      position: relative; padding-left: var(--space-5);
     }
-
     .legal-lista li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: var(--color-primary);
-      font-weight: 900;
+      content: '•'; position: absolute; left: 0;
+      color: var(--color-primary); font-weight: 900;
     }
-
     .legal-lista.proibido li::before { color: var(--color-danger); content: '✗'; }
     .legal-lista.permitido li::before { color: var(--color-secondary); content: '✓'; }
-
-    /* ── Cards de destaque ──────────────────────────────────── */
     .legal-card {
-      background: var(--color-gray-50);
-      border: 2px solid var(--color-gray-200);
-      border-radius: var(--radius-xl);
-      padding: var(--space-5) var(--space-6);
+      background: var(--color-gray-50); border: 2px solid var(--color-gray-200);
+      border-radius: var(--radius-xl); padding: var(--space-5) var(--space-6);
       margin: var(--space-5) 0;
     }
-
     .legal-card.destaque-verde  { background: #F0FDF4; border-color: #BBF7D0; }
     .legal-card.destaque-azul   { background: var(--color-primary-light); border-color: #BFDBFE; }
     .legal-card.destaque-amarelo { background: #FFFBEB; border-color: #FDE68A; }
     .legal-card.destaque-vermelho { background: #FEF2F2; border-color: #FECACA; }
-
     .legal-card-titulo {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: var(--text-sm);
-      margin-bottom: var(--space-3);
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
+      font-family: var(--font-display); font-weight: 800; font-size: var(--text-sm);
+      margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-2);
     }
-
     .legal-card.destaque-verde   .legal-card-titulo { color: #166534; }
     .legal-card.destaque-azul    .legal-card-titulo { color: var(--color-primary); }
     .legal-card.destaque-amarelo .legal-card-titulo { color: #92400E; }
     .legal-card.destaque-vermelho .legal-card-titulo { color: #991B1B; }
-
-    /* ── Tabela de planos resumida ──────────────────────────── */
-    .tabela-resumo {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: var(--text-sm);
-      margin: var(--space-5) 0;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 2px solid var(--color-gray-200);
-    }
-
-    .tabela-resumo th {
-      background: var(--color-gray-800);
-      color: var(--color-white);
-      padding: var(--space-3) var(--space-4);
-      text-align: left;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: var(--text-xs);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .tabela-resumo td {
-      padding: var(--space-3) var(--space-4);
-      color: var(--color-gray-700);
-      border-bottom: 1px solid var(--color-gray-100);
-      vertical-align: top;
-    }
-
-    .tabela-resumo tr:last-child td { border-bottom: none; }
-    .tabela-resumo tr:nth-child(even) td { background: var(--color-gray-50); }
-    .tabela-resumo td:first-child { font-weight: 700; color: var(--color-gray-800); white-space: nowrap; }
-
-    /* ── Bloco de contato ───────────────────────────────────── */
     .contato-card {
-      background: var(--color-gray-900);
-      color: var(--color-white);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8);
-      margin: var(--space-5) 0;
-      display: flex;
-      gap: var(--space-6);
-      align-items: flex-start;
-      flex-wrap: wrap;
+      background: var(--color-gray-900); color: var(--color-white);
+      border-radius: var(--radius-xl); padding: var(--space-8);
+      margin: var(--space-5) 0; display: flex; gap: var(--space-6);
+      align-items: flex-start; flex-wrap: wrap;
     }
-
     .contato-icone { font-size: 48px; flex-shrink: 0; }
-
     .contato-info { flex: 1; min-width: 220px; }
-
-    .contato-info h3 {
-      color: var(--color-white);
-      font-size: var(--text-lg);
-      margin-bottom: var(--space-3);
-    }
-
+    .contato-info h3 { color: var(--color-white); font-size: var(--text-lg); margin-bottom: var(--space-3); }
     .contato-info p {
-      color: var(--color-gray-400) !important;
-      font-size: var(--text-sm) !important;
+      color: var(--color-gray-400) !important; font-size: var(--text-sm) !important;
       margin-bottom: var(--space-2) !important;
     }
-
-    .contato-info a {
-      color: var(--color-primary-light);
-      text-decoration: underline;
-      font-weight: 600;
-    }
-
-    /* ── Responsivo ─────────────────────────────────────────── */
+    .contato-info a { color: var(--color-primary-light); text-decoration: underline; font-weight: 600; }
     @media (max-width: 1024px) {
       .legal-layout { grid-template-columns: 1fr; }
       .sumario { position: static; }
       .sumario-lista { flex-direction: row; flex-wrap: wrap; gap: var(--space-2); }
       .sumario-link { flex: 0 0 auto; }
     }
-
     @media (max-width: 768px) {
       .legal-hero-titulo h1 { font-size: var(--text-2xl); }
       .contato-card { flex-direction: column; gap: var(--space-4); }
@@ -370,12 +169,10 @@
 
         <ul class="nav-links">
           <li><a href="../catalogo.html" class="nav-link">Catálogo</a></li>
-          <li><a href="planos.html" class="nav-link">Planos</a></li>
           <li><a href="../index.html#como-funciona" class="nav-link">Como funciona</a></li>
         </ul>
 
         <div class="nav-acoes">
-          <a href="planos.html" class="btn btn-outline btn-sm">Ver planos</a>
           <a href="../catalogo.html" class="btn btn-primary btn-sm">Imprimir agora</a>
         </div>
 
@@ -397,15 +194,15 @@
             <h1>Termos de Uso</h1>
           </div>
           <p>
-            Condições que regem o uso do FolhaPronta. Ao utilizar o serviço,
-            você concorda com estes termos em conformidade com o
+            Condições que regem o uso do FolhaPronta, um serviço gratuito.
+            Ao utilizar o serviço, você concorda com estes termos em conformidade com o
             <strong>Código de Defesa do Consumidor (Lei 8.078/1990)</strong>
             e a <strong>LGPD (Lei 13.709/2018)</strong>.
           </p>
         </div>
         <div class="legal-data-badge">
           <span>📅</span>
-          <span>Vigência: 24 de maio de 2025</span>
+          <span>Vigência: 13 de junho de 2026</span>
         </div>
       </div>
     </div>
@@ -421,16 +218,18 @@
           <nav class="sumario" aria-label="Sumário dos termos">
             <div class="sumario-titulo">Sumário</div>
             <ul class="sumario-lista">
-              <li><a href="#aceitacao"           class="sumario-link"><span class="sumario-num">1</span>Aceitação</a></li>
-              <li><a href="#servico"             class="sumario-link"><span class="sumario-num">2</span>O serviço</a></li>
-              <li><a href="#uso-permitido"       class="sumario-link"><span class="sumario-num">3</span>Uso permitido e proibido</a></li>
-              <li><a href="#planos-pagamentos"   class="sumario-link"><span class="sumario-num">4</span>Planos e pagamentos</a></li>
-              <li><a href="#propriedade"         class="sumario-link"><span class="sumario-num">5</span>Propriedade intelectual</a></li>
-              <li><a href="#isencao"             class="sumario-link"><span class="sumario-num">6</span>Isenção de responsabilidade</a></li>
-              <li><a href="#limitacao"           class="sumario-link"><span class="sumario-num">7</span>Limitação de responsabilidade</a></li>
-              <li><a href="#modificacoes"        class="sumario-link"><span class="sumario-num">8</span>Modificações</a></li>
-              <li><a href="#lei-aplicavel"       class="sumario-link"><span class="sumario-num">9</span>Lei aplicável e foro</a></li>
-              <li><a href="#contato"             class="sumario-link"><span class="sumario-num">10</span>Contato</a></li>
+              <li><a href="#aceitacao"      class="sumario-link"><span class="sumario-num">1</span>Aceitação</a></li>
+              <li><a href="#servico"        class="sumario-link"><span class="sumario-num">2</span>O serviço</a></li>
+              <li><a href="#uso-permitido"  class="sumario-link"><span class="sumario-num">3</span>Uso permitido e proibido</a></li>
+              <li><a href="#gratuidade"     class="sumario-link"><span class="sumario-num">4</span>Gratuidade do serviço</a></li>
+              <li><a href="#propriedade"    class="sumario-link"><span class="sumario-num">5</span>Propriedade intelectual</a></li>
+              <li><a href="#isencao"        class="sumario-link"><span class="sumario-num">6</span>Isenção de responsabilidade</a></li>
+              <li><a href="#limitacao"      class="sumario-link"><span class="sumario-num">7</span>Limitação de responsabilidade</a></li>
+              <li><a href="#indenizacao"    class="sumario-link"><span class="sumario-num">8</span>Indenização pelo usuário</a></li>
+              <li><a href="#modificacoes"   class="sumario-link"><span class="sumario-num">9</span>Modificações</a></li>
+              <li><a href="#disposicoes"    class="sumario-link"><span class="sumario-num">10</span>Disposições gerais</a></li>
+              <li><a href="#lei-aplicavel"  class="sumario-link"><span class="sumario-num">11</span>Lei aplicável e foro</a></li>
+              <li><a href="#contato"        class="sumario-link"><span class="sumario-num">12</span>Contato</a></li>
             </ul>
 
             <div class="sumario-badge">
@@ -447,12 +246,12 @@
           <div style="margin-bottom:var(--space-10);padding-bottom:var(--space-8);border-bottom:2px solid var(--color-gray-100);">
             <p style="font-size:var(--text-base);color:var(--color-gray-700);line-height:1.8;">
               Estes Termos de Uso ("Termos") regulam a relação entre o <strong>FolhaPronta</strong>
-              ("nós", "nosso"), operador do site <strong>folhapronta.com.br</strong>, e você
-              ("usuário", "você"), ao acessar ou utilizar nosso serviço de geração de documentos em PDF.
+              ("nós", "nosso"), operador do site <strong>folhapronta.app.br</strong>, e você
+              ("usuário", "você"), ao acessar ou utilizar nosso serviço gratuito de geração de documentos em PDF.
             </p>
             <p style="font-size:var(--text-sm);color:var(--color-gray-500);margin-top:var(--space-4);line-height:1.8;">
-              Leia com atenção antes de usar o serviço. Se tiver dúvidas, entre em contato pelo e-mail
-              <strong>contato@folhapronta.com.br</strong> antes de prosseguir.
+              Leia com atenção antes de usar o serviço. Se tiver dúvidas, entre em contato
+              <a href="https://wa.me/5591988799352">pelo nosso WhatsApp</a> antes de prosseguir.
             </p>
           </div>
 
@@ -464,17 +263,16 @@
             </div>
 
             <p>
-              Ao acessar o FolhaPronta — seja para visualizar o catálogo, gerar um PDF ou assinar
-              um plano pago —, você declara que leu, compreendeu e concorda com estes Termos de Uso
-              e com nossa <a href="privacidade.html" style="color:var(--color-primary);font-weight:600;">Política de Privacidade</a>.
+              Ao acessar o FolhaPronta — seja para visualizar o catálogo ou gerar um PDF —,
+              você declara que leu, compreendeu e concorda com estes Termos de Uso e com nossa
+              <a href="privacidade.html" style="color:var(--color-primary);font-weight:600;">Política de Privacidade</a>.
             </p>
 
             <div class="legal-card destaque-amarelo">
               <div class="legal-card-titulo">⚠️ Requisito de idade</div>
               <p style="font-size:var(--text-sm);color:#92400E;line-height:1.7;margin:0;">
-                O FolhaPronta é destinado a maiores de <strong>18 anos</strong>. Menores de idade
-                podem utilizar o serviço somente com o consentimento expresso dos pais ou responsáveis
-                legais, que assumem solidariamente as obrigações destes Termos.
+                O FolhaPronta é destinado a <strong>maiores de 18 anos</strong>. Ao usar o serviço,
+                você declara ter pelo menos 18 anos de idade e capacidade civil para aceitar estes Termos.
               </p>
             </div>
 
@@ -495,32 +293,32 @@
             <p>
               O FolhaPronta é uma plataforma web que permite ao usuário configurar e gerar
               documentos em formato PDF diretamente no navegador, sem instalação de software
-              adicional e sem necessidade de cadastro no plano gratuito.
+              adicional e sem necessidade de cadastro.
             </p>
 
             <h3>Modelos disponíveis</h3>
             <p>
-              O catálogo inclui modelos de papéis para uso escolar, técnico, empresarial, de recibos
-              e criativo. A disponibilidade de cada modelo depende do plano contratado, conforme
-              descrito na <a href="planos.html" style="color:var(--color-primary);font-weight:600;">página de planos</a>.
+              O catálogo inclui modelos de papéis para uso escolar, técnico, empresarial, de recibos,
+              criativo e agropecuário. Novos modelos são adicionados periodicamente. Alguns modelos
+              aparecem marcados como "em breve" enquanto ainda estão em desenvolvimento.
             </p>
 
             <h3>Funcionamento técnico</h3>
             <p>
-              No plano Free, a geração de PDFs ocorre integralmente no navegador do usuário
-              (client-side), utilizando a biblioteca jsPDF. Nenhum conteúdo do documento é
-              transmitido aos nossos servidores. Nos planos pagos, algumas funcionalidades
-              avançadas podem envolver processamento em servidor, conforme detalhado na
-              Política de Privacidade.
+              A geração de PDFs ocorre integralmente no navegador do usuário (client-side),
+              utilizando a biblioteca jsPDF. O conteúdo que você preenche nos formulários (nome,
+              valores, datas, observações) <strong>não é transmitido aos nossos servidores</strong> —
+              tudo é processado localmente no seu dispositivo. Os detalhes sobre os dados anônimos de
+              acesso que utilizamos para estatísticas estão descritos na
+              <a href="privacidade.html" style="color:var(--color-primary);font-weight:600;">Política de Privacidade</a>.
             </p>
 
             <div class="legal-card destaque-azul">
               <div class="legal-card-titulo">ℹ️ Disponibilidade do serviço</div>
               <p style="font-size:var(--text-sm);color:var(--color-primary);line-height:1.7;margin:0;">
-                O FolhaPronta é oferecido no modelo SaaS (<em>Software as a Service</em>). Nos esforçamos
-                para manter disponibilidade de <strong>99% ao mês</strong>, mas não garantimos operação
-                ininterrupta. Manutenções programadas serão comunicadas com antecedência mínima de
-                24 horas por meio do site.
+                O FolhaPronta é oferecido no estado em que se encontra, de forma gratuita.
+                Nos esforçamos para manter o serviço disponível, mas não garantimos operação
+                ininterrupta nem nos responsabilizamos por indisponibilidades temporárias.
               </p>
             </div>
           </section>
@@ -538,115 +336,80 @@
               <li>Imprimir, salvar e distribuir os PDFs gerados para fins lícitos.</li>
               <li>Usar os documentos gerados em atividades comerciais, como emitir recibos para clientes.</li>
               <li>Compartilhar o link do FolhaPronta com terceiros.</li>
-              <li>Personalizar os documentos com seus dados (nome, empresa, logo) dentro das opções oferecidas.</li>
+              <li>Personalizar os documentos com seus dados (nome, empresa) dentro das opções oferecidas.</li>
             </ul>
 
             <h3>É expressamente proibido</h3>
             <ul class="legal-lista proibido">
               <li>Usar o serviço para gerar documentos com conteúdo ilegal, fraudulento, difamatório, obsceno ou que viole direitos de terceiros.</li>
               <li>Criar documentos que imitem ou falsifiquem documentos oficiais de governo, instituições financeiras ou entidades reguladas.</li>
-              <li>Tentar contornar os limites do plano Free (ex.: scripts automáticos para resetar contadores diários).</li>
-              <li>Realizar engenharia reversa, descompilar ou copiar o código-fonte, os templates ou os algoritmos de geração do FolhaPronta.</li>
-              <li>Usar crawlers, bots ou ferramentas automatizadas para acessar o serviço em volume superior ao uso humano normal.</li>
+              <li>Tentar contornar os limites de uso do serviço (ex.: scripts automáticos para resetar o contador diário de gerações).</li>
+              <li>Realizar engenharia reversa, descompilar ou copiar o código-fonte, os templates ou os algoritmos de geração do FolhaPronta para uso próprio ou comercial.</li>
+              <li>Usar crawlers, bots ou ferramentas automatizadas para acessar o serviço de forma que exceda o uso humano normal (ver definição abaixo).</li>
               <li>Revender, sublicenciar ou oferecer o acesso ao FolhaPronta como um serviço próprio sem autorização prévia por escrito.</li>
               <li>Interferir na infraestrutura, segurança ou integridade do serviço (ataques DDoS, injeção de código, etc.).</li>
             </ul>
 
+            <div class="legal-card destaque-azul">
+              <div class="legal-card-titulo">ℹ️ O que é "uso humano normal"</div>
+              <p style="font-size:var(--text-sm);color:var(--color-primary);line-height:1.7;margin:0;">
+                Para fins destes Termos, considera-se uso humano normal a geração de até
+                <strong>10 (dez) PDFs por dia, por dispositivo</strong> — o mesmo limite gratuito
+                descrito na seção 4. Acessos automatizados que ultrapassem esse padrão de forma
+                sistemática, ou que tentem burlar o limite, são considerados uso abusivo.
+              </p>
+            </div>
+
             <div class="legal-card destaque-vermelho">
               <div class="legal-card-titulo">🚫 Consequências do uso indevido</div>
               <p style="font-size:var(--text-sm);color:#991B1B;line-height:1.7;margin:0;">
-                O descumprimento destas regras pode resultar em suspensão ou encerramento imediato da conta,
-                sem direito a reembolso de valores pagos, além de responsabilização civil e criminal nos
-                termos da legislação brasileira.
+                O descumprimento destas regras pode resultar em bloqueio do acesso ao serviço,
+                além de responsabilização civil e criminal nos termos da legislação brasileira.
               </p>
             </div>
           </section>
 
-          <!-- 4. Planos e pagamentos -->
-          <section class="legal-secao" id="planos-pagamentos">
+          <!-- 4. Gratuidade do serviço -->
+          <section class="legal-secao" id="gratuidade">
             <div class="legal-secao-header">
               <div class="legal-secao-num">4</div>
-              <h2>Planos e pagamentos</h2>
+              <h2>Gratuidade do serviço</h2>
             </div>
 
-            <h3>Estrutura de planos</h3>
-            <table class="tabela-resumo">
-              <thead>
-                <tr>
-                  <th>Plano</th>
-                  <th>Valor</th>
-                  <th>Cobrança</th>
-                  <th>Cadastro</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Free</td>
-                  <td>R$ 0,00</td>
-                  <td>Sem cobrança</td>
-                  <td>Não necessário</td>
-                </tr>
-                <tr>
-                  <td>Premium</td>
-                  <td>R$ 9,90/mês ou R$ 7,90/mês (anual)</td>
-                  <td>Mensal ou anual antecipado</td>
-                  <td>Obrigatório</td>
-                </tr>
-                <tr>
-                  <td>Max</td>
-                  <td>R$ 24,90/mês ou R$ 19,90/mês (anual)</td>
-                  <td>Mensal ou anual antecipado</td>
-                  <td>Obrigatório</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <h3>Cobrança e renovação</h3>
-            <p>
-              Os planos pagos são cobrados de forma recorrente — mensalmente ou anualmente,
-              conforme a opção escolhida no momento da assinatura. A renovação é automática
-              ao final de cada período, até que o usuário cancele.
-            </p>
-            <p>
-              Os preços exibidos incluem todos os tributos aplicáveis. Nos reservamos o direito
-              de reajustar os valores com aviso prévio de <strong>30 dias</strong> por e-mail.
-              Se você não concordar com o novo preço, poderá cancelar antes da renovação sem ônus.
-            </p>
-
-            <h3>Cancelamento</h3>
-            <p>
-              Você pode cancelar sua assinatura a qualquer momento pela área do cliente ou
-              pelo e-mail <strong>contato@folhapronta.com.br</strong>. Após o cancelamento:
-            </p>
-            <ul class="legal-lista">
-              <li>O acesso ao plano permanece ativo até o fim do período já pago.</li>
-              <li>Não há cobrança adicional após o cancelamento.</li>
-              <li>No plano anual, o cancelamento encerra a renovação automática — o período restante dos 12 meses é aproveitado normalmente.</li>
-            </ul>
-
-            <h3>Reembolso</h3>
             <div class="legal-card destaque-verde">
-              <div class="legal-card-titulo">✅ Garantia de 7 dias (CDC)</div>
+              <div class="legal-card-titulo">✅ 100% gratuito, sem cadastro</div>
               <p style="font-size:var(--text-sm);color:#166534;line-height:1.7;margin:0;">
-                Em conformidade com o art. 49 do Código de Defesa do Consumidor, você tem
-                direito a <strong>reembolso integral</strong> nos primeiros <strong>7 dias</strong>
-                após a contratação de qualquer plano pago, sem precisar justificar o cancelamento.
-                Solicite pelo e-mail <strong>contato@folhapronta.com.br</strong>.
+                O FolhaPronta é, atualmente, totalmente <strong>gratuito</strong>. Não há cobrança,
+                não é necessário cadastro e não solicitamos dados de pagamento.
               </p>
             </div>
+
+            <h3>Condições de uso gratuito</h3>
             <p>
-              Após os 7 dias iniciais, não realizamos reembolso proporcional por períodos não
-              utilizados em assinaturas mensais. Para o plano anual, avaliamos reembolso proporcional
-              em casos de encerramento do serviço por nossa iniciativa.
+              O serviço gratuito está sujeito às seguintes condições, que existem para manter
+              a plataforma sustentável e disponível a todos:
+            </p>
+            <ul class="legal-lista">
+              <li>Limite de <strong>10 (dez) gerações de PDF por dia</strong>, por dispositivo. O contador é reiniciado automaticamente à meia-noite.</li>
+              <li>Os PDFs gerados incluem uma pequena marca d'água discreta no rodapé, identificando o FolhaPronta como origem do modelo.</li>
+            </ul>
+
+            <h3>Publicidade e patrocínio</h3>
+            <p>
+              Para manter o serviço gratuito, o FolhaPronta poderá, futuramente, exibir anúncios
+              de terceiros ou espaços de patrocínio no site. Caso isso ocorra, avisaremos
+              previamente, atualizaremos nossa
+              <a href="privacidade.html" style="color:var(--color-primary);font-weight:600;">Política de Privacidade</a>
+              e solicitaremos o seu consentimento quando exigido pela LGPD. A exibição de anúncios
+              não altera a gratuidade da geração de PDFs.
             </p>
 
-            <h3>Inadimplência</h3>
+            <h3>Eventuais planos pagos no futuro</h3>
             <p>
-              Em caso de falha no pagamento, o acesso ao plano pago é automaticamente rebaixado
-              para o plano Free após um período de carência de <strong>5 dias corridos</strong>,
-              durante o qual tentaremos processar o pagamento novamente. Seus dados e configurações
-              serão mantidos por <strong>30 dias</strong> após o rebaixamento para facilitar a
-              reativação da conta.
+              Caso planos pagos venham a ser oferecidos no futuro, seus termos, valores e condições
+              serão divulgados previamente nesta página e na plataforma, <strong>sem qualquer efeito
+              retroativo</strong> sobre o uso gratuito já realizado. A introdução de planos pagos
+              não tornará pago o acesso que hoje é gratuito sem aviso prévio e claro.
             </p>
           </section>
 
@@ -663,7 +426,7 @@
                 Todo documento PDF gerado por você no FolhaPronta é de sua <strong>propriedade exclusiva</strong>.
                 Você pode usar, imprimir, modificar, distribuir e comercializar os documentos gerados
                 sem qualquer restrição ou necessidade de citar o FolhaPronta como fonte
-                (exceto pela marca d'água no plano Free, que é parte do serviço gratuito).
+                (exceto pela marca d'água no rodapé, que é parte do serviço gratuito).
               </p>
             </div>
 
@@ -682,13 +445,11 @@
               por escrito do FolhaPronta.
             </p>
 
-            <h3>Conteúdo enviado pelo usuário</h3>
+            <h3>Conteúdo preenchido pelo usuário</h3>
             <p>
-              Ao fazer upload de imagens (ex.: logo da empresa) para uso nos PDFs, você declara
-              possuir todos os direitos necessários sobre essas imagens e nos concede uma licença
-              limitada, não exclusiva e revogável apenas para processá-las e inseri-las nos
-              documentos solicitados por você. Não armazenamos suas imagens além do necessário
-              para a execução do serviço.
+              Os dados que você digita nos formulários (nome, valores, datas, observações) são
+              processados localmente no seu navegador e inseridos no PDF gerado. Não armazenamos
+              esse conteúdo em nossos servidores.
             </p>
           </section>
 
@@ -705,11 +466,24 @@
               exceto as que não podem ser excluídas por lei (incluindo o CDC).
             </p>
 
+            <div class="legal-card destaque-amarelo">
+              <div class="legal-card-titulo">⚠️ A conferência do conteúdo é do usuário</div>
+              <p style="font-size:var(--text-sm);color:#92400E;line-height:1.7;margin:0;">
+                Todo o conteúdo digitado nos campos do formulário (nomes, valores, datas, textos)
+                é de <strong>responsabilidade exclusiva do usuário</strong>. O FolhaPronta apenas
+                insere no PDF os dados informados por você, sem conferir, validar ou corrigir esse
+                conteúdo. Recomendamos revisar o documento gerado antes de utilizá-lo.
+              </p>
+            </div>
+
             <h3>Não nos responsabilizamos por</h3>
             <ul class="legal-lista">
-              <li>Erros tipográficos, de formatação ou de cálculo inseridos pelo próprio usuário nos campos do formulário.</li>
+              <li>Erros tipográficos, de formatação, de valores ou de cálculo inseridos pelo próprio usuário nos campos do formulário.</li>
               <li>Documentos gerados que não sejam aceitos por terceiros (cartórios, órgãos públicos, instituições financeiras) — recomendamos sempre verificar os requisitos formais exigidos.</li>
               <li>Perdas de dados decorrentes de falha no navegador, sistema operacional ou dispositivo do usuário.</li>
+              <li>Falhas decorrentes de instabilidade ou indisponibilidade da conexão de internet do usuário ou de provedores de acesso.</li>
+              <li>Latência, lentidão ou indisponibilidade temporária causada por serviços de hospedagem, CDN ou infraestrutura de terceiros (como o serviço de hospedagem do site).</li>
+              <li>Erros de impressão, falhas de impressora, configurações de papel ou diferenças de cor/margem decorrentes do dispositivo de impressão do usuário.</li>
               <li>Interrupções de serviço causadas por fatores fora de nosso controle razoável (força maior, falhas de infraestrutura de terceiros, ataques cibernéticos).</li>
               <li>Uso indevido dos documentos gerados por terceiros que obtiveram acesso com ou sem autorização do usuário.</li>
               <li>Compatibilidade do PDF gerado com versões específicas de software de visualização de PDF de terceiros.</li>
@@ -734,40 +508,65 @@
             </div>
 
             <p>
-              Na máxima extensão permitida pela legislação brasileira aplicável, a responsabilidade
-              total do FolhaPronta perante você — por qualquer causa e independentemente da forma
-              da ação (contrato, ato ilícito ou outro) — estará limitada ao <strong>valor total
-              pago por você ao FolhaPronta nos 12 meses imediatamente anteriores ao evento
-              que deu origem à reclamação</strong>.
-            </p>
-            <p>
-              Para usuários do plano Free, que não realizam pagamento, a responsabilidade máxima
-              é limitada a <strong>R$ 100,00</strong>.
+              O FolhaPronta é oferecido de forma <strong>gratuita</strong>, sem qualquer
+              contraprestação financeira por parte do usuário. Na máxima extensão permitida pela
+              legislação brasileira aplicável, e considerando a natureza gratuita do serviço, o
+              FolhaPronta responde apenas pelos danos diretos a que tenha dado causa por dolo ou
+              culpa, nos limites do Código de Defesa do Consumidor e do Código Civil.
             </p>
 
             <h3>Danos não cobertos</h3>
             <p>
-              Em nenhuma hipótese o FolhaPronta será responsável por danos indiretos, incidentais,
-              especiais, consequentes ou punitivos, incluindo, sem limitação:
+              Na medida permitida por lei, o FolhaPronta não será responsável por danos indiretos,
+              incidentais, especiais ou consequentes que não decorram diretamente de sua atuação,
+              incluindo, sem limitação:
             </p>
             <ul class="legal-lista">
-              <li>Lucros cessantes ou perda de receita.</li>
-              <li>Perda de dados ou informações.</li>
+              <li>Lucros cessantes ou perda de receita do usuário.</li>
+              <li>Perda de dados ou informações armazenadas no dispositivo do usuário.</li>
               <li>Custos de aquisição de serviços substitutos.</li>
-              <li>Danos à reputação ou goodwill.</li>
+              <li>Danos decorrentes do uso que o usuário ou terceiros fizerem dos documentos gerados.</li>
+            </ul>
+
+            <div class="legal-card destaque-amarelo">
+              <div class="legal-card-titulo">⚠️ Direitos que a lei garante</div>
+              <p style="font-size:var(--text-sm);color:#92400E;line-height:1.7;margin:0;">
+                Nada nestes Termos exclui ou limita responsabilidades que, pelo Código de Defesa do
+                Consumidor, não podem ser afastadas — em especial as relativas a vícios do serviço,
+                morte, lesão corporal ou dolo. As limitações acima aplicam-se somente até o limite
+                que a lei permite.
+              </p>
+            </div>
+          </section>
+
+          <!-- 8. Indenização pelo usuário -->
+          <section class="legal-secao" id="indenizacao">
+            <div class="legal-secao-header">
+              <div class="legal-secao-num">8</div>
+              <h2>Indenização pelo usuário</h2>
+            </div>
+
+            <p>
+              O usuário concorda em isentar e indenizar o FolhaPronta, seus operadores e
+              colaboradores, por quaisquer perdas, danos, reclamações, processos ou despesas
+              (incluindo honorários advocatícios razoáveis) que decorram diretamente de:
+            </p>
+            <ul class="legal-lista">
+              <li>Uso do serviço em violação a estes Termos.</li>
+              <li>Geração de documentos com conteúdo ilícito, fraudulento ou que viole direitos de terceiros.</li>
+              <li>Uso dos documentos gerados de forma contrária à lei ou lesiva a terceiros.</li>
             </ul>
             <p>
-              Essas limitações se aplicam mesmo que o FolhaPronta tenha sido advertido da
-              possibilidade de tais danos. Nada nestas cláusulas exclui ou limita nossa
-              responsabilidade por morte, lesão corporal ou fraude dolosa, conforme proibido
-              pelo Código de Defesa do Consumidor.
+              Esta obrigação não se aplica na medida em que a perda ou dano decorra de conduta do
+              próprio FolhaPronta, e observa sempre os limites e as proteções garantidas ao
+              consumidor pela legislação brasileira.
             </p>
           </section>
 
-          <!-- 8. Modificações -->
+          <!-- 9. Modificações -->
           <section class="legal-secao" id="modificacoes">
             <div class="legal-secao-header">
-              <div class="legal-secao-num">8</div>
+              <div class="legal-secao-num">9</div>
               <h2>Modificações no serviço e nos termos</h2>
             </div>
 
@@ -778,37 +577,61 @@
             </p>
             <ul class="legal-lista">
               <li>A data de <strong>"Vigência"</strong> no topo desta página será atualizada.</li>
-              <li>Usuários com conta ativa nos planos pagos receberão notificação por e-mail com ao menos <strong>15 dias de antecedência</strong> antes das alterações entrarem em vigor.</li>
-              <li>Alterações que ampliem obrigações ou restrinjam direitos dos usuários exigem aceite explícito no próximo login.</li>
+              <li>Alterações relevantes serão sinalizadas de forma clara na própria plataforma.</li>
             </ul>
             <p>
-              O uso continuado do serviço após a vigência das novas condições constitui aceitação
-              tácita dos Termos atualizados.
+              Alterações que ampliem suas obrigações ou reduzam seus direitos não se aplicam
+              retroativamente. O uso continuado do serviço após a sinalização das novas condições
+              indica concordância com os Termos atualizados; caso não concorde, basta interromper o uso.
             </p>
 
             <h3>Modificações no serviço</h3>
             <p>
               Reservamo-nos o direito de modificar, suspender ou encerrar qualquer funcionalidade
-              do FolhaPronta a qualquer momento, incluindo modelos do catálogo, limites de planos
-              e integrações. Para alterações que afetem substancialmente os planos pagos:
+              do FolhaPronta a qualquer momento, incluindo modelos do catálogo e limites de uso,
+              por se tratar de serviço gratuito.
             </p>
-            <ul class="legal-lista">
-              <li>Comunicaremos por e-mail com <strong>30 dias de antecedência</strong>.</li>
-              <li>Você terá direito a cancelar sem multa e com reembolso proporcional do período não utilizado, caso a alteração represente redução de funcionalidades contratadas.</li>
-            </ul>
 
             <h3>Encerramento do serviço</h3>
             <p>
-              Em caso de encerramento definitivo do FolhaPronta, notificaremos os usuários
-              com pelo menos <strong>60 dias de antecedência</strong> e garantiremos reembolso
-              proporcional dos planos pagos vigentes.
+              Em caso de encerramento definitivo do FolhaPronta, procuraremos avisar os usuários
+              com antecedência razoável por meio do site.
             </p>
           </section>
 
-          <!-- 9. Lei aplicável e foro -->
+          <!-- 10. Disposições gerais -->
+          <section class="legal-secao" id="disposicoes">
+            <div class="legal-secao-header">
+              <div class="legal-secao-num">10</div>
+              <h2>Disposições gerais</h2>
+            </div>
+
+            <h3>Independência das cláusulas</h3>
+            <p>
+              Se qualquer cláusula destes Termos for considerada inválida, nula ou inaplicável por
+              uma autoridade competente, as demais cláusulas permanecerão em pleno vigor e efeito.
+              A cláusula afetada será interpretada da forma que mais se aproxime de sua intenção
+              original, dentro dos limites da lei.
+            </p>
+
+            <h3>Tolerância não é renúncia</h3>
+            <p>
+              A eventual tolerância do FolhaPronta quanto ao descumprimento de qualquer obrigação
+              por parte do usuário não significa renúncia ao direito de exigir o cumprimento dessa
+              obrigação no futuro.
+            </p>
+
+            <h3>Acordo integral</h3>
+            <p>
+              Estes Termos, em conjunto com a Política de Privacidade, constituem o acordo integral
+              entre o usuário e o FolhaPronta quanto ao uso do serviço.
+            </p>
+          </section>
+
+          <!-- 11. Lei aplicável e foro -->
           <section class="legal-secao" id="lei-aplicavel">
             <div class="legal-secao-header">
-              <div class="legal-secao-num">9</div>
+              <div class="legal-secao-num">11</div>
               <h2>Lei aplicável e foro</h2>
             </div>
 
@@ -828,60 +651,56 @@
             <p>
               Em caso de controvérsias decorrentes destes Termos, as partes se comprometem a
               buscar, primeiramente, uma solução amigável por meio de contato direto com o
-              FolhaPronta (contato@folhapronta.com.br). Não sendo possível a resolução amigável
-              em <strong>30 dias</strong>, o conflito será submetido ao seguinte foro:
+              FolhaPronta (<a href="https://wa.me/5591988799352">WhatsApp</a>). Não sendo possível a resolução amigável
+              em <strong>30 dias</strong>, o conflito será submetido ao foro competente.
             </p>
 
             <div class="legal-card destaque-azul">
               <div class="legal-card-titulo">⚖️ Foro competente</div>
               <p style="font-size:var(--text-sm);color:var(--color-primary);line-height:1.7;margin:0;">
-                Fica eleito o foro da <strong>Comarca de Belém, Estado do Pará, Brasil</strong>,
-                com renúncia a qualquer outro, por mais privilegiado que seja.
+                Fica eleito o foro da <strong>Comarca de Ananindeua, Estado do Pará, Brasil</strong>
+                para dirimir controvérsias decorrentes destes Termos.
                 <br><br>
-                <strong>Exceção (CDC):</strong> em relações de consumo, o usuário-consumidor poderá
-                optar pelo foro de seu domicílio, conforme garantido pelo art. 101 do CDC e pela
-                jurisprudência do STJ.
+                <strong>Garantia do consumidor (CDC):</strong> em relações de consumo, o
+                usuário-consumidor poderá optar pelo foro de seu próprio domicílio, conforme
+                garantido pelo art. 101, I, do CDC e pela jurisprudência do STJ. Essa garantia
+                prevalece sobre a eleição de foro acima.
               </p>
             </div>
 
             <p>
               As partes também reconhecem a validade jurídica de comunicações eletrônicas
-              realizadas por e-mail, em conformidade com o Marco Civil da Internet.
+              realizadas pelos canais oficiais do FolhaPronta, em conformidade com o Marco Civil da Internet.
             </p>
           </section>
 
-          <!-- 10. Contato -->
+          <!-- 12. Contato -->
           <section class="legal-secao" id="contato">
             <div class="legal-secao-header">
-              <div class="legal-secao-num">10</div>
+              <div class="legal-secao-num">12</div>
               <h2>Contato</h2>
             </div>
 
             <p>
-              Para dúvidas sobre estes Termos, solicitações de suporte, cancelamentos ou
-              qualquer assunto relacionado ao FolhaPronta, entre em contato pelos canais abaixo:
+              Para dúvidas sobre estes Termos, solicitações de suporte ou qualquer assunto
+              relacionado ao FolhaPronta, entre em contato pelo nosso canal oficial:
             </p>
 
             <div class="contato-card">
-              <div class="contato-icone">✉️</div>
+              <div class="contato-icone">💬</div>
               <div class="contato-info">
                 <h3>Fale com o FolhaPronta</h3>
                 <p>
-                  <strong style="color:var(--color-white)">Suporte geral:</strong>
-                  <a href="mailto:contato@folhapronta.com.br">contato@folhapronta.com.br</a>
+                  <strong style="color:var(--color-white)">Suporte e dúvidas:</strong>
+                  <a href="https://wa.me/5591988799352">pelo nosso WhatsApp</a>
                 </p>
                 <p>
-                  <strong style="color:var(--color-white)">Privacidade e dados (DPO):</strong>
-                  <a href="mailto:privacidade@folhapronta.com.br">privacidade@folhapronta.com.br</a>
-                </p>
-                <p>
-                  <strong style="color:var(--color-white)">Cancelamentos e reembolsos:</strong>
-                  <a href="mailto:financeiro@folhapronta.com.br">financeiro@folhapronta.com.br</a>
+                  <strong style="color:var(--color-white)">Privacidade e dados (LGPD):</strong>
+                  <a href="https://wa.me/5591988799352">pelo nosso WhatsApp</a>
                 </p>
                 <p>
                   <strong style="color:var(--color-white)">Atendimento:</strong>
                   Respondemos em até <strong style="color:var(--color-white)">2 dias úteis</strong>.
-                  Para solicitações urgentes sobre pagamentos, em até 24 horas.
                 </p>
               </div>
             </div>
@@ -889,7 +708,8 @@
             <div class="legal-card" style="margin-top:var(--space-6);">
               <div class="legal-card-titulo" style="color:var(--color-gray-700);">📜 Histórico de versões</div>
               <ul class="legal-lista" style="margin:0;">
-                <li><strong>24/05/2025</strong> — Versão inicial dos Termos de Uso.</li>
+                <li><strong>13/06/2026</strong> — Reescrita: ajuste da idade mínima (maiores de 18); remoção do teto fixo de indenização; isenção de responsabilidade detalhada; novas cláusulas de indenização e disposições gerais; alinhamento com o modelo 100% gratuito.</li>
+                <li><strong>26/05/2026</strong> — Versão inicial dos Termos de Uso.</li>
               </ul>
             </div>
           </section>
@@ -918,15 +738,8 @@
             <li><a href="../catalogo.html?cat=tecnico">Técnicos</a></li>
             <li><a href="../catalogo.html?cat=empresarial">Empresariais</a></li>
             <li><a href="../catalogo.html?cat=recibos">Recibos</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h6 class="footer-titulo">Planos</h6>
-          <ul class="footer-links">
-            <li><a href="planos.html#free">Free</a></li>
-            <li><a href="planos.html#premium">Premium</a></li>
-            <li><a href="planos.html#max">Max</a></li>
+            <li><a href="../catalogo.html?cat=criativo">Criativos</a></li>
+            <li><a href="../catalogo.html?cat=agro">Agro</a></li>
           </ul>
         </div>
 
@@ -941,7 +754,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 FolhaPronta. Feito com ❤️ no Brasil.</p>
+        <p>© 2026 FolhaPronta. Feito com ❤️ no Brasil.</p>
         <p class="footer-lgpd-info">
           Seus dados são protegidos conforme a
           <a href="privacidade.html">LGPD (Lei 13.709/2018)</a>
@@ -953,9 +766,9 @@
   <!-- ── BANNER LGPD ─────────────────────────────────────────── -->
   <div class="lgpd-banner hidden" id="lgpd-banner">
     <p>
-      🍪 Usamos apenas cookies essenciais para salvar suas preferências localmente.
-      Nenhum dado é enviado a servidores. Saiba mais em nossa
-      <a href="privacidade.html">Política de Privacidade</a>.
+      🍪 Usamos apenas armazenamento local (localStorage) para salvar suas preferências no
+      seu próprio dispositivo. O conteúdo dos seus PDFs não é enviado a servidores. Saiba mais
+      em nossa <a href="privacidade.html">Política de Privacidade</a>.
     </p>
     <div class="lgpd-acoes">
       <button class="btn btn-secondary btn-sm" id="lgpd-aceitar">Entendi, aceitar</button>
@@ -972,17 +785,13 @@
   </a>
 
   <!-- ── SCRIPTS ─────────────────────────────────────────────── -->
-  <script src="../assets/js/planos/planos.js"></script>
-  <script src="../assets/js/core/pdf-engine.js"></script>
   <script src="../assets/js/core/lgpd.js"></script>
 
   <script>
-    // ── Header
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
     });
 
-    // ── Menu mobile
     const btnMenu = document.getElementById('btn-menu-mobile');
     const navLinks = document.querySelector('.nav-links');
     if (btnMenu) {
@@ -992,7 +801,6 @@
       });
     }
 
-    // ── Sumário: destacar seção ativa ao rolar
     const secoes   = document.querySelectorAll('.legal-secao[id]');
     const linksNav = document.querySelectorAll('.sumario-link');
 
