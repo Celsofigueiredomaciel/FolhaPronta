@@ -1,161 +1,111 @@
 # 📄 FolhaPronta
 
-Site de utilidade pública para geração e impressão de papéis formatados em PDF.
-Sem cadastro, sem complicação — escolheu, personalizou, imprimiu.
+Gerador gratuito de papéis e documentos prontos para imprimir, em PDF, direto no navegador. Sem cadastro, sem instalação — escolha o modelo, personalize e imprima.
+
+🔗 **Online:** [folhapronta.app.br](https://folhapronta.app.br)
+
+---
+
+## Sobre o projeto
+
+O FolhaPronta resolve um problema cotidiano: precisar de um papel pautado, uma folha de ponto, um recibo ou uma caderneta de campo e não ter um modelo pronto à mão. Em vez de procurar arquivos soltos pela internet, o usuário escolhe um modelo, ajusta as opções e gera um PDF formatado em segundos — tudo gratuitamente.
+
+O serviço é **100% gratuito** e funciona inteiramente no navegador: nenhum dado digitado pelo usuário é enviado a servidores.
 
 ---
 
 ## 🏗️ Arquitetura
 
-### Princípios
-- **Zero backend na Fase 1** — tudo roda no navegador (jsPDF)
-- **Modular** — cada tipo de papel é um módulo JS independente
-- **Escalável** — estrutura já preparada para backend nas Fases 2 e 3
-- **LGPD ready** — cookies apenas com consentimento
-- **Acessível** — foco em público amplo (escolar, empresarial, doméstico)
+- **Sem backend** — toda a geração de PDF acontece no navegador do usuário (client-side), com a biblioteca jsPDF.
+- **Registry como fonte única** — um único arquivo (`registry.js`) define todo o catálogo de papéis: categorias, slugs, estado (ativo / em breve) e o módulo gerador de cada um. Páginas, contadores e o gerador leem dessa fonte, evitando dados duplicados e divergentes.
+- **Modular** — cada papel funcional é um módulo JavaScript independente, carregado dinamicamente conforme a necessidade.
+- **Privacidade por padrão** — sem cadastro, sem login, sem banco de dados de usuários. As preferências ficam em `localStorage`, no próprio dispositivo.
+- **Hospedagem estática** — GitHub Pages, com domínio próprio.
 
-### Stack Fase 1 (atual)
-- HTML5 + CSS3 + JavaScript puro (sem framework)
-- jsPDF — geração de PDF no navegador
-- html2canvas — captura de personalizações visuais
-- GitHub Pages / Netlify — hospedagem gratuita
+### Stack
 
-### Stack Fase 2 (futuro — Premium)
-- Node.js + TypeScript (backend)
-- MySQL (banco de dados)
-- JWT + RBAC (autenticação)
-- Mercado Pago (assinaturas)
+- HTML5, CSS3 e JavaScript puro (sem framework)
+- [jsPDF](https://github.com/parallax/jsPDF) — geração de PDF no navegador
+- Google Apps Script + Google Sheets — contagem anônima e agregada de acessos
+- GitHub Pages — hospedagem
 
 ---
 
-## 📁 Estrutura de Pastas
+## 📁 Estrutura de pastas
 
 ```
-folhapronta/
+FolhaPronta/
 │
-├── index.html                        ← Landing page principal
-├── catalogo.html                     ← Catálogo de todos os papéis
-├── README.md
+├── index.html                  ← Landing page
+├── catalogo.html               ← Catálogo de todos os papéis
+├── sitemap.xml / robots.txt    ← SEO
+├── CNAME                        ← Domínio customizado (GitHub Pages)
 │
 ├── pages/
-│   ├── planos.html                   ← Página Free / Premium / Max
-│   ├── privacidade.html              ← Política de privacidade (LGPD)
-│   └── termos.html                   ← Termos de uso
-│
-├── components/
-│   ├── header.html                   ← Cabeçalho reutilizável
-│   ├── footer.html                   ← Rodapé com WhatsApp
-│   ├── cookie-banner.html            ← Banner LGPD
-│   └── modal-plano.html              ← Modal de upgrade de plano
+│   ├── gerador.html            ← Tela de geração (lê o papel via ?papel=slug)
+│   ├── termos.html             ← Termos de uso
+│   ├── privacidade.html        ← Política de privacidade (LGPD)
+│   ├── planos.html             ← Redirect para o catálogo
+│   └── (demais .html)          ← Páginas de papéis / redirects
 │
 ├── assets/
 │   ├── css/
-│   │   ├── global.css                ← Variáveis, reset, tipografia
-│   │   ├── components.css            ← Botões, cards, modais
-│   │   ├── landing.css               ← Estilo da home
-│   │   └── gerador.css               ← Estilo da tela de geração
+│   │   ├── global.css          ← Variáveis, reset, tipografia
+│   │   ├── components.css      ← Botões, cards, header, footer
+│   │   ├── landing.css         ← Estilo da home
+│   │   ├── catalogo.css        ← Estilo do catálogo
+│   │   └── gerador.css         ← Estilo da tela de geração
 │   │
-│   ├── fonts/                        ← Fontes locais (opcional)
-│   ├── icons/                        ← SVG icons
+│   ├── icons/                  ← Logo (SVG) e og-image
 │   │
 │   └── js/
 │       ├── core/
-│       │   ├── app.js                ← Inicialização e roteamento
-│       │   ├── plano-guard.js        ← Controle de acesso por plano
-│       │   ├── pdf-engine.js         ← Engine central jsPDF
-│       │   ├── storage.js            ← localStorage (preferências)
-│       │   ├── lgpd.js               ← Consentimento e cookies
-│       │   └── whatsapp.js           ← Botão de feedback
-│       │
-│       ├── planos/
-│       │   ├── planos.js             ← Definição dos planos e limites
-│       │   └── upgrade.js            ← Lógica de upgrade (futura API)
+│       │   ├── registry.js     ← Catálogo: fonte única de papéis
+│       │   ├── pdf-engine.js   ← Engine central de geração (jsPDF)
+│       │   ├── stats-tracker.js← Contagem anônima de acessos
+│       │   ├── theme-toggle.js ← Alternância de tema claro/escuro
+│       │   └── lgpd.js         ← Aviso de privacidade / preferências
 │       │
 │       └── papeis/
-│           ├── escolar/
-│           │   ├── pautado.js        ← Papel pautado (free)
-│           │   ├── quadriculado.js   ← Papel quadriculado (free)
-│           │   ├── caligrafia.js     ← Caligrafia infantil (premium)
-│           │   └── milimetrado.js    ← Milimetrado (premium)
-│           │
-│           ├── tecnico/
-│           │   ├── engenharia.js     ← Quadriculado engenharia (free)
-│           │   ├── partitura.js      ← Partitura musical (premium)
-│           │   └── isometrico.js     ← Papel isométrico (premium)
-│           │
-│           ├── empresarial/
-│           │   ├── protocolo.js      ← Papel protocolo (free)
-│           │   ├── ponto.js          ← Folha de ponto (free)
-│           │   ├── requisicao.js     ← Requisição (premium)
-│           │   ├── hora-extra.js     ← Hora extra (premium)
-│           │   ├── ata-reuniao.js    ← Ata de reunião (premium)
-│           │   └── ordem-servico.js  ← Ordem de serviço (max)
-│           │
-│           ├── recibos/
-│           │   ├── recibo-simples.js     ← Recibo simples (free)
-│           │   ├── recibo-comercial.js   ← Recibo comercial (premium)
-│           │   ├── recibo-aluguel.js     ← Recibo aluguel (premium)
-│           │   └── recibo-duas-vias.js   ← Duas vias A4 (premium)
-│           │
-│           └── criativo/
-│               ├── planner-semanal.js    ← Planner semanal (free)
-│               ├── bullet-journal.js     ← Bullet journal (premium)
-│               ├── lista-tarefas.js      ← To-do list (free)
-│               └── storyboard.js        ← Storyboard (max)
+│           ├── escolar/        ← pautado, quadriculado
+│           ├── empresarial/    ← protocolo, ponto
+│           ├── recibos/        ← recibo-simples, recibo-aluguel
+│           ├── criativo/       ← lista-tarefas
+│           └── agro/           ← diario-campo
+│
+└── docs/                       ← Documentação interna do projeto
 ```
 
 ---
 
-## 🎯 Planos
+## 📋 Papéis disponíveis
 
-| Recurso                        | Free | Premium | Max |
-|-------------------------------|------|---------|-----|
-| Papéis básicos                | ✅   | ✅      | ✅  |
-| Todos os papéis               | ❌   | ✅      | ✅  |
-| Sem marca d'água              | ❌   | ✅      | ✅  |
-| Personalização com logo       | ❌   | ✅      | ✅  |
-| Salvar modelos personalizados | ❌   | ❌      | ✅  |
-| Histórico de PDFs             | ❌   | ❌      | ✅  |
-| Multi-usuário (empresa)       | ❌   | ❌      | ✅  |
-| Banco de dados próprio        | ❌   | ❌      | ✅  |
+Os modelos abaixo geram PDF e estão funcionais. Outros aparecem no catálogo marcados como **"em breve"** e são adicionados conforme a demanda.
 
----
-
-## 🔒 LGPD
-
-- Banner de consentimento de cookies na primeira visita
-- Nenhum dado pessoal coletado no plano Free
-- Política de privacidade completa em `/pages/privacidade.html`
-- Personalização salva apenas em localStorage (dispositivo do usuário)
-- Fase Premium/Max: consentimento explícito no cadastro
+| Categoria    | Modelos funcionais                  |
+|--------------|-------------------------------------|
+| Escolar      | Pautado, Quadriculado               |
+| Empresarial  | Protocolo, Folha de ponto           |
+| Recibos      | Recibo simples, Recibo de aluguel   |
+| Criativo     | Lista de tarefas                    |
+| Agro         | Diário de campo                     |
 
 ---
 
-## 📱 Roadmap
+## 🔒 Privacidade e LGPD
 
-### Fase 1 — MVP Free (agora)
-- [x] Estrutura de pastas e arquitetura
-- [ ] Landing page
-- [ ] Catálogo de papéis
-- [ ] 5 papéis funcionais gerando PDF
-- [ ] Banner LGPD
-- [ ] Botão WhatsApp feedback
-- [ ] Deploy GitHub Pages
-
-### Fase 2 — Premium
-- [ ] Backend Node.js + MySQL
-- [ ] Autenticação JWT
-- [ ] Integração Mercado Pago
-- [ ] Upload de logo
-- [ ] Histórico de PDFs
-
-### Fase 3 — Max
-- [ ] Banco de dados por conta
-- [ ] Templates salvos
-- [ ] Multi-usuário
-- [ ] API para integrações
+- Nenhum dado digitado nos formulários é enviado a servidores — o PDF é gerado localmente.
+- Sem cadastro, login ou cobrança.
+- Preferências (tema, último modelo, contagem diária) ficam apenas em `localStorage`.
+- Estatísticas de acesso são anônimas e agregadas.
+- Política completa em [`/pages/privacidade.html`](https://folhapronta.app.br/pages/privacidade.html).
 
 ---
 
-## 💬 Feedback
-Sugestões? [Fale pelo WhatsApp](https://wa.me/5591988799352?text=Oi!%20Tenho%20uma%20sugestão%20para%20o%20FolhaPronta:)
+## 💬 Contato
+
+Sugestões ou dúvidas? [Fale pelo WhatsApp](https://wa.me/5591988799352).
+
+---
+
+<sub>Projeto autoral de Celso Figueiredo Maciel. Código sob licença MIT.</sub>
